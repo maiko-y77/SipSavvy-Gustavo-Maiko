@@ -148,6 +148,7 @@ Wine Lovers interested in learning and teaching more about the fascinating world
 - password
 - avatar
 - role (admin/writer/reader)
+- email_verified
 - followers (Array of userIDs that follow this user) e.g., [1, 50, 35] etc
 - following (Array of userIDs that this user is following)
 
@@ -244,29 +245,33 @@ Wine Lovers interested in learning and teaching more about the fascinating world
 ```
 SipSavvy/
   ├── client(or frontend)/     Frontend codes
-  │   ├── public/
-  │   │   ├── index.html
+  │   ├── public/              
   │   │   ├── ...
-  │   ├── src/
-  │   │   ├── components/      React components
-  │   │   ├── pages/
-  │   │   ├── styles/          CSS or styling files
-  │   │   ├── App.js           Main components
-  │   │   ├── index.js         Entry point
   │   │   ├── ...
+  │   ├── src/app                 
+  │   │   ├── about/           about Routes
+  │   │   │   ├── page.tsx
+  │   │   ├── write/           write Routes
+  │   │   │   ├── page.tsx
+  │   │   ├── login/           login Routes
+  │   │   │   ├── page.tsx
+  │   │   ├── register/        register Routes
+  │   │   │   ├── page.tsx
+  │   │   ├── page.tsx         Entry point
+  │   │   ├── layout.tsx
   │   ├── package.json
   │   ├── node_modules/
   ├── server(or backend)/      Backend code
-  │   ├── controllers/
-  │   ├── models/
-  │   ├── routes/
-  │   ├── server.js
+  │   ├── controllers/         
+  │   ├── models/              
+  │   ├── routes/                            
+  │   ├── server.js            
   │   ├── package.json
   │   ├── database/            Database scripts and configurations
   │   ├── package.json
-  │   ├── node_modules/
-  ├── node_modules/
-  ├── .gitignore
+  │   ├──node_modules/
+  ├── node_modules/            
+  ├── .gitignore              
   ├── README.md                Project documentation (Using our Google documentation)
   ├── package.json
 ```
