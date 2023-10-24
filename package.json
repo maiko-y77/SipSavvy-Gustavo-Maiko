@@ -1,0 +1,12 @@
+{
+  "name": "sipsavvy-gustavo-maiko",
+  "version": "1.0.0",
+  "description": "- **Gustavo**:   - [list of roles comes here once decided all the steps]",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
