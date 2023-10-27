@@ -248,8 +248,9 @@ SipSavvy/
   │   ├── public/              
   │   │   ├── ...
   │   │   ├── ...
-  │   ├── src/app                 
-  │   │   ├── about/           about Routes
+  │   ├── src/  
+  │   │   ├── app/    
+  │   │   │   ├── about/       about Routes
   │   │   │   ├── page.tsx
   │   │   ├── write/           write Routes
   │   │   │   ├── page.tsx
@@ -257,8 +258,14 @@ SipSavvy/
   │   │   │   ├── page.tsx
   │   │   ├── register/        register Routes
   │   │   │   ├── page.tsx
+  │   │   ├── contact/         contact Routes
+  │   │   │   ├── page.tsx
   │   │   ├── page.tsx         Entry point
   │   │   ├── layout.tsx
+  │   │   ├── globals.scss  
+  │   │   ├── components/      
+  │   │   │   ├── Navbar.tsx      
+  │   │   │   ├── Footer.tsx      
   │   ├── package.json
   │   ├── node_modules/
   ├── server(or backend)/      Backend code
@@ -273,7 +280,7 @@ SipSavvy/
   ├── node_modules/            
   ├── .gitignore              
   ├── README.md                Project documentation (Using our Google documentation)
-  ├── package.json
+  ├── package.json            
 ```
 
 # Project management
