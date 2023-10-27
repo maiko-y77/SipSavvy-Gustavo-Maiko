@@ -1,12 +1,10 @@
-//ABOUT US PAGE
-import Footer from "@/components/Footer";
+//CONTACT US PAGE
 import Navbar from "@/components/Navbar";
 
 export default function Register() {
     return (
         <section>
             <Navbar />
-            <Footer />
         </section>
     )
 }
