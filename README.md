@@ -252,8 +252,6 @@ SipSavvy/
   │   │   ├── app/    
   │   │   │   ├── about/       about Routes
   │   │   │   ├── page.tsx
-  │   │   ├── write/           write Routes
-  │   │   │   ├── page.tsx
   │   │   ├── login/           login Routes
   │   │   │   ├── page.tsx
   │   │   ├── register/        register Routes
@@ -280,7 +278,8 @@ SipSavvy/
   ├── node_modules/            
   ├── .gitignore              
   ├── README.md                Project documentation (Using our Google documentation)
-  ├── package.json            
+  ├── package.json
+              
 ```
 
 # Project management
