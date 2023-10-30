@@ -1,21 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400|Oswald:300,700");
-
-$primary: #671929;
-$secondary: #01395E;
-$primary_darker: #44202E;
-$brand_white: #FAFAFA;
-$accent: #E0C389;
-$neutrals_black: #111827;
-
-@mixin primary_btn {
-  display: flex;
-  padding: 12px 24px;
-  align-items: center;
-  gap: 8px;
-  border-radius: 12px;
-  background: $primary;
-  color: $brand_white;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&display=swap');
+@import "../styles/mixins.scss";
+@import "../styles/colors.scss";
 
 * {
   margin: 0;
