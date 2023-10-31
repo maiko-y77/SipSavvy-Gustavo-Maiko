@@ -1,4 +1,4 @@
-//ABOUT US PAGE
+//CONTACT US PAGE
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 

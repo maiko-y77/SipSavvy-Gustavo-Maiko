@@ -1,0 +1,86 @@
+@mixin primary_btn {
+    display: flex;
+    padding: 12px 24px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    background: $primary;
+    color: $brand_white;
+}
+
+@mixin font-oswald-style-height-normal {
+    font-family: $Oswald;
+    font-style: $font-style-normal;
+    line-height: $line-height-normal; //1
+}
+
+@mixin font-oswald-style-normal-height-tall {
+    font-family: $Oswald;
+    font-style: $font-style-normal;
+    line-height: $line-height-tall; //2
+}
+
+@mixin title {
+    @include font-oswald-style-height-normal;
+    font-size: 80px;
+    font-weight: $font-weight-bold;
+    /* 80px */
+    text-transform: uppercase;
+}
+
+@mixin subtitle {
+    @include font-oswald-style-normal-height-tall;
+    font-size: 36px;
+    font-weight: $font-weight-light;
+    /* 54px */
+}
+
+@mixin heading-1 {
+    @include font-oswald-style-normal-height-tall;
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    /* 72px */
+}
+
+@mixin heading-2 {
+    @include font-oswald-style-height-normal;
+    font-size: 32px;
+    font-weight: $font-weight-regular;
+    /* 32px */
+}
+
+@mixin heading-3 {
+    @include font-oswald-style-normal-height-tall;
+    font-size: 24px;
+    font-weight: $font-weight-regular;
+    /* 36px */
+}
+
+@mixin body-style {
+    font-family: $Montserrat;
+    font-style: $font-style-normal;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-tall;
+}
+
+@mixin body {
+    @include body-style;
+    font-size: 16px;
+    /* 24px */
+}
+
+@mixin body-small {
+    @include body-style;
+    font-size: 12px;
+    /* 18px */
+}
+
+@mixin link {
+    font-family: $Montserrat;
+    font-size: 14px;
+    font-style: $font-style-normal;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-normal;
+    /* 14px */
+    text-decoration-line: underline;
+}
