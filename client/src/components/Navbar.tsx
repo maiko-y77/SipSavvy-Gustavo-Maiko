@@ -4,7 +4,11 @@ import WriterNavbar from "./navbar/WriterNavbar";
 import UserNavbar from "./navbar/UserNavbar";
 import DefaultNavbar from "./navbar/DefaultNavbar";
 
-export default function Navbar( { type }) {
+interface NavbarProps {
+    type: "admin" | "writer" | "user" | "default";
+}
+
+export default function Navbar({ type }: NavbarProps) {
 
     let componentToRender
 

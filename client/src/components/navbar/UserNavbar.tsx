@@ -1,8 +1,9 @@
 const UserNavbar = () => {
     return (
         <div>
-            User Navbar
+           User Navbar
         </div>
+
     );
 }
 

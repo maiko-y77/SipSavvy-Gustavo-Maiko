@@ -13,6 +13,11 @@ a {
   color: inherit
 }
 
+body{
+  min-height: 100vh;
+  position: relative;
+}
+
 .header {
   display: flex;
   width: 100%;
@@ -41,6 +46,11 @@ a {
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
+    transition: all 0.6s ease;
+
+    a:hover{
+      color: $primary;
+    }
     /* 24px */
 
     div {
@@ -50,19 +60,35 @@ a {
 }
 
 .footer {
+  width: 100%;
   display: flex;
-  width: 1728px;
-  padding: 16px 48px;
+  margin: 0 auto;
   align-items: center;
-  gap: 8px;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
   p {
-    color: $brand_white;
+    color: $neutrals_black;
     font-family: Montserrat;
-    font-size: 16px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
+    width: 100%;
+    max-width: 1728px;
+    padding: 16px 48px;
     /* 24px */
   }
+}
+
+.full-width{
+  width: 100%;
+}
+
+.centered{
+  width: 100%;
+  max-width: 1344px;
+  padding-inline: 1.5rem;
 }
