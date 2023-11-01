@@ -2,7 +2,7 @@ export default function Navbar() {
     return (
         <header className="header">
             <div>
-                <a href="/"><img className="header-navbar-logo" src="" alt="Header / Navbar / Logo" /></a>
+                <a href="/"><img className="header-navbar-logo" src="" alt="Logo" /></a>
             </div>
             <nav className="navbar">
                 <a href="/about">About Us</a>
