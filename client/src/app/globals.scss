@@ -15,7 +15,8 @@ a {
 
 .header {
   display: flex;
-  width: 1728px;
+  width: 100%;
+  margin: 0 auto;
   padding: 24px 48px;
   justify-content: space-between;
   align-items: center;

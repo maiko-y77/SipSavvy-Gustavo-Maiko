@@ -1,8 +1,10 @@
+import Logo from "./Logo";
+
 export default function Navbar() {
     return (
         <header className="header">
             <div>
-                <a href="/"><img className="header-navbar-logo" src="" alt="Logo" /></a>
+                <Logo />
             </div>
             <nav className="navbar">
                 <a href="/about">About Us</a>
