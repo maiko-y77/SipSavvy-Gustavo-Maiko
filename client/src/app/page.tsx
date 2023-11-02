@@ -4,9 +4,8 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <section>
-      <Navbar />
-      <Footer />
-    </section>
+    <>
+      This is the homepage content
+    </>
   )
 }
