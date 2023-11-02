@@ -6,6 +6,7 @@
 
 // Page stylesheets
 @import "../styles/pages/home.scss";
+@import "../styles/pages/contact.scss";
 
 * {
   margin: 0;
@@ -26,10 +27,14 @@ body {
   font-family: $Montserrat;
 }
 
-input[type=text],
+input[type="text"],
 input[type="email"],
 input[type="password"]{
   @include text-field;
+}
+
+textarea{
+  resize: none;
 }
 
 button{

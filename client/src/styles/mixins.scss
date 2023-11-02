@@ -76,11 +76,6 @@
         background: var(--white, #FFF);
         outline: none;
     }
-
-    &:invalid{
-        border-bottom: 1px solid var(--supporting-error-500, #CB2D2D);
-        background: var(--supporting-error-100, #FFF3F3);
-    }
 }
 
 @mixin font-oswald-style-height-normal {
