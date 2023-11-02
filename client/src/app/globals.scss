@@ -36,6 +36,20 @@ button{
   @include primary_btn;
 }
 
+.tab-bar,
+.breadcrumbs-bar{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.tab,
+.breadcrumb{
+  @include tab;
+  flex-grow: 0;
+}
+
 .icon{
   color: $grey_400;
 }
