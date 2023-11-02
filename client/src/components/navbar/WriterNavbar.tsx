@@ -1,3 +1,5 @@
+import LinksBar from "./LinksBar";
+
 const WriterNavbar = () => {
   return (
     <nav className="user-writer-admin-navbar">
@@ -8,25 +10,7 @@ const WriterNavbar = () => {
         <a href="/collections">My Collections</a>
         <a href="/contact">Contact Us</a>
       </div>
-      <div className="wrap-icons">
-        <a href="/">
-          <img src="#" alt="bell" />
-        </a>
-        <a href="/">
-          <img src="#" alt="vector" />
-        </a>
-      </div>
-      <div className="droppeddown-loggedin">
-        <a className="user" href="/">
-          <img src="#" alt="user" />
-        </a>
-        <p>
-          Hello, <span>Writer!</span>
-        </p>
-        <a href="/">
-          <img src="#" alt="power-off" />
-        </a>
-      </div>
+      <LinksBar />
     </nav>
   );
 };

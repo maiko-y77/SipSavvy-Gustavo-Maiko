@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <Navbar type="user" />
+      <Navbar type="admin" />
       <main>
         {children}
         </main>

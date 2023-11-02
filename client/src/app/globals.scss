@@ -156,6 +156,13 @@ body {
   background: $primary;
   color: $brand_white;
 
+  .icon{
+    color: $brand_white;
+    &:hover{
+      color: $accent;
+    }
+  }
+
   .header-navbar-logo {
     width: 163.669px;
     height: 64px;
@@ -211,11 +218,6 @@ body {
           font-weight: $font-weight-bold;
         }
       }
-    }
-
-
-    a:hover {
-      color: $primary;
     }
   }
 }
