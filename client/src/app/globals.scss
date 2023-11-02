@@ -6,6 +6,7 @@
 
 // Page stylesheets
 @import "../styles/pages/home.scss";
+@import "../styles/pages/404.scss";
 
 * {
   margin: 0;
@@ -26,11 +27,11 @@ body {
   font-family: $Montserrat;
 }
 
-.icon{
+.icon {
   color: $grey_400;
 }
 
-.avatar{
+.avatar {
   width: 36px;
   height: 36px;
   border-radius: 18px;
@@ -40,7 +41,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  svg{
+  svg {
     height: 18px;
   }
 }
