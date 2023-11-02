@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@300;400;700&display=swap');
 @import "../styles/mixins.scss";
 @import "../styles/colors.scss";
 @import "../styles/typography.scss";
 @import "../styles/navbar.scss";
+
+// Page stylesheets
+@import "../styles/pages/home.scss";
 
 * {
   margin: 0;
