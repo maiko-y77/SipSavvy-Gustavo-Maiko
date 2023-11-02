@@ -4,9 +4,8 @@ import Navbar from "@/components/Navbar";
 
 export default function Register() {
     return (
-        <section>
-            <Navbar />
-            <Footer />
-        </section>
+        <>
+            This is the about page content
+        </>
     )
 }

@@ -11,12 +11,15 @@
 
 a {
   text-decoration: none;
-  color: inherit
+  color: inherit;
+  font-family: $Montserrat;
+  transition: all 0.3s ease-in-out;
 }
 
 body {
   min-height: 100vh;
   position: relative;
+  font-family: $Montserrat;
 }
 
 .header {
@@ -145,6 +148,10 @@ body {
       padding: 0px 24px;
       align-items: center;
       gap: 24px;
+
+      a:hover{
+        color: $accent;
+      }
     }
 
     .wrap-icons {

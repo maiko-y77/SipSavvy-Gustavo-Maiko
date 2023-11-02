@@ -5,8 +5,7 @@ import Navbar from "@/components/Navbar";
 export default function Home() {
   return (
     <>
-      <Navbar type="admin" />
-      <Footer />
+      This is the homepage content
     </>
   )
 }
