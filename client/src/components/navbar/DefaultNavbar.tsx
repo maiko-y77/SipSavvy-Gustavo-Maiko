@@ -1,6 +1,6 @@
-export default function DefaultNavbar(){
+export default function DefaultNavbar() {
     return (
-        <nav className="navbar">
+        <nav className="default_navbar">
             <a href="/about">About Us</a>
             <a href="/contact">Contact Us</a>
             <a href="/login">Sign In</a>
