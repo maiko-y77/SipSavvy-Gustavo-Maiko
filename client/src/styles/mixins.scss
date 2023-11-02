@@ -15,7 +15,13 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 24px */
+    line-height: 150%;
+    transition: all 0.2s ease-in-out;
+    
+    &:hover{
+        background: $accent;
+        color: $primary;
+    } /* 24px */
 }
 
 @mixin text-field{
@@ -24,6 +30,8 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    outline: none;
+    border: none;
     border-bottom: 1px solid var(--neutrals-greys-300, #D1D5DB);
     background: var(--white, #FFF);
 
@@ -39,16 +47,12 @@
     &:focus{
         border-bottom: 1px solid var(--brand-primary, #671929);
         background: var(--white, #FFF);
+        outline: none;
     }
 
     &:invalid{
         border-bottom: 1px solid var(--supporting-error-500, #CB2D2D);
         background: var(--supporting-error-100, #FFF3F3);
-    }
-
-    &:valid{
-        border-bottom: 1px solid var(--supporting-success-500, #2DCB2D);
-        background: var(--supporting-success-100, #F3FFF3);
     }
 }
 

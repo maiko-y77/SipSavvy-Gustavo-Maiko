@@ -26,6 +26,16 @@ body {
   font-family: $Montserrat;
 }
 
+input[type=text],
+input[type="email"],
+input[type="password"]{
+  @include text-field;
+}
+
+button{
+  @include primary_btn;
+}
+
 .icon{
   color: $grey_400;
 }
