@@ -1,3 +1,5 @@
+import { BellIcon, EnvelopeIcon, UserIcon, PowerIcon } from '@heroicons/react/24/outline'
+
 const UserNavbar = () => {
     return (
         <nav className="user-writer-admin-navbar">
@@ -7,14 +9,23 @@ const UserNavbar = () => {
                 <a href="/contact">Contact Us</a>
             </div>
             <div className="wrap-icons">
-                <a href="/"><img src="#" alt="bell" /></a>
-                <a href="/"><img src="#" alt="vector" /></a>
+                <a href="/" className='icon'>
+                    <BellIcon width={24} height={24}  />
+                </a>
+                <a href="/" className='icon'>
+                    <EnvelopeIcon width={24} height={24}  />
+                </a>
             </div>
+
             <div className="droppeddown-loggedin">
-                <a className="user" href="/"><img className="user" src="#" alt="user" /></a>
+                <a className="avatar icon" href="/" >
+                    <UserIcon width={24} height={24} />
+                </a>
                 <p>Hello, <span>User!</span></p>
-                <a href="/"><img src="#" alt="power-off" /></a>
             </div>
+            <a href="/" className='icon'>
+                    <PowerIcon width={22} height={22} />
+                </a>
         </nav>
     )
 }
