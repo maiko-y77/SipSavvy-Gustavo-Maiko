@@ -1,4 +1,5 @@
-import Logo from "./Logo";
+import { Logo } from "./Logo";
+import { AdminLogo } from "./Logo";
 import AdminNavbar from "./navbar/AdminNavbar";
 import WriterNavbar from "./navbar/WriterNavbar";
 import UserNavbar from "./navbar/UserNavbar";
@@ -28,10 +29,13 @@ export default function Navbar({ type }: NavbarProps) {
             break;
     }
 
+    // Define the className based on the type
+    const headerClassName = type === "admin" ? "admin-header" : "header";
+
     return (
-        <header className="header">
+        <header className={headerClassName}>
             <div>
-                <Logo />
+                {type === "admin" ? <AdminLogo /> : <Logo />}
             </div>
             {componentToRender}
         </header>
