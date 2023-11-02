@@ -249,6 +249,8 @@ SipSavvy/
   │   │   ├── ...
   │   │   ├── ...
   │   ├── src/  
+  │   │   ├── pages/    
+  │   │   │   ├── 404.tsx      404 page
   │   │   ├── app/    
   │   │   │   ├── about/       about Routes
   │   │   │   ├── page.tsx
@@ -261,9 +263,16 @@ SipSavvy/
   │   │   ├── page.tsx         Entry point
   │   │   ├── layout.tsx
   │   │   ├── globals.scss  
-  │   │   ├── components/      
+  │   │   ├── components/     
+  │   │   │   ├── navbar/
+  │   │   │   │   ├── AdminNavbar.tsx      
+  │   │   │   │   ├── DefaultNavbar.tsx      
+  │   │   │   │   ├── LinksBar.tsx      
+  │   │   │   │   ├── UserNavbar.tsx      
+  │   │   │   │   ├── WriterNavbar.tsx      
   │   │   │   ├── Navbar.tsx      
-  │   │   │   ├── Footer.tsx      
+  │   │   │   ├── Footer.tsx    
+  │   │   │   ├── Logo.tsx        
   │   ├── package.json
   │   ├── node_modules/
   ├── server(or backend)/      Backend code
