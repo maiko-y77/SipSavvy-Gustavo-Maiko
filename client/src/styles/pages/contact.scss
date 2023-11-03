@@ -1,0 +1,55 @@
+// Contact us page styles
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 887px;
+    margin: 0 auto;
+    padding: 64px;
+
+    .copy{
+        width: 100%;
+        margin: 64px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        h1{
+            @include heading-1;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        p{
+            text-align: center;
+            line-height: 150%;
+            font-weight: 400;
+        }
+    }
+
+    .contact-form{
+        width: 432px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+        align-items: center;
+
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            textarea{
+                @include text-field;
+                height: 120px;
+            }
+        }
+
+
+        button{
+            width: fit-content;
+        }
+    }
+}

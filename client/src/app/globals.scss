@@ -6,7 +6,11 @@
 
 // Page stylesheets
 @import "../styles/pages/home.scss";
+<<<<<<< HEAD
 @import "../styles/pages/404.scss";
+=======
+@import "../styles/pages/contact.scss";
+>>>>>>> contact-page-dev
 
 * {
   margin: 0;
@@ -27,7 +31,39 @@ body {
   font-family: $Montserrat;
 }
 
+<<<<<<< HEAD
 .icon {
+=======
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+  @include text-field;
+}
+
+textarea{
+  resize: none;
+}
+
+button{
+  @include primary_btn;
+}
+
+.tab-bar,
+.breadcrumbs-bar{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.tab,
+.breadcrumb{
+  @include tab;
+  flex-grow: 0;
+}
+
+.icon{
+>>>>>>> contact-page-dev
   color: $grey_400;
 }
 
