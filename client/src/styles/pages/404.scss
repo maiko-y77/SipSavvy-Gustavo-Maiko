@@ -1,0 +1,99 @@
+.overlap-group {
+    height: 768px;
+    position: relative;
+    top: 50%;
+    width: 891px;
+    margin: 0 auto;
+
+    .text-wrapper {
+        color: $grey_100;
+        font-family: $Oswald;
+        font-size: 512px;
+        font-weight: $font-weight-bold;
+        height: 768px;
+        left: 34px;
+        letter-spacing: 0;
+        line-height: 768px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        white-space: nowrap;
+    }
+
+     .group {
+            position: absolute;
+            width: 891px;
+            height: 232px;
+            top: 271px;
+            left: 0;
+
+            .primary-btn {
+                @include primary_btn;
+                position: absolute;
+                top: 184px;
+                left: 352px;
+                background-color: $primary;
+                border-radius: 12px;
+
+                .sign-up {
+                    position: relative;
+                    width: fit-content;
+                    margin-top: -1px;
+                    font-family: $Montserrat;
+                    font-weight: $font-weight-regular;
+                    color: $brand_white;
+                    font-size: 16px;
+                    text-align: center;
+                    line-height: $line-height-tall;
+                    white-space: nowrap;
+                    font-style: $font-style-normal;
+                }
+            }
+
+            .the-page-you-re {
+                position: absolute;
+                width: 887px;
+                height: 24px;
+                top: 98px;
+                left: 0;
+                font-family: $Montserrat;
+                font-weight: $font-weight-regular;
+                color: #000000;
+                font-size: 16px;
+                text-align: center;
+                line-height: $line-height-tall;
+                font-style: $font-style-normal;
+            }
+
+            .div {
+                position: absolute;
+                height: 72px;
+                top: 0;
+                left: 124px;
+                font-family: $Oswald;
+                font-weight: $font-weight-bold;
+                color: #000000;
+                font-size: 48px;
+                text-align: center;
+                line-height: $line-height-tall;
+                white-space: nowrap;
+                font-style: $font-style-normal;
+            }
+        }
+    }
+
+.background {
+    position: absolute;
+    height: 72px;
+    top: 0;
+    left: 124px;
+    font-family: var(--heading-1-font-family);
+    font-weight: var(--heading-1-font-weight);
+    color: #000000;
+    font-size: var(--heading-1-font-size);
+    text-align: center;
+    letter-spacing: var(--heading-1-letter-spacing);
+    line-height: var(--heading-1-line-height);
+    white-space: nowrap;
+    font-style: var(--heading-1-font-style);
+}

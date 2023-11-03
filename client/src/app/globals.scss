@@ -6,6 +6,7 @@
 
 // Page stylesheets
 @import "../styles/pages/home.scss";
+@import "../styles/pages/404.scss";
 @import "../styles/pages/contact.scss";
 
 * {
@@ -59,7 +60,7 @@ button{
   color: $grey_400;
 }
 
-.avatar{
+.avatar {
   width: 36px;
   height: 36px;
   border-radius: 18px;
@@ -69,7 +70,7 @@ button{
   justify-content: center;
   align-items: center;
 
-  svg{
+  svg {
     height: 18px;
   }
 }
