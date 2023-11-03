@@ -1,0 +1,21 @@
+// Feed css code
+.feed-container{
+    width: 77.78%;
+    min-height: fit-content;
+    margin: 0 auto;
+    padding-block: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .articles-container{
+        width: 66.07%;
+        display: inline-block;
+    }
+
+    .sidebar{
+        width: 32.14%;
+        display: inline-block;
+        margin-left: auto;
+    }
+}
