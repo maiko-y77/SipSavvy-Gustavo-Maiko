@@ -1,0 +1,25 @@
+.dialog-window{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    .dialog-content{
+        z-index: 3;
+    }
+
+    .dialog-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $grey_100;
+        z-index: 2;
+    }
+}
