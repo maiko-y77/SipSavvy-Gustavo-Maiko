@@ -51,6 +51,18 @@
     }
 }
 
+@mixin form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    .form-group{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
 @mixin text-field{
     display: inline-flex;
     padding: 12px 24px;
