@@ -8,6 +8,7 @@
 @import "../styles/pages/home.scss";
 @import "../styles/pages/404.scss";
 @import "../styles/pages/contact.scss";
+@import "../styles/pages/register.scss";
 
 * {
   margin: 0;
@@ -26,6 +27,10 @@ body {
   min-height: 100vh;
   position: relative;
   font-family: $Montserrat;
+}
+
+form{
+  @include form;
 }
 
 input[type="text"],
