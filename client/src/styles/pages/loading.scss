@@ -1,0 +1,65 @@
+.loading {
+    width: 1728px;
+    //height: 1117px;
+    background-color: #ffffff;
+
+    .overlap-group {
+        display: flex;
+        height: 1117px;
+        background-color: $grey_100;
+
+        .loading-circles {
+            position: absolute;
+            width: 72px;
+            height: 16px;
+            top: 659px;
+            left: 50%;
+
+            .ellipse {
+                left: 28px;
+                background-color: $grey_300;
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                top: 0;
+                border-radius: 8px;
+            }
+
+            .div {
+                left: 56px;
+                background-color: $grey_300;
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                top: 0;
+                border-radius: 8px;
+            }
+
+            .ellipse-2 {
+                left: 0;
+                background-color: $grey_200;
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                top: 0;
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
+.loading .uncorking-the {
+    @include heading-3;
+    position: absolute;
+    height: 72px;
+    top: 522px;
+    color: $neutrals_black;
+}
+
+.loading .header-navbar-logo {
+    position: absolute;
+    width: 164px;
+    height: 64px;
+    top: 435px;
+    left: 50%;
+}
