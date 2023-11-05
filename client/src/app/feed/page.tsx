@@ -1,4 +1,6 @@
 import Tab from "@/components/Tab";
+import SectionTitle from "@/components/SectionTitle";
+import Link from "next/link";
 
 const page = () => {
     return (
@@ -10,9 +12,15 @@ const page = () => {
                 </div>
             </div>
             <div className="sidebar">
-                <section className="most-liked">Most Liked</section>
-                <section className="reading-list">Your Reading List</section>
-                <div className="banner">Writing banner</div>
+                <section className="reading-list"><SectionTitle text="Most Liked Articles" /></section>
+                <section className="reading-list"> <SectionTitle text="Your Reading List" /></section>
+                <div className="banner">
+                    <h3>Pour Your Passion Into Our Community!</h3>
+                    <p>
+                        Share your wine wisdom with our community of enthusiasts. Your knowledge is the key to a richer wine experience for all of us.
+                    </p>
+                    <Link href="">Start Writing</Link>
+                </div>
             </div>
         </div>
     );
