@@ -1,11 +1,13 @@
+import Link from "next/link";
+
 export default function DefaultNavbar() {
     return (
         <nav className="default_navbar">
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact Us</a>
-            <a href="/login">Sign In</a>
+            <Link href="/about">About Us</Link>
+            <Link href="/contact">Contact Us</Link>
+            <Link href="/login">Sign In</Link>
             <div>
-                <a href="/register">Sign Up</a>
+                <Link href="/register">Sign Up</Link>
             </div>
         </nav>
     )
