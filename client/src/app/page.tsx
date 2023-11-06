@@ -13,7 +13,6 @@ export default function Home() {
         </div>
         <div className="bg-image"></div>
     </div>
-    <div className="bg-image"></div>
     </>
   )
 }
