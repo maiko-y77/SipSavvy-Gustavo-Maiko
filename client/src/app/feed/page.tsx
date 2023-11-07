@@ -1,6 +1,7 @@
 import Tab from "@/components/Tab";
 import SectionTitle from "@/components/SectionTitle";
 import Link from "next/link";
+import Article from "@/components/Article";
 
 const page = () => {
     return (
@@ -9,6 +10,13 @@ const page = () => {
                 <div className="tab-bar">
                     <Tab text="For you" isActive={true} />
                     <Tab text="Following" isActive={false} />
+                </div>
+                <div className="articles-list">
+                    <Article />
+                    <Article />
+                    <Article />
+                    <Article />
+                    <Article />
                 </div>
             </div>
             <div className="sidebar">

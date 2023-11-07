@@ -51,6 +51,22 @@
     }
 }
 
+@mixin icon-link{
+    display: flex;
+    padding: 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    color: $grey_300;
+    transition: color 0.3s ease-out;
+
+    &:hover{
+        color: $primary;
+    }
+
+}
+
 @mixin form{
     display: flex;
     flex-direction: column;
