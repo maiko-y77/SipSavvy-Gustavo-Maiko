@@ -4,13 +4,14 @@ import Link from "next/link";
 import Article from "@/components/Article";
 
 const page = () => {
-  return (
-    <div className="feed-container">
-      <div className="articles-container">
-        <div className="tab-bar">
-          <Tab text="For you" isActive={true} />
-          <Tab text="Following" isActive={false} />
-        </div>
+
+    return (
+        <div className="feed-container">
+            <div className="articles-container">
+                <div className="tab-bar">
+                    <Tab text="For you" isActive={true} />
+                    <Tab text="Following" isActive={false} />
+                </div>
         <div className="articles-list">
           <Article />
           <Article />
