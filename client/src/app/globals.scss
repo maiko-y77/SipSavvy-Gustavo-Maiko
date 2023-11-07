@@ -4,6 +4,7 @@
 @import "../styles/typography.scss";
 @import "../styles/navbar.scss";
 @import "../styles/dialog.scss";
+@import "../styles/modal.scss";
 
 // Page stylesheets
 @import "../styles/pages/home.scss";
@@ -26,10 +27,19 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
+html{
+  display: block;
+}
+
 body {
   min-height: 100vh;
+  display: block;
   position: relative;
   font-family: $Montserrat;
+}
+
+main{
+  display: block;
 }
 
 form{
