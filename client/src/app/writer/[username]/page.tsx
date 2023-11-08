@@ -12,12 +12,12 @@ const page = () => {
       <div className="sidebar">
         <div className="author-card">
           <div className="author-info">
-          <div className="avatar">
-            <UserIcon />
-          </div>
-          <div className="author-name">
-            <h2>Jon Doe</h2>
-            <p>20k Followers</p>
+            <div className="avatar">
+              <UserIcon />
+            </div>
+            <div className="author-name">
+              <h2>Jon Doe</h2>
+              <p>20k Followers</p>
             </div>
           </div>
           <div className="author-bio">
@@ -31,13 +31,10 @@ const page = () => {
           <Link href="#">Follow</Link>
         </div>
         <div className="following-list">
-
           <div className="tab-bar">
-
             <SectionTitle text="Following" />
 
             <SearchBar />
-
           </div>
 
           <ul>
@@ -63,14 +60,13 @@ const page = () => {
             </li>
           </ul>
 
-          <Link href="writer/jondoe/following" className="link">See all</Link>
-
+          <Link href="writer/jondoe/following" className="link">
+            See all
+          </Link>
         </div>
-
       </div>
 
       <div className="articles-container">
-
         <div className="tab-bar">
           <Tab text="Jon Doe's Articles" isActive={true} />
           <SearchBar />
@@ -84,7 +80,6 @@ const page = () => {
             <Article />
           </li>
         </ul>
-
       </div>
     </div>
   );
