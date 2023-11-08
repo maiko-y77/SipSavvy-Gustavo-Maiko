@@ -25,6 +25,7 @@
 @import "../styles/pages/article.scss";
 @import "../styles/pages/feed.scss";
 @import "../styles/pages/writerProfile.scss";
+@import "../styles/pages/collection.scss";
 
 * {
   margin: 0;
@@ -90,16 +91,17 @@ button {
   color: $grey_400;
 }
 
-.section-title{
+.section-title {
   font-family: $Montserrat;
   color: $grey_500;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 36px */
+  line-height: 150%;
+  /* 36px */
 }
 
-.banner{
+.banner {
   width: 100%;
   background-color: $error_100;
   padding: 24px;
@@ -108,8 +110,8 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  
-  h3{
+
+  h3 {
     color: $error_800;
     text-align: center;
     // text
@@ -121,19 +123,20 @@ button {
     line-height: 150%;
   }
 
-  p{
-  width: 100%;
-  height: fit-content;
-  color: $error_800;
-  /* Body */
-  font-family: Montserrat;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%; /* 24px */
+  p {
+    width: 100%;
+    height: fit-content;
+    color: $error_800;
+    /* Body */
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 24px */
   }
 
-  a{
+  a {
     @include primary_btn;
     width: fit-content;
   }
