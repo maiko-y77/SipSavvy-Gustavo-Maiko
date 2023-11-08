@@ -1,3 +1,5 @@
+import { UserIcon } from "@heroicons/react/24/outline"
+
 export default function Article() {
     return (
         <>
@@ -9,8 +11,12 @@ export default function Article() {
                     <div className="post-info">
                         <div className="author-info">
                             <div className="author-bullet">
-                                <img className="avatar-2" src="img/avatar-3.svg" />
-                                <div className="text-wrapper-3">Author Name</div>
+                                <a className="avatar icon" href="/">
+                                    <UserIcon width={36} height={36} />
+                                </a>
+                                <p>
+                                    Author Name
+                                </p>
                             </div>
                             <div className="text-wrapper-4">Follow</div>
                             <div className="icons">
@@ -74,8 +80,12 @@ export default function Article() {
                     </div>
                     <div className="author-info-2">
                         <div className="author-bullet">
-                            <img className="avatar-2" src="img/image.svg" />
-                            <div className="text-wrapper-3">Author Name</div>
+                            <a className="avatar icon" href="/">
+                                <UserIcon width={36} height={36} />
+                            </a>
+                            <p>
+                                Author Name
+                            </p>
                         </div>
                         <div className="text-wrapper-4">Follow</div>
                         <div className="icons">
@@ -100,8 +110,12 @@ export default function Article() {
                                         up about a winemaker not being able to ...
                                     </p>
                                     <div className="author-bullet">
-                                        <img className="avatar-2" src="img/avatar-2.svg" />
-                                        <div className="text-wrapper-7">Author Name</div>
+                                        <a className="avatar icon" href="/">
+                                            <UserIcon width={36} height={36} />
+                                        </a>
+                                        <p>
+                                            Author Name
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="save-btn">
@@ -120,8 +134,12 @@ export default function Article() {
                                         popular a wine is, the less likely ...
                                     </p>
                                     <div className="author-bullet">
-                                        <img className="avatar-2" src="img/avatar.svg" />
-                                        <div className="text-wrapper-7">Author Name</div>
+                                        <a className="avatar icon" href="/">
+                                            <UserIcon width={24} height={24} />
+                                        </a>
+                                        <p>
+                                            Author Name
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="save-btn">
@@ -132,7 +150,7 @@ export default function Article() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }
