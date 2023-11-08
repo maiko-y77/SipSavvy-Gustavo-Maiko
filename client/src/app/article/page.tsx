@@ -120,7 +120,7 @@ export default function Article() {
                                     </div>
                                 </div>
                                 <Link href="#" className="save-btn">
-                                    <BookmarkIcon width={24} height={24} />
+                                    <BookmarkIcon width={18} height={24} />
                                     <div className="text-wrapper-8">Save for later</div>
                                 </Link>
                             </div>
@@ -144,7 +144,7 @@ export default function Article() {
                                     </div>
                                 </div>
                                 <Link href="#" className="save-btn">
-                                    <BookmarkIcon width={24} height={24} />
+                                    <BookmarkIcon width={18} height={24} />
                                     <div className="text-wrapper-8">Save for later</div>
                                 </Link>
                             </div>
