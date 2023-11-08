@@ -10,6 +10,10 @@
 @import "../styles/components/article.scss";
 @import "../styles/components/authorBullet.scss";
 
+// Components
+@import "../styles/components/article.scss";
+@import "../styles/components/authorBullet.scss";
+
 // Page stylesheets
 @import "../styles/pages/home.scss";
 @import "../styles/pages/404.scss";
@@ -20,7 +24,7 @@
 @import "../styles/pages/loading.scss";
 @import "../styles/pages/article.scss";
 @import "../styles/pages/feed.scss";
-
+@import "../styles/pages/writerProfile.scss";
 
 * {
   margin: 0;
@@ -147,6 +151,7 @@ button {
 
   svg {
     height: 18px;
+    color: $brand_white;
   }
 }
 
