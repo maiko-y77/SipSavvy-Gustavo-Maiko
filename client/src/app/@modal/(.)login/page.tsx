@@ -1,11 +1,9 @@
 "use client"
 import LoginForm from "@/components/LoginForm";
 import Modal from "@/components/Modal"
+import { usePathname } from "next/navigation";
 
 const page = () => {
-
-    const router = window.location.pathname;
-
     return (
         <Modal>
         <div className="login-content">
