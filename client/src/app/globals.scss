@@ -24,7 +24,7 @@
 @import "../styles/pages/loading.scss";
 @import "../styles/pages/article.scss";
 @import "../styles/pages/feed.scss";
-
+@import "../styles/pages/writerProfile.scss";
 
 * {
   margin: 0;
@@ -151,6 +151,7 @@ button {
 
   svg {
     height: 18px;
+    color: $brand_white;
   }
 }
 
