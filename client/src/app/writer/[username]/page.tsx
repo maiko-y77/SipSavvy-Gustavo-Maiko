@@ -39,24 +39,20 @@ const page = () => {
 
           <ul>
             <li>
-              <Link href="/writer/leonardodicapprio">
-                <Avatar /> Leonardo Dicapprio
-              </Link>
+              <Avatar />
+              <Link href="/writer/leonardodicapprio">Leonardo Dicapprio</Link>
             </li>
             <li>
-              <Link href="/writer/leonardodicapprio">
-                <Avatar /> Jane Doe
-              </Link>
+              <Avatar />
+              <Link href="/writer/leonardodicapprio">Jane Doe</Link>
             </li>
             <li>
-              <Link href="/writer/leonardodicapprio">
-                <Avatar /> Richard Owsen
-              </Link>
+              <Avatar />
+              <Link href="/writer/leonardodicapprio">Richard Owsen</Link>
             </li>
             <li>
-              <Link href="/writer/leonardodicapprio">
-                <Avatar /> Lana DelRey
-              </Link>
+              <Avatar />
+              <Link href="/writer/leonardodicapprio">Lana DelRey</Link>
             </li>
           </ul>
 
