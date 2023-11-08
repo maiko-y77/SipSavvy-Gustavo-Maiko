@@ -1,4 +1,5 @@
-import { UserIcon } from "@heroicons/react/24/outline"
+import { UserIcon, BookmarkIcon } from "@heroicons/react/24/outline"
+import Link from "next/link"
 
 export default function Article() {
     return (
@@ -118,10 +119,10 @@ export default function Article() {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="save-btn">
-                                    <img className="img-2" src="img/bookmark.svg" />
+                                <Link href="#" className="save-btn">
+                                    <BookmarkIcon width={24} height={24} />
                                     <div className="text-wrapper-8">Save for later</div>
-                                </div>
+                                </Link>
                             </div>
                             <div className="related-article-item">
                                 <div className="article-picture2"></div>
@@ -142,10 +143,10 @@ export default function Article() {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="save-btn">
-                                    <img className="img-2" src="img/bookmark-2.svg" />
+                                <Link href="#" className="save-btn">
+                                    <BookmarkIcon width={24} height={24} />
                                     <div className="text-wrapper-8">Save for later</div>
-                                </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
