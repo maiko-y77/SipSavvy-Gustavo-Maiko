@@ -1,5 +1,5 @@
-import { Logo } from "../Logo";
-import { AdminLogo } from "../Logo";
+import { Logo } from "../Logo/Logo";
+import { AdminLogo } from "../Logo/Logo";
 import "./Navbar.scss";
 import AdminNavbar from "./AdminNavbar";
 import WriterNavbar from "./WriterNavbar";

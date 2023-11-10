@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@300;400;700&display=swap');
-@import "../styles/navbar.scss";
-@import "../styles/dialog.scss";
-@import "../styles/modal.scss";
+@import "../styles/variables";
+@import "../styles/mixins";
 
 // Components
 @import "../styles/components/article.scss";
