@@ -1,9 +1,9 @@
-import { Logo } from "./Logo";
-import { AdminLogo } from "./Logo";
-import AdminNavbar from "./navbar/AdminNavbar";
-import WriterNavbar from "./navbar/WriterNavbar";
-import UserNavbar from "./navbar/UserNavbar";
-import DefaultNavbar from "./navbar/DefaultNavbar";
+import { Logo } from "../Logo";
+import { AdminLogo } from "../Logo";
+import AdminNavbar from "./AdminNavbar";
+import WriterNavbar from "./WriterNavbar";
+import UserNavbar from "./UserNavbar";
+import DefaultNavbar from "./DefaultNavbar";
 
 interface NavbarProps {
     type: "admin" | "writer" | "user" | "default";
