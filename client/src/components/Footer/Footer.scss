@@ -1,0 +1,26 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.footer {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  
+    p {
+      color: $neutrals_black;
+      font-family: $Montserrat;
+      font-size: 14px;
+      font-style: $font-style-normal;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-tall;
+      width: 100%;
+      max-width: 1728px;
+      padding: 16px 48px;
+      /* 24px */
+    }
+}
