@@ -1,5 +1,5 @@
-import Modal from "@/components/Modal";
-import RegisterForm from "@/components/RegisterForm";
+import Modal from "@/components/Modal/Modal";
+import RegisterForm from "@/components/RegisterForm/RegisterForm";
 const page = () => {
     return (
         <Modal>

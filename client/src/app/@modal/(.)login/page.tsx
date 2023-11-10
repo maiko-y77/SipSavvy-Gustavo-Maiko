@@ -1,6 +1,6 @@
 "use client"
-import LoginForm from "@/components/LoginForm";
-import Modal from "@/components/Modal"
+import LoginForm from "@/components/LoginForm/LoginForm";
+import Modal from "@/components/Modal/Modal"
 import { usePathname } from "next/navigation";
 
 const page = () => {

@@ -1,7 +1,7 @@
 import Tab from "@/components/Tab";
 import SectionTitle from "@/components/SectionTitle";
 import Link from "next/link";
-import CollectionItem from "@/components/CollectionItem";
+import CollectionItem from "@/components/CollectionItem/CollectionItem";
 
 const page = () => {
 

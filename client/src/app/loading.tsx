@@ -1,6 +1,6 @@
 import Image from "next/image";
 const logoUrl = "/images/SipSavvy-Logo.svg";
-import Dialog from "@/components/Dialog";
+import Dialog from "@/components/Dialog/Dialog";
 
 const Loading = () => {
   return (

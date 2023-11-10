@@ -1,5 +1,5 @@
 import Article from "@/components/Article";
-import Avatar from "@/components/Avatar";
+import Avatar from "@/components/Avatar/Avatar";
 import SearchBar from "@/components/SearchBar";
 import SectionTitle from "@/components/SectionTitle";
 import Tab from "@/components/Tab";
