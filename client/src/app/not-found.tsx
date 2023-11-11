@@ -1,4 +1,4 @@
-import "../app/globals.scss";
+import './not-found.scss';
 
 export default function NotFound() {
   return (
