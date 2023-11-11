@@ -1,0 +1,29 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding-block: 12px;
+
+    .loading-circles {
+        width: 72px;
+        height: 16px;
+        display: flex;
+        gap: 12px;
+
+        div {
+            background-color: $grey_300;
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+        }
+    }
+}
+
+.loading-container p {
+    @include heading-3;
+    color: $neutrals_black;
+}
