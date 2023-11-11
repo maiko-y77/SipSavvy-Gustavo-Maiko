@@ -1,8 +1,8 @@
-import Article from "@/components/Article";
+import Article from "@/components/Article/Article";
 import Avatar from "@/components/Avatar/Avatar";
 import SearchBar from "@/components/SearchBar/SearchBar";
-import SectionTitle from "@/components/SectionTitle";
-import Tab from "@/components/Tab";
+import SectionTitle from "@/components/SectionTitle/SectionTitle";
+import Tab from "@/components/Tab/Tab";
 import { UserIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
