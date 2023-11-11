@@ -1,40 +1,42 @@
 // Register page
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
-    .register-content{
-        width: 100%;
-        height: 514px;
-        display: flex;
-        flex-direction: column;
-        max-width: 553px;
-        margin: 0 auto;
-        margin-top: 12%;
+.register-content {
+    width: 100%;
+    height: 514px;
+    display: flex;
+    flex-direction: column;
+    max-width: 553px;
+    margin: 0 auto;
+    margin-top: 12%;
+    gap: 24px;
+
+    h1 {
+        @include heading-3;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    form {
         gap: 24px;
-    
-        h1{
-           @include heading-3;
-           text-align: center;
-        }
-    
-        p{
-            text-align: center;
-        }
-    
-        form{
-            gap: 24px;
+        width: 100%;
+
+        .form-group {
             width: 100%;
-    
-            .form-group{
+            max-width: 432px;
+
+            label {
+                margin-bottom: 8px;
+            }
+
+            input {
                 width: 100%;
-                max-width: 432px;
-    
-                label{
-                    margin-bottom: 8px;
-                }
-    
-                input{
-                    width: 100%;
-                    text-align: center;
-                }
+                text-align: center;
             }
         }
     }
+}
