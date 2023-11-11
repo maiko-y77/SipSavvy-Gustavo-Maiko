@@ -1,4 +1,7 @@
 // Contact us page styles
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
 .contact{
     display: flex;
     flex-direction: column;
@@ -34,12 +37,19 @@
         flex-direction: column;
         justify-content: center;
         gap: 24px;
-        align-items: center;
+        align-items: flex-start;
 
         .form-group{
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
             width: 100%;
+            font-weight: 700;
+
+            input,
+            textarea{
+                width: 100%;
+            }
 
             textarea{
                 @include text-field;
@@ -50,6 +60,7 @@
 
         button{
             width: fit-content;
+            align-self: center;
         }
     }
 }

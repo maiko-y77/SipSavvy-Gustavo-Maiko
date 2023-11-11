@@ -1,4 +1,5 @@
 //CONTACT US PAGE
+import './contact.scss';
 
 export default function Register() {
     return (
