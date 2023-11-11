@@ -1,5 +1,5 @@
 //SIGN UP PAGE
-
+import './register.scss'
 import RegisterForm from "@/components/RegisterForm/RegisterForm";
 
 export default function Register() {

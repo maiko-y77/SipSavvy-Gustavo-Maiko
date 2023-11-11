@@ -1,4 +1,5 @@
 //SIGN IN PAGE
+import './login.scss'
 import LoginForm from "@/components/LoginForm/LoginForm";
 
 export default function Login() {

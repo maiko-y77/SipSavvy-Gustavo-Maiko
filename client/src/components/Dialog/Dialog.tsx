@@ -1,3 +1,5 @@
+import './dialog.scss'
+
 const Dialog = ({children}:{children: React.ReactNode}) => {
     return (
         <>
