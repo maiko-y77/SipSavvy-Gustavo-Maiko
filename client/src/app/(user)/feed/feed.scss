@@ -1,4 +1,7 @@
 // Feed css code
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
 .feed-container {
     width: 77.78%;
     min-height: fit-content;
