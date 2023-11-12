@@ -41,9 +41,9 @@ model User {
   sendCommentsIDs         String[]       @db.ObjectId
   notificationReceiver    Notification[] @relation(fields: [notificationReceiverIDs], references: [id])
   notificationReceiverIDs String[]       @db.ObjectId
-  sendMessages            Message[]      @relation("Sender", fields: [sendMessagesIDs], references: [id])
+  sendMessages            Message[]      @relation("Sender")
   sendMessagesIDs         String[]       @db.ObjectId
-  receiveMessages         Message[]      @relation("Receiver", fields: [receiveMessagesIDs], references: [id])
+  receiveMessages         Message[]      @relation("Receiver")
   receiveMessagesIDs      String[]       @db.ObjectId
   collections             Collection[]   @relation(fields: [collectionIDS], references: [id])
   collectionIDS           String[]       @db.ObjectId
@@ -53,35 +53,35 @@ model User {
 
 // Article model
 model Article {
-  id                     String       @id @default(auto()) @map("_id") @db.ObjectId
-  title                  String
-  content                String
-  date_created           DateTime     @default(now())
-  date_updated           DateTime     @updatedAt
-  status                 String // Assuming 'draft', 'published', 'unpublished', 'deleted'
-  cover_img              String?
-  likes                  User[]       @relation(fields: [likesIDs], references: [id])
-  likesIDs               String[]     @db.ObjectId
-  articleComments        Comment[]    @relation(fields: [articleCommentsIDs], references: [id])
-  articleCommentsIDs     String[]     @db.ObjectId
-  articlesCollections    Collection[] @relation(fields: [articlesCollectionsIDs], references: [id])
-  articlesCollectionsIDs String[]     @db.ObjectId
+  id                   String     @id @default(auto()) @map("_id") @db.ObjectId
+  title                String
+  content              String
+  date_created         DateTime   @default(now())
+  date_updated         DateTime   @updatedAt
+  status               String // Assuming 'draft', 'published', 'unpublished', 'deleted'
+  cover_img            String?
+  likes                User[]     @relation(fields: [likesIDs], references: [id])
+  likesIDs             String[]   @db.ObjectId
+  articleComments      Comment[]
+  articleCommentsIDs   String[]   @db.ObjectId
+  articlesCollection   Collection @relation(fields: [articlesCollectionID], references: [id])
+  articlesCollectionID String     @db.ObjectId
 }
 
 // Comment model
 model Comment {
-  id           String    @id @default(auto()) @map("_id") @db.ObjectId
-  date_created DateTime  @default(now())
-  date_updated DateTime  @updatedAt
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  date_created DateTime @default(now())
+  date_updated DateTime @updatedAt
   message      String
-  likes        User[]    @relation("LikedComments", fields: [likesIDs], references: [id])
-  likesIDs     String[]  @db.ObjectId
-  dislikes     User[]    @relation("disLikedComments", fields: [dislikesIDs], references: [id])
-  dislikesIDs  String[]  @db.ObjectId
-  sender       User[]    @relation("Sender", fields: [senderId], references: [id])
-  senderId     String[]  @db.ObjectId
-  article      Article[] @relation(fields: [articleId], references: [id])
-  articleId    String[]  @db.ObjectId
+  likes        User[]   @relation("LikedComments", fields: [likesIDs], references: [id])
+  likesIDs     String[] @db.ObjectId
+  dislikes     User[]   @relation("disLikedComments", fields: [dislikesIDs], references: [id])
+  dislikesIDs  String[] @db.ObjectId
+  senders      User[]   @relation("Sender", fields: [sendersIDS], references: [id])
+  sendersIDS   String[] @db.ObjectId
+  articles     Article  @relation(fields: [articlesIDs], references: [id])
+  articlesIDs  String   @db.ObjectId
 }
 
 // Notification model
@@ -100,20 +100,20 @@ model Message {
   subject      String
   message      String
   status       String // Assuming 'read', 'unread', 'trashed'
-  sender       User[]   @relation("Sender", fields: [senderId], references: [id])
-  senderId     String[] @db.ObjectId
-  receiver     User[]   @relation("Receiver", fields: [receiverId], references: [id])
-  receiverId   String[] @db.ObjectId
+  sender       User     @relation("Sender", fields: [senderId], references: [id])
+  senderId     String   @db.ObjectId
+  receiver     User     @relation("Receiver", fields: [receiverId], references: [id])
+  receiverId   String   @db.ObjectId
 }
 
 // Collection model
 model Collection {
-  id         String    @id @default(auto()) @map("_id") @db.ObjectId
-  title      String
-  articles   Article[] @relation(fields: [articlesID], references: [id])
-  articlesID String[]  @db.ObjectId
-  owner      User[]    @relation(fields: [ownerId], references: [id])
-  ownerId    String[]  @db.ObjectId
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  articles    Article[]
+  articlesIDs String[]  @db.ObjectId
+  owner       User[]    @relation(fields: [ownerId], references: [id])
+  ownerId     String[]  @db.ObjectId
 }
 
 // Application model
