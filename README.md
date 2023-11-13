@@ -330,7 +330,8 @@ SipSavvy/
   │   ├── controllers/         
   │   ├── models/              
   │   ├── routes/                            
-  │   ├── server.js            
+  │   │   ├── article.ts                            
+  │   ├── server.ts            
   │   ├── package.json
   │   ├── database/            Database scripts and configurations
   │   ├── package.json
@@ -340,7 +341,6 @@ SipSavvy/
   ├── .gitignore              
   ├── README.md                Project documentation (Using our Google documentation)
   ├── package.json
-
               
 ```
 
