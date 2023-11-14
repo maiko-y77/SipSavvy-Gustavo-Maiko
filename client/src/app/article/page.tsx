@@ -1,7 +1,24 @@
-import { UserIcon, BookmarkIcon } from "@heroicons/react/24/outline"
-import Link from "next/link"
+import { useEffect, useState } from 'react';
+import { UserIcon, BookmarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import axios from 'axios';
+
 
 export default function Article() {
+
+    const [article, setArticle] = useState(null);
+
+    useEffect(() => {
+        // sending request to backend
+        axios.get('/articles/:id')
+            .then(response => setArticle(response.data))
+            .catch(error => console.error('Error fetching article:', error));
+    }, []);
+
+    if (!article) {
+        return <p>Loading...</p>;
+    }
+
     return (
         <>
             <div className="article-main">
