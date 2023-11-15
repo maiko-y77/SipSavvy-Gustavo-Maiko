@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import Link from "next/link"
 import axios from 'axios';
 import './article.scss'
 import { UserIcon, BookmarkIcon } from "@heroicons/react/24/outline"
+=======
+"use client"
+
+>>>>>>> 2f0fee6 (Marked use client for working client component)
 import { useEffect, useState } from 'react';
 import { UserIcon, BookmarkIcon } from "@heroicons/react/24/outline";
 
