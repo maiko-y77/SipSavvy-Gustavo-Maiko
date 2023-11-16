@@ -249,20 +249,42 @@ SipSavvy/
   │   │   ├── ...
   │   │   ├── ...
   │   ├── src/  
-  │   │   ├── pages/    
-  │   │   │   ├── 404.tsx      404 page
   │   │   ├── app/    
-  │   │   │   ├── about/       about Routes
-  │   │   │   ├── page.tsx
-  │   │   ├── login/           login Routes
-  │   │   │   ├── page.tsx
-  │   │   ├── register/        register Routes
-  │   │   │   ├── page.tsx
-  │   │   ├── contact/         contact Routes
-  │   │   │   ├── page.tsx
-  │   │   ├── page.tsx         Entry point
-  │   │   ├── layout.tsx
-  │   │   ├── globals.scss  
+  │   │   │   ├── (user)/          
+  │   │   │   │   ├── article/
+  │   │   │   │   │   ├── article.scss    
+  │   │   │   │   │   ├── page.tsx    
+  │   │   │   │   ├── feed/
+  │   │   │   │   │   ├── feed.scss    
+  │   │   │   │   │   ├── page.tsx    
+  │   │   │   │   ├── first-login/     first-login Routes
+  │   │   │   │   │   ├── page.tsx
+  │   │   │   │   ├── my-collections/
+  │   │   │   │   │   ├── collections.scss    
+  │   │   │   │   │   ├── page.tsx    
+  │   │   │   │   ├── writer\[username]/
+  │   │   │   │   │   ├── writerProfile.scss    
+  │   │   │   │   │   ├── page.tsx    
+  │   │   │   ├── @modal/          modal Routes
+  │   │   │   │   ├── (.)login
+  │   │   │   │   │   ├── page.tsx
+  │   │   │   │   ├── (.)register
+  │   │   │   │   │   ├── default.tsx
+  │   │   │   ├── about/           about Routes
+  │   │   │   │   ├── page.tsx
+  │   │   │   ├── login/           login Routes
+  │   │   │   │   ├── page.tsx
+  │   │   │   ├── article/         article Routes
+  │   │   │   │   ├── page.tsx
+  │   │   │   ├── register/        register Routes
+  │   │   │   │   ├── page.tsx
+  │   │   │   ├── contact/         contact Routes
+  │   │   │   │   ├── page.tsx
+  │   │   │   ├── page.tsx         Entry point
+  │   │   │   ├── layout.tsx
+  │   │   │   ├── loading.tsx
+  │   │   │   ├── not-found.tsx
+  │   │   │   ├── globals.scss  
   │   │   ├── components/     
   │   │   │   ├── navbar/
   │   │   │   │   ├── AdminNavbar.tsx      
@@ -273,17 +295,48 @@ SipSavvy/
   │   │   │   ├── Navbar.tsx      
   │   │   │   ├── Footer.tsx    
   │   │   │   ├── Logo.tsx        
+  │   │   │   ├── Article.tsx     
+  │   │   │   ├── AuthorBullet.tsx    
+  │   │   │   ├── Avatar.tsx    
+  │   │   │   ├── Dialog.tsx      
+  │   │   │   ├── Modal.tsx
+  │   │   │   ├── RegisterForm.tsx
+  │   │   │   ├── SectionTitle.tsx
+  │   │   │   ├── Tab.tsx
+  │   │   ├── styles/     
+  │   │   │   ├── components/
+  │   │   │   │   ├── article.scss
+  │   │   │   │   ├── authorBullet.scss    
+  │   │   │   ├── pages/
+  │   │   │   │   ├── 404.scss
+  │   │   │   │   ├── article.scss   
+  │   │   │   │   ├── contact.scss
+  │   │   │   │   ├── feed.scss 
+  │   │   │   │   ├── home.scss
+  │   │   │   │   ├── loading.scss
+  │   │   │   │   ├── login.scss
+  │   │   │   │   ├── register.scss
+  │   │   │   ├── colors.scss  
+  │   │   │   ├── dialog.scss 
+  │   │   │   ├── mixins.scss 
+  │   │   │   ├── modal.scss
+  │   │   │   ├── navbar.scss  
+  │   │   │   ├── typography.scss
   │   ├── package.json
   │   ├── node_modules/
   ├── server(or backend)/      Backend code
+  │   ├── prisma/         
+  │   │   ├── schema.prisma         
   │   ├── controllers/         
   │   ├── models/              
   │   ├── routes/                            
-  │   ├── server.js            
+  │   │   ├── article.ts                            
+  │   ├── server.ts            
   │   ├── package.json
   │   ├── database/            Database scripts and configurations
   │   ├── package.json
-  │   ├──node_modules/
+  │   ├── node_modules/
+  │   ├── .env
   ├── node_modules/            
   ├── .gitignore              
   ├── README.md                Project documentation (Using our Google documentation)
