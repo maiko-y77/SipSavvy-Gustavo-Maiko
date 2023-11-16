@@ -1,6 +1,8 @@
+"use client"
 import { UserIcon, BookmarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import axios from 'axios';
+import './article.scss'
 
 interface ArticleProps {
     article: {
