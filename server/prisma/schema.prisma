@@ -6,6 +6,23 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  WRITER
+  READER
+}
+
+// Article model
+model Article {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  content      String
+  date_created DateTime @default(now())
+  date_updated DateTime @updatedAt
+  status       String // Assuming 'draft', 'published', 'unpublished', 'deleted'
+  cover_img    String?
 }
