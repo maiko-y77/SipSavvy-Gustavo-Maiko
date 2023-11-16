@@ -10,12 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Role {
-  ADMIN
-  WRITER
-  READER
-}
-
 // Article model
 model Article {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
