@@ -1,4 +1,8 @@
-import { LinkIcon, PhotoIcon, VideoCameraIcon } from "@heroicons/react/24/outline";
+import {
+  LinkIcon,
+  PhotoIcon,
+  VideoCameraIcon,
+} from "@heroicons/react/24/outline";
 import styles from "./newArticle.module.scss";
 
 const NewArticle = () => {
@@ -22,18 +26,23 @@ const NewArticle = () => {
                 <LinkIcon />
               </div>
             </div>
+            <div className={styles.buttons}><button className={styles.saveDraftBtn}>Save Draft</button>
+            <button>Publish</button></div>
           </div>
         </div>
-        <div className="editor-container">
-          <input type="text" name="article-title" placeholder="Title" />
+        <div className={styles.editorContainer}>
           <input
+            className={styles.articleTitle}
             type="text"
+            name="article-title"
+            placeholder="Title"
+          />
+          <textarea
+            className={styles.articleContent}
             name="article-content"
             placeholder="What do you want to talk about today?"
-          />
+          ></textarea>
         </div>
-        <button>Save Draft</button>
-        <button>Publish</button>
       </form>
     </div>
   );

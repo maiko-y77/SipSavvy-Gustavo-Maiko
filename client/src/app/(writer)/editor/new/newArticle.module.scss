@@ -22,7 +22,7 @@
                 width: 100%;
                 height: fit-content;
                 max-width: 1344px;
-                margin: 0 14.29%;
+                margin: 0 auto;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -57,6 +57,57 @@
                         }
                     }
                 }
+
+                .buttons {
+                    display: flex;
+                    gap: 12px;
+
+                    button {
+                        padding: 6px 12px;
+                        font-size: 12px;
+                    }
+                }
+
+                .saveDraftBtn {
+                    background-color: transparent;
+                    color: $grey_400;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+
+        .editorContainer {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            max-width: 1344px;
+            margin: 0 auto;
+
+            .articleTitle,
+            .articleTitle::placeholder {
+                width: 100%;
+                color: $neutrals_black;
+
+                /* Heading 1 */
+                font-family: Oswald;
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 150%;
+                /* 72px */
+
+                margin-block: 48px;
+            }
+
+            .articleContent {
+                outline: 0;
+                border: 0;
+                font-family: Montserrat;
             }
         }
     }
