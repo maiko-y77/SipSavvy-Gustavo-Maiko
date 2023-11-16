@@ -1,28 +1,21 @@
-<<<<<<< HEAD
+"use client"
 import Link from "next/link"
 import axios from 'axios';
 import './article.scss'
 import { UserIcon, BookmarkIcon } from "@heroicons/react/24/outline"
-=======
-"use client"
 
->>>>>>> 2f0fee6 (Marked use client for working client component)
-import { useEffect, useState } from 'react';
-import { UserIcon, BookmarkIcon } from "@heroicons/react/24/outline";
+interface ArticleProps {
+    article: {
+        id: string;
+        title: string;
+        content: string;
+    };
+}
 
-export default function Article() {
-
-    const [article, setArticle] = useState(null);
-
-    useEffect(() => {
-        // sending request to backend
-        axios.get('/articles/:id')
-            .then(response => setArticle(response.data))
-            .catch(error => console.error('Error fetching article:', error));
-    }, []);
+export default function Article({ article }: ArticleProps) {
 
     if (!article) {
-        return <p>Loading...</p>;
+        return <div>Article not found</div>;
     }
 
     return (
@@ -30,7 +23,7 @@ export default function Article() {
             <div className="article-main">
                 <div className="article-container">
                     <p className="article-div">
-                        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+                        {article.title}
                     </p>
                     <div className="post-info">
                         <div className="author-info">
@@ -177,4 +170,24 @@ export default function Article() {
             </div >
         </>
     )
+}
+
+export async function getServerSideProps(context: any) {
+    try {
+        const response = await axios.get(`http://localhost:3000/articles/${context.params.id}`);
+        const article = response.data;
+
+        return {
+            props: {
+                article,
+            },
+        };
+    } catch (error) {
+        console.error('Error fetching article:', error);
+        return {
+            props: {
+                article: null,
+            },
+        };
+    }
 }
