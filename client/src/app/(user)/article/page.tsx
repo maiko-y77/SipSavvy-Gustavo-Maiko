@@ -10,6 +10,7 @@ interface ArticleProps {
     };
 }
 
+// /articles/:id
 export default function Article({ article }: ArticleProps) {
 
     if (!article) {
