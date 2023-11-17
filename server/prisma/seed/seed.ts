@@ -6,8 +6,8 @@ async function main() {
   // ... you will write your Prisma Client queries here
   const data = await prisma.article.createMany({
     data: {
-      title: "My First Article",
-      content: "I am would like to work with prisma and mongodb but it sucks",
+      title: "What Does 5,000-Year-Old Wine Taste Like?",
+      content: "The short answer: 😖 — By now, you have probably heard the 5,000-year-old tomb of Queen Meret-Neith has been discovered. When I was a kid, I was fascinated that the ancient Egyptians buried their famous ...",
       status: "pending"
     }
   })
