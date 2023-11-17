@@ -3,8 +3,9 @@
 
 .container {
     width: 100%;
+    min-height: 600px;
 
-    color: var(--neutrals-greys-500, #6B7280);
+    color: $grey_500;
     font-family: $Montserrat;
     font-size: 12px;
     font-style: normal;
@@ -12,6 +13,9 @@
     line-height: 150%;
 
     form {
+        position: relative;
+        height: inherit;
+
         .actionsBar {
             width: 100%;
             height: fit-content;
@@ -20,12 +24,13 @@
 
             .wrapper {
                 width: 100%;
+                height: inherit;
                 height: fit-content;
-                max-width: 1344px;
                 margin: 0 auto;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                padding: 0 14.25%;
 
                 p.textContainer {
                     color: var(--neutrals-greys-500, #6B7280);
@@ -81,17 +86,20 @@
         }
 
         .editorContainer {
+            width: 100%;
+            min-height: calc(100vh - 180px);
+            max-height: fit-content;
             display: flex;
             flex-direction: column;
-            width: 100%;
-            height: 100%;
-            max-width: 1344px;
+            align-items: center;
+            justify-content: stretch;
+            gap: 0;
             margin: 0 auto;
 
-            .articleTitle,
-            .articleTitle::placeholder {
+            .articleTitle {
                 width: 100%;
                 color: $neutrals_black;
+                padding: 0 14.25%;
 
                 /* Heading 1 */
                 font-family: Oswald;
@@ -101,13 +109,19 @@
                 line-height: 150%;
                 /* 72px */
 
-                margin-block: 48px;
+                margin-block: 24px;
+                flex-grow: 0;
             }
 
             .articleContent {
+                width: 100%;
+                height: auto;
                 outline: 0;
                 border: 0;
                 font-family: Montserrat;
+                flex-grow: 10;
+                padding: 0 14.25%;
+                font-size: 16px;
             }
         }
     }
