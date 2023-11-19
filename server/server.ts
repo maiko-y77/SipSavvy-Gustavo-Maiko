@@ -1,11 +1,11 @@
 import express, { Request, Response } from 'express';
-import { PrismaClient } from '@prisma/client';
-import articleRoutes from './routes/articleRoutes';
 
-const prisma = new PrismaClient();
+import articleRoutes from './routes/articleRoutes';
+import cors from 'cors';
+
+
 const app = express();
-const port = 3000;
-const cors = require('cors');
+const port = 3001;
 
 app.use(cors());
 
@@ -14,10 +14,20 @@ app.use('/articles', articleRoutes);
 
 
 app.get('/', (req: Request, res: Response) => {
-    res.send('GET request to the homepage');
+  res.send('GET request to the homepage');
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
 
+
+/**
+ * 
+enum Role {
+  ADMIN
+  WRITER
+  READER
+}
+
+ */
