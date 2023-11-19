@@ -11,13 +11,6 @@ import {
 } from "@heroicons/react/24/outline";
 
 const ArticleEditor = () => {
-  const editor = useEditor({
-    extensions: [Document, Paragraph, Text],
-    content: "<p>What do you want to talk about today?</p>",
-    autofocus: true,
-    editable: true,
-    injectCSS: false,
-  });
 
   return (
     <div className={styles.container}>
