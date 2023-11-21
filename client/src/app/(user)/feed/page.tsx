@@ -1,7 +1,7 @@
 import Tab from "@/components/Tab/Tab";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import Link from "next/link";
-import Article from "@/components/Article/Article";
+import Articles from "@/components/Articles/Articles";
 import './feed.scss'
 
 const page = () => {
@@ -14,11 +14,7 @@ const page = () => {
           <Tab text="Following" isActive={false} />
         </div>
         <div className="articles-list">
-          <Article />
-          <Article />
-          <Article />
-          <Article />
-          <Article />
+          <Articles />
         </div>
       </div>
       <div className="sidebar">
