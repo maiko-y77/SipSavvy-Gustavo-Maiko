@@ -18,6 +18,13 @@ router.get('/:id', async (req: Request, res: Response) => {
     try {
         const article = await prisma.article.findUnique({
             where: { id: String(id) },
+            select: {
+                id: true,
+                title: true,
+                content: true,
+                cover_img: true,
+                date_created: true,
+            },
         });
 
         if (!article) {
