@@ -31,7 +31,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                                 <img className="img-2" src="img/vector.svg" />
                             </div>
                         </div>
-                        <p className="article-p">Published on October 25, 2023 12:27 AM.</p>
+                        <p className="article-p">Published on {new Date(page.date_created).toLocaleString()}</p>
                     </div>
                     <img className="article-image" src="img/image.png" />
                     <div className="article-content">
@@ -87,13 +87,9 @@ export default async function Page({ params }: { params: { id: string } }) {
                             <div className="related-article-item">
                                 <div className="article-picture2"></div>
                                 <div className="article-content2">
-                                    {/* {page.map(({ title }) =>
-                                        <div>
-                                            <p className="post-title">
-                                                {title}
-                                            </p>
-                                        </div>)
-                                    } */}
+                                    <p className="post-title">
+                                        Winemakers Can No Longer Afford to Drink Their Own Wine in America
+                                    </p>
                                     <p className="article-preview">
                                         And why you should drink them too — I call it The Sommelier’s Paradox. It goes like this: The more
                                         popular a wine is, the less likely ...
