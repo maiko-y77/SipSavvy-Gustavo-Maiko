@@ -1,24 +1,19 @@
 import { BookmarkIcon, ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import './article.scss'
+import './articles.scss'
 import AuthorBullet from "../AuthorBullet/AuthorBullet";
 import { getArticles } from '../../lib/Articles/data'
 
-
-export default async function Article() {
+export default async function Articles() {
 
   const articles = await getArticles()
 
   return (
     <div className="article-item">
-      <div className="article-content">
+      {articles.map(({ id, title, content }) => <div><div className="article-content">
         <AuthorBullet />
-        {articles.map(({ title }) => <div>
-          <h3 className="article-title"><Link href="#">{title}</Link></h3>
-        </div>)}
-        {articles.map(({ content }) => <div><p>
-          {content}
-        </p></div>)}
+        <h3 className="article-title"><Link href={`/articles/${id}`}>{title}</Link></h3>
+        <p>{content}</p>
         <div className="action-bar">
           <Link href="#">
             Continue Reading <ArrowLongRightIcon width={24} height={24} />
@@ -28,7 +23,8 @@ export default async function Article() {
           </Link>
         </div>
       </div>
-      <div className="article-image"></div>
+        <div className="article-image"></div>
+      </div>)}
     </div>
   );
 };
