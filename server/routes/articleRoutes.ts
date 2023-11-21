@@ -22,7 +22,6 @@ router.get('/:id', async (req: Request, res: Response) => {
                 id: true,
                 title: true,
                 content: true,
-                status: true,
                 cover_img: true,
                 date_created: true,
             },
