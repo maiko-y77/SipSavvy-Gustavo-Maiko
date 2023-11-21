@@ -1,11 +1,11 @@
 import React from 'react'
 import { UserIcon, BookmarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { getSingleArticle } from '@/lib/Article/data';
+import { getArticle } from '@/lib/Article/data';
 
 export default async function Page({ params }: { params: { id: string } }) {
 
-    const page = await getSingleArticle(params.id)
+    const page = await getArticle(params.id)
 
     return (
         <>
@@ -51,7 +51,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                         <div className="text-wrapper-4">Follow</div>
                         <div className="icons">
                             <div className="group-2">
-                                <img className="vector" src="img/vector-3.svg" />
+                                <img className="vector" src={page.cover_img} />
                                 <div className="element">650 likes</div>
                             </div>
                             <img className="img-2" src="img/vector-4.svg" />

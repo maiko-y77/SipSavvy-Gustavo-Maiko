@@ -1,7 +1,7 @@
 import axios from "axios";
-import { SingleArticle } from "./types";
+import { Article } from "./types";
 
-export const getSingleArticle = async (id: string): Promise<SingleArticle[]> => {
+export const getArticle = async (id: string): Promise<Article[]> => {
     const response = await axios(`http://localhost:3001/articles/${id}`)
 
     return response.data
