@@ -1,21 +1,17 @@
 import React from 'react'
 import { UserIcon, BookmarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { getArticles } from '@/lib/Articles/data';
+import { getSingleArticle } from '@/lib/Article/data';
 
-export default async function Page() {
-    const page = await getArticles()
+export default async function Page({ params }: { params: { id: string } }) {
+
+    const page = await getSingleArticle(params.id)
 
     return (
         <>
             <div className="article-main">
                 <div className="article-container">
-                    {page.map(({ title }) =>
-                        <div>
-                            <p className="article-div">
-                                {title}
-                            </p>
-                        </div>)}
+                    {page.title}
                     <div className="post-info">
                         <div className="author-info">
                             <div className="author-bullet">
@@ -39,13 +35,9 @@ export default async function Page() {
                     </div>
                     <img className="article-image" src="img/image.png" />
                     <div className="article-content">
-                        {page.map(({ content }) =>
-                            <div>
-                                <p className="text-wrapper-5">
-                                    {content}
-                                </p>
-                            </div>)
-                        }
+                        <p className="text-wrapper-5">
+                            {page.content}
+                        </p>
                     </div>
                     <div className="author-info-2">
                         <div className="author-bullet">
@@ -95,13 +87,13 @@ export default async function Page() {
                             <div className="related-article-item">
                                 <div className="article-picture2"></div>
                                 <div className="article-content2">
-                                    {page.map(({ title }) =>
+                                    {/* {page.map(({ title }) =>
                                         <div>
                                             <p className="post-title">
                                                 {title}
                                             </p>
                                         </div>)
-                                    }
+                                    } */}
                                     <p className="article-preview">
                                         And why you should drink them too — I call it The Sommelier’s Paradox. It goes like this: The more
                                         popular a wine is, the less likely ...
