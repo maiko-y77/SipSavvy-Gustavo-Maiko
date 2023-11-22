@@ -47,6 +47,11 @@ router.post('/', async (req: Request, res: Response) => {
                 content,
                 status,
                 cover_img,
+                author: {
+                    connect: {
+                        id: authorId,
+                    },
+                },
             },
         });
 
