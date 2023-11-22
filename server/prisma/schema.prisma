@@ -19,4 +19,13 @@ model Article {
   date_updated DateTime @updatedAt
   status       String // Assuming 'draft', 'published', 'unpublished', 'deleted'
   cover_img    String?
+  author       User     @relation(fields: [authorId], references: [id])
+  authorId     String   @db.ObjectId
+}
+
+//User model
+model User {
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  articles Article[]
 }
