@@ -1,4 +1,4 @@
-import Article from "@/components/Article/Article";
+import Articles from "@/components/Articles/Articles";
 import Avatar from "@/components/Avatar/Avatar";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
@@ -70,10 +70,7 @@ const page = () => {
 
         <ul className="articles-list">
           <li>
-            <Article />
-            <Article />
-            <Article />
-            <Article />
+            <Articles />
           </li>
         </ul>
       </div>
