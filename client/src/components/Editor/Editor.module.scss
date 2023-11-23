@@ -1,2 +1,63 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
+
+.container {
+    width: 100%;
+    max-width: 1344px;
+    margin: 0 auto;
+    position: relative;
+
+    .actions{
+        width: 100%;
+        height: fit-content;
+        padding: 24px 0;
+        display: flex;
+        justify-content: space-between;
+
+        div{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        p{
+            font-size: 12px;
+            color: $grey_500;
+        }
+
+        .addButton{
+            padding: 8px;
+            background-color: transparent;
+            border: solid 1px $grey_400;
+            color: $grey_400;
+
+            &:hover{
+                color: $primary;
+                border-color: $primary;
+            }
+        }
+    }
+
+    .title {
+        width: 100%;
+        padding-inline: 0;
+
+        font-size: 48px;
+        font-family: $Oswald;
+        font-weight: 700;
+        color: $neutrals_black;
+    }
+
+    .button{
+        background-color: transparent;
+        border: solid 1px $grey_400;
+        color: $grey_400;
+        padding: 8px;
+        border-radius: 50%;
+
+        &:hover{
+            color: $primary;
+            border-color: $primary;
+        }
+    }
+}

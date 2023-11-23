@@ -142,3 +142,17 @@ button {
   max-width: 1344px;
   padding-inline: 1.5rem;
 }
+
+.ql-container {
+  font-size: 18px !important;
+}
+
+.quill > .ql-container > .ql-editor{
+  padding: 24px 0;
+  color: $neutrals_black !important;
+}
+
+.quill > .ql-container > .ql-editor.ql-blank::before{
+  color: $grey_400;
+  left: 0;
+}
