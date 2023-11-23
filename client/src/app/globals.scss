@@ -142,3 +142,30 @@ button {
   max-width: 1344px;
   padding-inline: 1.5rem;
 }
+
+.ql-container {
+  font-size: 18px !important;
+}
+
+.quill > .ql-container > .ql-editor{
+  padding: 24px 0;
+  color: $neutrals_black !important;
+  overflow-y: visible !important;
+}
+
+.quill > .ql-container > .ql-editor.ql-blank::before{
+  color: $grey_400;
+  left: 0;
+}
+
+.ql-bubble .ql-tooltip:not(.ql-flip) .ql-tooltip-arrow {
+  border-bottom: 6px solid $primary  !important;
+  color: white;
+}
+
+.ql-toolbar {
+  background-color: $primary;
+  color: white;
+  border-radius: 25px;
+}
+
