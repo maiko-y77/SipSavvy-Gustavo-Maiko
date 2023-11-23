@@ -1,5 +1,5 @@
 import React from "react";
-import { UserIcon } from "@heroicons/react/24/outline";
+import { UserIcon, BookmarkIcon, HeartIcon } from "@heroicons/react/24/outline";
 import { getArticle } from "@/lib/Article/data";
 import Articles from "@/components/Articles/Articles";
 import { Article } from "@/lib/Article/types";
@@ -16,7 +16,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <>
             <div className="article-main">
                 <div className="article-container">
-                    {article.title}
+                    <p className="article-div">{article.title}</p>
                     <div className="post-info">
                         <div className="author-info">
                             <div className="author-bullet">
@@ -28,10 +28,10 @@ export default async function Page({ params }: { params: { id: string } }) {
                             <div className="text-wrapper-4">Follow</div>
                             <div className="icons">
                                 <div className="group-2">
-                                    <img className="vector" src="img/vector-2.svg" />
+                                    <HeartIcon width={24} height={24} />
                                     <div className="element">650 likes</div>
                                 </div>
-                                <img className="img-2" src="img/vector.svg" />
+                                <BookmarkIcon width={24} height={24} />
                             </div>
                         </div>
                         <p className="article-p">
@@ -44,25 +44,24 @@ export default async function Page({ params }: { params: { id: string } }) {
                     <div className="article-content">
                         <p className="text-wrapper-5">{article.content}</p>
                     </div>
-                    <Articles data={recommendedArticles} />
-                    {/* <div className="author-info-2">
+                    <div className="author-info-2">
                         <div className="author-bullet">
                             <a className="avatar icon" href="/">
                                 <UserIcon width={36} height={36} />
                             </a>
-                            <p>
-                                Author Name
-                            </p>
+                            <p>{article.author.name}</p>
                         </div>
                         <div className="text-wrapper-4">Follow</div>
                         <div className="icons">
                             <div className="group-2">
-                                <img className="vector" src={page.cover_img} />
+                                <HeartIcon width={24} height={24} />
                                 <div className="element">650 likes</div>
                             </div>
-                            <img className="img-2" src="img/vector-4.svg" />
+                            <BookmarkIcon width={24} height={24} />
                         </div>
                     </div>
+                    <Articles data={recommendedArticles} />
+                    {/* 
                     <div className="related-articles">
                         <div className="sidebar-section">
                             <div className="section-title-here">Related Articles</div>
