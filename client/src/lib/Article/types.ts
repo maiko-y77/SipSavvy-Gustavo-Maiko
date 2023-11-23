@@ -3,5 +3,10 @@ export type Article = {
     content: string;
     id: string;
     cover_img: string;
-    date_created: string
+    date_created: string;
+    authorId: string;
+    author: {
+        id: string;
+        name: string;
+    }
 }

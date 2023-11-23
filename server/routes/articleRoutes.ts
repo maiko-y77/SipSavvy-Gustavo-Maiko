@@ -18,13 +18,9 @@ router.get('/:id', async (req: Request, res: Response) => {
     try {
         const article = await prisma.article.findUnique({
             where: { id: String(id) },
-            select: {
-                id: true,
-                title: true,
-                content: true,
-                cover_img: true,
-                date_created: true,
-            },
+            include: {
+                author: true
+            }
         });
 
         if (!article) {
@@ -39,7 +35,7 @@ router.get('/:id', async (req: Request, res: Response) => {
 });
 
 router.post('/', async (req: Request, res: Response) => {
-    const { title, content, status, cover_img } = req.body;
+    const { title, content, status, cover_img, authorId } = req.body;
     try {
         const newArticle = await prisma.article.create({
             data: {
@@ -47,6 +43,11 @@ router.post('/', async (req: Request, res: Response) => {
                 content,
                 status,
                 cover_img,
+                author: {
+                    connect: {
+                        id: authorId,
+                    },
+                },
             },
         });
 
