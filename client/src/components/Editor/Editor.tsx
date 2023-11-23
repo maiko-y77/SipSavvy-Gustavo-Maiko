@@ -27,6 +27,10 @@ const ArticleEditor = () => {
             <VideoCameraIcon width={16} height={16} />
           </button>
         </div>
+        <div>
+          <button className={styles.saveDraftButton}>Save Draft</button>
+          <button className={styles.publishButton}>Publish</button>
+        </div>
       </div>
       <input className={styles.title} type="text" placeholder="Title" />
       <div className={styles.editor}>

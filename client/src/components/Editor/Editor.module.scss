@@ -7,33 +7,63 @@
     margin: 0 auto;
     position: relative;
 
-    .actions{
+    .actions {
         width: 100%;
         height: fit-content;
         padding: 24px 0;
         display: flex;
         justify-content: space-between;
 
-        div{
+        div {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        p{
+        p {
             font-size: 12px;
             color: $grey_500;
         }
 
-        .addButton{
-            padding: 8px;
+        .addButton {
             background-color: transparent;
             border: solid 1px $grey_400;
             color: $grey_400;
+            padding: 8px;
+            border-radius: 50%;
 
-            &:hover{
+            &:hover {
                 color: $primary;
                 border-color: $primary;
+            }
+        }
+
+        .saveDraftButton{
+            font-size: 13px;
+            font-family: $Montserrat;
+            color: $grey_400;
+            background-color: transparent;
+            transition: $transition;
+            padding: 8px 16px;
+
+            &:hover{
+                text-decoration: underline;
+                color: $primary;
+            }
+        }
+
+        .publishButton{
+            font-size: 13px;
+            font-family: $Montserrat;
+            color: white;
+            background-color: $primary;
+            transition: $transition;
+            padding: 8px 16px;
+
+            &:hover{
+                text-decoration: none;
+                color: $primary;
+                background-color: $accent;
             }
         }
     }
@@ -46,18 +76,5 @@
         font-family: $Oswald;
         font-weight: 700;
         color: $neutrals_black;
-    }
-
-    .button{
-        background-color: transparent;
-        border: solid 1px $grey_400;
-        color: $grey_400;
-        padding: 8px;
-        border-radius: 50%;
-
-        &:hover{
-            color: $primary;
-            border-color: $primary;
-        }
     }
 }
