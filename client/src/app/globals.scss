@@ -150,6 +150,7 @@ button {
 .quill > .ql-container > .ql-editor{
   padding: 24px 0;
   color: $neutrals_black !important;
+  overflow-y: visible !important;
 }
 
 .quill > .ql-container > .ql-editor.ql-blank::before{
