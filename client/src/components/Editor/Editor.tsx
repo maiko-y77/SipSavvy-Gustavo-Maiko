@@ -30,20 +30,6 @@ const ArticleEditor = () => {
       </div>
       <input className={styles.title} type="text" placeholder="Title" />
       <div className={styles.editor}>
-        {/* <button className={styles.button}>
-          <PlusIcon width={16} height={16} />
-        </button>
-          <div className={styles.add}>
-            <button className={styles.addButton}>
-              <PhotoIcon width={16} height={16} />
-            </button>
-            <button className={styles.addButton}>
-              <ArrowUpIcon width={16} height={16} />
-            </button>
-            <button className={styles.addButton}>
-              <VideoCameraIcon width={16} height={16} />
-            </button>
-          </div> */}
         <ReactQuill
           theme="bubble"
           value={value}
