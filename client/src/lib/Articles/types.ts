@@ -1,5 +1,3 @@
-export type Articles = {
-    title: string;
-    content: string;
-    id: string;
-}
+import { Article } from "../Article/types";
+
+export type Articles = Article[]
