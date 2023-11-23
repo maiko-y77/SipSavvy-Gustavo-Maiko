@@ -3,14 +3,7 @@
 
 .container {
     width: 100%;
-    min-height: 600px;
-
-    color: $grey_500;
-    font-family: $Montserrat;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
+    min-height: 100%;
 
     .actionsBar {
         width: 100%;
@@ -20,13 +13,12 @@
 
         .wrapper {
             width: 100%;
-            height: inherit;
+            max-width: 1344px;
             height: fit-content;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 14.25%;
 
             p.textContainer {
                 color: var(--neutrals-greys-500, #6B7280);
@@ -82,61 +74,46 @@
     }
 
     .editorContainer {
-        width: 100%;
-        min-height: calc(100vh - 300px);
-        max-height: fit-content;
+
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: stretch;
-        gap: 0;
-        margin: 0 auto;
+        justify-content: center;
 
-        div {
+        .articleTitle {
             width: 100%;
-            height: inherit;
-            padding: 0 14.25%;
+            max-width: 1344px;
+            color: $neutrals_black;
+            outline: none;
+            border: 0;
+            border-bottom: 1px solid $grey_300;
+            margin: 0 auto;
 
-            &:focus{
-                outline: none;
-            }
+            /* Heading 1 */
+            font-family: Oswald;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%;
+            /* 72px */
 
-            p{
-                font-size: 16px;
-            }
+            margin-block: 24px;
 
-            .articleContent {
-                width: 100%;
-                height: auto;
-                outline: 0;
-                border: 0;
-                font-family: Montserrat;
-                flex-grow: 10;
-                padding: 0 14.25%;
-                font-size: 16px;
+            &:focus {
+                border-color: $primary;
             }
         }
-    }
-    .articleTitle {
-        width: 100%;
-        color: $neutrals_black;
-        padding: 0 14.25%;
-        outline: none;
-        border: 0;
-        border-bottom: 1px solid $grey_300;
 
-        /* Heading 1 */
-        font-family: Oswald;
-        font-size: 48px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 150%;
-        /* 72px */
-
-        margin-block: 24px;
-        flex-grow: 0;
-        &:focus{
-            border-color: $primary;
+        .articleContent {
+            width: 100%;
+            max-width: 1344px;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            margin: 0 auto;
+            color: $neutrals_black;
+            font-family: $Montserrat;
         }
     }
 }
