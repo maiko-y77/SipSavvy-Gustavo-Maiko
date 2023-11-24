@@ -12,17 +12,17 @@ datasource db {
 
 // Article model
 model Article {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  id           String        @id @default(auto()) @map("_id") @db.ObjectId
   title        String
   content      String
-  date_created DateTime @default(now())
-  date_updated DateTime @updatedAt
-  author       User     @relation(fields: [authorId], references: [id])
-  authorId     String   @db.ObjectId
+  date_created DateTime      @default(now())
+  date_updated DateTime      @updatedAt
+  author       User          @relation(fields: [authorId], references: [id])
+  authorId     String        @db.ObjectId
   status       ArticleStatus @default(DRAFT)
   cover_img    String?
-  likes Int[]
-  slug  String
+  likes        Int[]
+  slug         String
 }
 
 //User model
