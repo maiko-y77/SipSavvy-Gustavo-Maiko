@@ -28,12 +28,13 @@ model Article {
 //User model
 model User {
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  username String
   name     String
   last_name String
   email String
   password String
   avatar String
-  role UserRoles @default(USER)
+  role UserRoles @default(user)
   email_verified Boolean
   followers Int[]
   following Int[]
@@ -48,7 +49,7 @@ enum ArticleStatus {
 }
 
 enum UserRoles {
-  USER
-  WRITER
-  ADMIN
+  user
+  writer
+  admin
 }
