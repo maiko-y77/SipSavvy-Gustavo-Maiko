@@ -70,7 +70,7 @@ const page = () => {
 
         <ul className="articles-list">
           <li>
-            <Articles />
+            {/* <Articles /> */}
           </li>
         </ul>
       </div>
