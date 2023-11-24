@@ -19,7 +19,7 @@ model Article {
   date_updated DateTime      @updatedAt
   author       User          @relation(fields: [authorId], references: [id])
   authorId     String        @db.ObjectId
-  status       ArticleStatus @default(DRAFT)
+  status       ArticleStatus @default(draft)
   cover_img    String?
   likes        Int[]
   slug         String
@@ -42,10 +42,10 @@ model User {
 }
 
 enum ArticleStatus {
-  DRAFT
-  PUBLISHED
-  UNPUBLISHED
-  DELETED
+  draft
+  published
+  unpublished
+  deleted
 }
 
 enum UserRoles {
