@@ -1,5 +1,5 @@
-@import '../../../styles/variables';
-@import '../../../styles/mixins';
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
 
 .article-main {
     display: flex;
@@ -156,6 +156,8 @@
             @include body;
             color: $neutrals_black;
             text-align: justify;
+            white-space: nowrap;
+            overflow: hidden;
         }
 
         .text-wrapper-6 {

@@ -4,11 +4,12 @@
 
 .hero{
     display: flex;
-    width: 1632px;
-    height: 100%;
-    padding: 308px 511px 307px 318px;
+    width: 100%;
+    max-width: 1632px;
+    height: calc(100vh - 170px);
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
     flex-shrink: 0;
 
     .hero-content{
@@ -16,7 +17,6 @@
         height: 344px;
         flex-shrink: 0;
         margin: 0 auto;
-        transform: translate(15%);
         
         h1{
            /* Title */

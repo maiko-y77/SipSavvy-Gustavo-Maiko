@@ -1,20 +1,22 @@
 import React from "react";
-import { UserIcon, BookmarkIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
+import { UserIcon, BookmarkIcon, HeartIcon } from "@heroicons/react/24/outline";
 import { getArticle } from "@/lib/Article/data";
 import Articles from "@/components/Articles/Articles";
 import { Article } from "@/lib/Article/types";
+import Image from "next/image"
+import "@/app/(user)/articles/[id]/article.scss"
+
 
 export default async function Page({ params }: { params: { id: string } }) {
     const article = await getArticle(params.id);
-    // TODO: find a way to fetch personalized recommended articles
+    // TODO: find a way to fetch personalized recoommended articles
     const recommendedArticles: Article[] = [];
 
     return (
         <>
             <div className="article-main">
                 <div className="article-container">
-                    {article.title}
+                    <p className="article-div">{article.title}</p>
                     <div className="post-info">
                         <div className="author-info">
                             <div className="author-bullet">
@@ -26,17 +28,19 @@ export default async function Page({ params }: { params: { id: string } }) {
                             <div className="text-wrapper-4">Follow</div>
                             <div className="icons">
                                 <div className="group-2">
-                                    <img className="vector" src="img/vector-2.svg" />
+                                    <HeartIcon width={24} height={24} />
                                     <div className="element">650 likes</div>
                                 </div>
-                                <img className="img-2" src="img/vector.svg" />
+                                <BookmarkIcon width={24} height={24} />
                             </div>
                         </div>
                         <p className="article-p">
                             Published on {new Date(article.date_created).toLocaleString()}
                         </p>
                     </div>
-                    <img className="article-image" src="img/image.png" />
+                    {article.cover_img &&
+                        <Image src={article.cover_img} alt="cover image for article" width={700} height={300} />
+                    }
                     <div className="article-content">
                         <p className="text-wrapper-5">{article.content}</p>
                     </div>
@@ -50,32 +54,14 @@ export default async function Page({ params }: { params: { id: string } }) {
                         <div className="text-wrapper-4">Follow</div>
                         <div className="icons">
                             <div className="group-2">
-                                <img className="vector" src={article.cover_img} />
+                                <HeartIcon width={24} height={24} />
                                 <div className="element">650 likes</div>
                             </div>
-                            <img className="img-2" src="img/vector-4.svg" />
+                            <BookmarkIcon width={24} height={24} />
                         </div>
                     </div>
-                    {/* <div className="related-articles">
-                        <div className="sidebar-section"></div> */}
-                    {/* <div className="author-info-2">
-                        <div className="author-bullet">
-                            <a className="avatar icon" href="/">
-                                <UserIcon width={36} height={36} />
-                            </a>
-                            <p>
-                                Author Name
-                            </p>
-                        </div>
-                        <div className="text-wrapper-4">Follow</div>
-                        <div className="icons">
-                            <div className="group-2">
-                                <img className="vector" src={page.cover_img} />
-                                <div className="element">650 likes</div>
-                            </div>
-                            <img className="img-2" src="img/vector-4.svg" />
-                        </div>
-                    </div>
+                    <Articles data={recommendedArticles} />
+                    {/* 
                     <div className="related-articles">
                         <div className="sidebar-section">
                             <div className="section-title-here">Related Articles</div>
