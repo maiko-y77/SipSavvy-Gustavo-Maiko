@@ -1,11 +1,13 @@
-import React from "react";
 import { UserIcon, BookmarkIcon, HeartIcon } from "@heroicons/react/24/outline";
 import { getArticle } from "@/lib/Article/data";
 import Articles from "@/components/Articles/Articles";
 import { Article } from "@/lib/Article/types";
 import Image from "next/image"
 import "@/app/(user)/articles/[id]/article.scss"
+import Link from "next/link";
+import { FollowButton } from "@/components/FollowButton/FollowButton";
 
+const BASE_CLASS = "article"
 
 export default async function Page({ params }: { params: { id: string } }) {
     const article = await getArticle(params.id);
@@ -14,37 +16,69 @@ export default async function Page({ params }: { params: { id: string } }) {
 
     return (
         <>
-            <div className="article-main">
-                <div className="article-container">
-                    <p className="article-div">{article.title}</p>
-                    <div className="post-info">
-                        <div className="author-info">
-                            <div className="author-bullet">
-                                <a className="avatar icon" href="/">
-                                    <UserIcon width={36} height={36} />
-                                </a>
-                                <p>{article.author.name}</p>
+            <div className={BASE_CLASS}>
+                <div className={`${BASE_CLASS}__container`}>
+                    <h1 className={`${BASE_CLASS}__title`}>{article.title}</h1>
+
+                    <div className={`${BASE_CLASS}__author`}>
+                        <div className={`${BASE_CLASS}__author-info`}>
+                            <div className={`${BASE_CLASS}__author-left`} >
+                                <Link className={`${BASE_CLASS}__author-link`} href="/">
+                                    <UserIcon className={`${BASE_CLASS}__author-icon`} width={36} height={36} />
+                                    <p>{article.author.name}</p>
+                                </Link>
+
+                                <FollowButton />
                             </div>
-                            <div className="text-wrapper-4">Follow</div>
-                            <div className="icons">
-                                <div className="group-2">
+
+                            <div className={`${BASE_CLASS}__author-right`} >
+                                <div className={`${BASE_CLASS}__author__heart`}>
                                     <HeartIcon width={24} height={24} />
                                     <div className="element">650 likes</div>
                                 </div>
+
                                 <BookmarkIcon width={24} height={24} />
                             </div>
                         </div>
-                        <p className="article-p">
+                        <p className={`${BASE_CLASS}__publish-date`}>
                             Published on {new Date(article.date_created).toLocaleString()}
                         </p>
                     </div>
+
                     {article.cover_img &&
-                        <Image src={article.cover_img} alt="cover image for article" width={700} height={300} />
+                        <Image src={article.cover_img} alt="cover image for article" width={100} height={100} style={{
+                            width: '100%',
+                            height: 'auto',
+                        }} />
                     }
-                    <div className="article-content">
-                        <p className="text-wrapper-5">{article.content}</p>
+
+                    <div className={`${BASE_CLASS}__content`}>
+                        <p >{article.content}</p>
                     </div>
-                    <div className="author-info-2">
+
+                    <div className={`${BASE_CLASS}__author`}>
+                        <div className={`${BASE_CLASS}__author-info`}>
+                            <div className={`${BASE_CLASS}__author-left`} >
+                                <Link className={`${BASE_CLASS}__author-link`} href="/">
+                                    <UserIcon className={`${BASE_CLASS}__author-icon`} width={36} height={36} />
+                                    <p>{article.author.name}</p>
+                                </Link>
+
+                                <FollowButton />
+                            </div>
+
+                            <div className={`${BASE_CLASS}__author-right`} >
+                                <div className={`${BASE_CLASS}__author__heart`}>
+                                    <HeartIcon width={24} height={24} />
+                                    <div className="element">650 likes</div>
+                                </div>
+
+                                <BookmarkIcon width={24} height={24} />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* <div className="author-info-2">
                         <div className="author-bullet">
                             <a className="avatar icon" href="/">
                                 <UserIcon width={36} height={36} />
@@ -59,64 +93,9 @@ export default async function Page({ params }: { params: { id: string } }) {
                             </div>
                             <BookmarkIcon width={24} height={24} />
                         </div>
-                    </div>
-                    <Articles data={recommendedArticles} />
-                    {/* 
-                    <div className="related-articles">
-                        <div className="sidebar-section">
-                            <div className="section-title-here">Related Articles</div>
-                        </div>
-                        <div className="related-articles-2">
-                            <div className="related-article-item">
-                                <div className="article-picture2"></div>
-                                <div className="article-content2">
-                                    <p className="post-title">Winemakers Can No Longer Afford to Drink Their Own Wine in America</p>
-                                    <p className="article-preview">
-                                        Thanks to restaurants’ price gouging tactics, you probably can’t either — There’s something screwed
-                                        up about a winemaker not being able to ...
-                                    </p>
-                                    <div className="author-bullet">
-                                        <a className="avatar icon" href="/">
-                                            <UserIcon width={36} height={36} />
-                                        </a>
-                                        <p>
-                                            Author Name
-                                        </p>
-                                    </div>
-                                </div>
-                                <Link href="#" className="save-btn">
-                                    <BookmarkIcon width={18} height={24} />
-                                    <div className="text-wrapper-8">Save for later</div>
-                                </Link>
-                            </div>
-                            <div className="related-article-item">
-                                <div className="article-picture2"></div>
-                                <div className="article-content2">
-                                    <p className="post-title">
-                                        Winemakers Can No Longer Afford to Drink Their Own Wine in America
-                                    </p>
-                                    <p className="article-preview">
-                                        And why you should drink them too — I call it The Sommelier’s Paradox. It goes like this: The more
-                                        popular a wine is, the less likely ...
-                                    </p>
-                                    <div className="author-bullet">
-                                        <a className="avatar icon" href="/">
-                                            <UserIcon width={24} height={24} />
-                                        </a>
-                                        <p>
-                                            Author Name
-                                        </p>
-                                    </div>
-                                </div>
-                                <Link href="#" className="save-btn">
-                                    <BookmarkIcon width={18} height={24} />
-                                    <div className="text-wrapper-8">Save for later</div>
-                                </Link>
-                            </div>
-                        </div>
                     </div> */}
-                    <Articles data={recommendedArticles} />
                 </div>
+                <Articles data={recommendedArticles} />
             </div>
         </>
     );
