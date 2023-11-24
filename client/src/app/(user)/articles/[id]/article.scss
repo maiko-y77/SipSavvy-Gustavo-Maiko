@@ -1,359 +1,66 @@
 @import '../../../../styles/variables';
 @import '../../../../styles/mixins';
 
-.article-main {
-    display: flex;
-    flex-direction: column;
-    margin: 0 25%;
-}
-
-.article-container {
-    display: inline-flex;
-    align-items: center;
+.article {
     max-width: 1116px;
-    gap: 36px;
-    flex: 0 0 auto;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
+    margin: 0 auto;
+    padding: 64px 0;
 
-    .article-div {
-        position: relative;
-        align-self: stretch;
-        @include heading-1;
-        margin-top: -1px;
-        color: $neutrals_black;
-    }
 
-    .post-info {
-        position: relative;
-        width: 1118px;
-        height: 80px;
-        margin-right: -2px;
-
-        .author-info {
-            display: flex;
-            width: 1116px;
-            align-items: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-
-            .author-bullet {
-                display: inline-flex;
-                align-items: center;
-                gap: 12px;
-                position: relative;
-                flex: 0 0 auto;
-
-                .avatar-2 {
-                    position: relative;
-                    width: 36px;
-                    height: 36px;
-                }
-
-                .text-wrapper-3 {
-                    position: relative;
-                    width: fit-content;
-                    font-family: $Montserrat;
-                    font-weight: $font-weight-bold;
-                    color: $grey_400;
-                    font-size: 16px;
-                    line-height: $line-height-tall;
-                    white-space: nowrap;
-                    font-style: $font-style-normal;
-                }
-            }
-
-            .text-wrapper-4 {
-                position: relative;
-                width: fit-content;
-                color: $primary;
-                white-space: nowrap;
-                @include body
-            }
-
-            .text-wrapper-7 {
-                position: relative;
-                width: fit-content;
-                @include body-small;
-                color: $grey_400;
-                white-space: nowrap;
-            }
-
-            .icons {
-                display: flex;
-                width: 878px;
-                align-items: center;
-                justify-content: flex-end;
-                gap: 32px;
-                padding: 16px 32px;
-                position: relative;
-
-                .group-2 {
-                    position: relative;
-                    width: 90px;
-                    height: 21px;
-
-                    .vector {
-                        position: absolute;
-                        width: 24px;
-                        height: 21px;
-                        top: 0;
-                        left: 0;
-                    }
-
-                    .element {
-                        position: absolute;
-                        height: 18px;
-                        top: 1px;
-                        left: 36px;
-                        color: $grey_500;
-                        white-space: nowrap;
-                        @include body-small
-                    }
-                }
-
-                .img-2 {
-                    position: relative;
-                    width: 18px;
-                    height: 24px;
-                }
-
-            }
-        }
-
-        .article-p {
-            position: absolute;
-            width: 1116px;
-            height: 24px;
-            top: 56px;
-            left: 0;
-            color: $neutrals_black;
-            @include body
-        }
-    }
-
-    .article-image {
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        height: 625px;
-    }
-
-    .article-content {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
-        position: relative;
-        flex: 0 0 auto;
-
-        .text-wrapper-5 {
-            position: relative;
-            width: 1116px;
-            margin-top: -1px;
-            @include body;
-            color: $neutrals_black;
-            text-align: justify;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        .text-wrapper-6 {
-            position: relative;
-            width: 1116px;
-            @include body;
-            color: $neutrals_black;
-            text-align: justify;
-        }
-    }
-
-    .author-info-2 {
+    &__container {
         display: flex;
-        width: 1116px;
-        align-items: center;
-        position: relative;
-        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 36px;
+        margin: 36px;
+    }
 
-        .author-bullet {
-            display: inline-flex;
+    &__title {
+        @include heading-1
+    }
+
+    &__author {
+
+        &-info {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
+            padding: 12px 0;
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             gap: 12px;
-            position: relative;
-            flex: 0 0 auto;
 
-            .avatar-2 {
-                position: relative;
-                width: 36px;
-                height: 36px;
-            }
-
-            .text-wrapper-3 {
-                position: relative;
-                width: fit-content;
-                font-family: $Montserrat;
-                font-weight: $font-weight-bold;
-                color: $grey_400;
-                font-size: 16px;
-                line-height: $line-height-tall;
-                white-space: nowrap;
-                font-style: $font-style-normal;
+            p {
+                color: #9CA3AF
             }
         }
 
-        .text-wrapper-4 {
-            position: relative;
-            width: fit-content;
-            color: $primary;
-            white-space: nowrap;
-            @include body
+        &-icon {
+            background-color: $primary;
+            color: $brand_white;
+            border-radius: 50%;
         }
 
-        .icons {
+        &-left,
+        &-right,
+        &__heart {
             display: flex;
-            width: 878px;
             align-items: center;
-            justify-content: flex-end;
-            gap: 32px;
-            padding: 16px 32px;
-            position: relative;
-
-            .group-2 {
-                position: relative;
-                width: 90px;
-                height: 21px;
-
-                .vector {
-                    position: absolute;
-                    width: 24px;
-                    height: 21px;
-                    top: 0;
-                    left: 0;
-                }
-
-                .element {
-                    position: absolute;
-                    height: 18px;
-                    top: 1px;
-                    left: 36px;
-                    color: $grey_500;
-                    white-space: nowrap;
-                    @include body-small
-                }
-            }
-
-            .img-2 {
-                position: relative;
-                width: 18px;
-                height: 24px;
-            }
+            gap: 24px;
 
         }
+
+
     }
 
-    .related-articles {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
-        align-self: stretch;
-        width: 100%;
-        flex: 0 0 auto;
-
-        .sidebar-section {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 0px 24px;
-            position: relative;
-            align-self: stretch;
-            width: 100%;
-            flex: 0 0 auto;
-
-            .section-title-here {
-                position: relative;
-                flex: 1;
-                margin-top: -1px;
-                @include heading-3;
-                color: $grey_500;
-            }
-        }
-
-        .related-articles-2 {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            align-self: stretch;
-            width: 100%;
-            flex: 0 0 auto;
-
-            .related-article-item {
-                display: flex;
-                align-items: center;
-                gap: 24px;
-                padding: 24px;
-                position: relative;
-                align-self: stretch;
-                width: 100%;
-                flex: 0 0 auto;
-                border-bottom-width: 1px;
-                border-bottom-style: solid;
-                border-color: $grey_300;
-
-                .article-picture2 {
-                    position: relative;
-                    width: 164px;
-                    height: 164px;
-                    background-color: #d9d9d9;
-                }
-
-                .article-content2 {
-                    display: flex;
-                    justify-content: center;
-                    gap: 24px;
-                    flex: 1;
-                    flex-grow: 1;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    position: relative;
-
-                    .post-title {
-                        position: relative;
-                        align-self: stretch;
-                        @include heading-3;
-                        margin-top: -1px;
-                        color: $neutrals_black;
-                    }
-
-                    .article-preview {
-                        position: relative;
-                        align-self: stretch;
-                        @include body;
-                        color: $neutrals_black;
-                    }
-                }
-
-                .save-btn {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 12px;
-                    padding: 6px;
-                    position: absolute;
-                    top: 156px;
-                    left: 966px;
-
-                    .text-wrapper-8 {
-                        position: relative;
-                        width: fit-content;
-                        @include body-small;
-                        color: $grey_400;
-                        white-space: nowrap;
-                    }
-                }
-            }
-        }
+    &__content {
+        @include body-style;
+        @include body
     }
+
+
+
 }
