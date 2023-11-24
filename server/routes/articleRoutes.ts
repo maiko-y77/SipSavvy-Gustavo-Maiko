@@ -52,6 +52,7 @@ router.post("/", async (req: Request, res: Response) => {
             content,
             status,
             cover_img,
+            authorId,
             author: {
               connect: {
                 id: authorId,
