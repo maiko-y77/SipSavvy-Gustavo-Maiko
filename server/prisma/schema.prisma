@@ -17,10 +17,12 @@ model Article {
   content      String
   date_created DateTime @default(now())
   date_updated DateTime @updatedAt
-  status       String // Assuming 'draft', 'published', 'unpublished', 'deleted'
-  cover_img    String?
   author       User     @relation(fields: [authorId], references: [id])
   authorId     String   @db.ObjectId
+  status       ArticleStatus @default(DRAFT)
+  cover_img    String?
+  likes Int[]
+  slug  String
 }
 
 //User model
@@ -28,4 +30,11 @@ model User {
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
   name     String
   articles Article[]
+}
+
+enum ArticleStatus {
+  DRAFT
+  PUBLISHED
+  UNPUBLISHED
+  DELETED
 }
