@@ -16,7 +16,7 @@ const LoginForm = () => {
   };
 
   return (
-    <form className="login-form">
+    <div className="login-form">
       <div className="form-group">
         <label>Your email</label>
         <input name="email" type="email" onChange={(e) => (userName.current = e.target.value)} />
@@ -28,7 +28,7 @@ const LoginForm = () => {
       </div>
 
       <button onClick={onSubmit}>Sign In</button>
-    </form>
+    </div>
   );
 };
 
