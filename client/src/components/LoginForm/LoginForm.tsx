@@ -1,19 +1,35 @@
+"use client";
+import { signIn } from "next-auth/react";
+import React, { useRef } from "react";
+
 const LoginForm = () => {
-    return (
-        <form className="login-form">
-          <div className="form-group">
-            <label>Your email</label>
-            <input name="email" type="email" />
-          </div>
+  const userName = useRef("");
+  const pass = useRef("");
 
-          <div className="form-group">
-            <label>Your Password</label>
-            <input name="password" type="password" />
-          </div>
+  const onSubmit = async () => {
+    const result = await signIn("credentials", {
+      username: userName.current,
+      password: pass.current,
+      redirect: true,
+      callbackUrl: "/feed",
+    });
+  };
 
-          <button>Sign In</button>
-        </form>
-    );
-}
+  return (
+    <form className="login-form">
+      <div className="form-group">
+        <label>Your email</label>
+        <input name="email" type="email" onChange={(e) => (userName.current = e.target.value)} />
+      </div>
+
+      <div className="form-group">
+        <label>Your Password</label>
+        <input name="password" type="password" onChange={(e) => (userName.current = e.target.value)} />
+      </div>
+
+      <button onClick={onSubmit}>Sign In</button>
+    </form>
+  );
+};
 
 export default LoginForm;
