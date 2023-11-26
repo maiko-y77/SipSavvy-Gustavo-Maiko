@@ -5,16 +5,21 @@ const handler = NextAuth({
   providers: [
     CredentialsProvider({
       name: "Credentials",
+
       credentials: {
-        email: { label: "Email", type: "text", placeholder: "youremail@example.com" },
+        email: { label: "Email", type: "email", placeholder: "youremail@example.com" },
         password: { label: "Password", type: "password" },
       },
+
       async authorize(credentials, req) {
+        console.log(credentials)
         const res = await fetch("http://localhost:3000/auth/login", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json"
+          },
           body: JSON.stringify({
-            username: credentials?.email,
+            email: credentials?.email,
             password: credentials?.password,
           }),
         });
@@ -29,9 +34,9 @@ const handler = NextAuth({
     }),
   ],
   pages: {
-    signIn: "/login",
-    signOut: "/logout",
+    signIn: "/auth/signIn",
   },
+  secret: process.env.NEXT_AUTH_SECRET,
 });
 
 export { handler as GET, handler as POST };
