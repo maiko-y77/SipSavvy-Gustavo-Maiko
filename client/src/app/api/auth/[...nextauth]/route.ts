@@ -13,7 +13,7 @@ const handler = NextAuth({
 
       async authorize(credentials, req) {
         console.log(credentials)
-        const res = await fetch("http://localhost:3000/auth/login", {
+        const res = await fetch(`http://localhost:3001/auth/login/${credentials?.email}`, {
           method: "POST",
           headers: { 
             "Content-Type": "application/json"
@@ -23,6 +23,7 @@ const handler = NextAuth({
             password: credentials?.password,
           }),
         });
+
         const user = await res.json();
 
         if (user) {
@@ -34,7 +35,7 @@ const handler = NextAuth({
     }),
   ],
   pages: {
-    signIn: "/auth/signIn",
+    signIn: "/login",
   },
   secret: process.env.NEXT_AUTH_SECRET,
 });
