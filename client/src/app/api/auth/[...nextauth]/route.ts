@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { getUser } from "@/lib/UserAuth/data";
 
 const handler = NextAuth({
   providers: [
@@ -16,6 +17,7 @@ const handler = NextAuth({
       },
 
       async authorize(credentials, req) {
+
         const res = await fetch(
           `http://localhost:3001/auth/login/${credentials?.email}`,
           {
@@ -33,8 +35,9 @@ const handler = NextAuth({
         const user = await res.json();
 
         if (user) {
-          if (user.password !== credentials?.password) {
-            return null;
+
+          if(credentials?.password !== user.password){
+            return null
           }
 
           return user;
