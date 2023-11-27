@@ -4,6 +4,7 @@ const prisma = new PrismaClient();
 
 import articleRoutes from "./routes/articleRoutes";
 import userRoutes from "./routes/userRoutes";
+import loginAuth from "./routes/loginAuth";
 import cors from "cors";
 
 const app = express();
@@ -49,6 +50,7 @@ app.get("/users", async (req: Request, res: Response) => {
 
 app.use("/articles", articleRoutes);
 app.use("/user", userRoutes);
+app.use("/auth", loginAuth);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
