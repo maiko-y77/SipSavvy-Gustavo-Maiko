@@ -25,7 +25,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                         <div className={`${BASE_CLASS}__author-info`}>
                             <div className={`${BASE_CLASS}__author-left`} >
                                 <Link className={`${BASE_CLASS}__author-link`} href={`/writers/${article.authorId}`}>
-                                    <Avatar img={article.author.avatar} />
+                                    <Avatar className="avatar" img={article.author.avatar} />
                                     <p>{article.author.name}</p>
                                 </Link>
 
@@ -61,7 +61,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                         <div className={`${BASE_CLASS}__author-info`}>
                             <div className={`${BASE_CLASS}__author-left`} >
                                 <Link className={`${BASE_CLASS}__author-link`} href="/">
-                                    <Avatar img={article.author.avatar} />
+                                    <Avatar className="avatar" img={article.author.avatar} />
                                     <p>{article.author.name}</p>
                                 </Link>
 
