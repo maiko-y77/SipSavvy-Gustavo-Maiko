@@ -9,6 +9,13 @@ router.get("/:id", async (req: Request, res: Response) => {
   try {
     const user = await prisma.user.findUnique({
       where: { id: String(id) },
+      include: {
+        Articles: {
+          include: {
+            author: true
+          }
+        }
+      }
     });
 
     if (!user) {
