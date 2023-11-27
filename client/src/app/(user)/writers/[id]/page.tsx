@@ -16,7 +16,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <div className="author-card">
           <div className="author-info">
             <div className="avatar">
-              <Avatar img={writer.avatar.toString()} />
+              <Avatar className="avatar" img={writer.avatar.toString()} />
             </div>
             <div className="author-name">
               <h2>{writer.name} {writer.last_name}</h2>
