@@ -1,6 +1,5 @@
 import { UserIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import "@/components/Avatar/Avatar.scss"
 
 type Props = {
   img?: string
