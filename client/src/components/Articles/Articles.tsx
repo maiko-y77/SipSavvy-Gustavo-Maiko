@@ -4,6 +4,7 @@ import "./articles.scss";
 import AuthorBullet from "../AuthorBullet/AuthorBullet";
 import { getArticles } from "../../lib/Articles/data";
 import { Article } from "@/lib/Article/types";
+import "@/components/Articles/articles.scss"
 
 type ArticlesProps = {
   data: Article[];
@@ -12,10 +13,10 @@ type ArticlesProps = {
 export default async function Articles({ data }: ArticlesProps) {
   return (
     <div className="article-item">
-      {data.map(({ id, title, content }) => (
+      {data.map(({ id, title, content, author }) => (
         <div key={id}>
           <div className="article-content">
-            <AuthorBullet />
+            <AuthorBullet name={author.name} avatar={author.avatar} />
             <h3 className="article-title">
               <Link href={`/articles/${id}`}>{title}</Link>
             </h3>

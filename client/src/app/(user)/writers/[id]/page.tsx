@@ -4,10 +4,8 @@ import Avatar from "@/components/Avatar/Avatar";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import Tab from "@/components/Tab/Tab";
-import { UserIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import "@/app/(user)/writers/[id]/writerProfile.scss"
-
 
 export default async function Page({ params }: { params: { id: string } }) {
   const writer = await getUser(params.id);
@@ -18,7 +16,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <div className="author-card">
           <div className="author-info">
             <div className="avatar">
-              <UserIcon />
+              <Avatar img={writer.avatar.toString()} />
             </div>
             <div className="author-name">
               <h2>{writer.name} {writer.last_name}</h2>
