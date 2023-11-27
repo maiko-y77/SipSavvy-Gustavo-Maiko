@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.article-item{
+.article-item {
     width: 100%;
     height: fit-content;
     padding: 24px;
@@ -13,15 +13,16 @@
     background-color: transparent;
     transition: background-color 0.3s ease-out;
 
-    &:not(:first-child), &:not(:last-child){
+    &:not(:first-child),
+    &:not(:last-child) {
         margin-block: 12px;
     }
 
-    &:hover{
+    &:hover {
         background-color: $brand_white;
     }
 
-    .article-content{
+    .article-content {
         width: 100%;
         flex-grow: 1;
         display: flex;
@@ -29,77 +30,91 @@
         align-items: flex-start;
         gap: 24px;
 
-        .article-title a{
-            color: var(--neutrals-black, #111827);
-            /* Heading 3 */
-            font-family: Oswald;
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 150%; /* 36px */
+        .author-bullet {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+
+            .author-name {
+                color: $grey_400;
+                /* Body Small Bold */
+                @include body-small
+                /* 12px */
+            }
         }
 
-        p{
+        .article-title a {
+            color: var(--neutrals-black, #111827);
+            /* Heading 3 */
+            @include heading-3
+            /* 36px */
+        }
+
+        p {
             color: var(--neutrals-black, #111827);
             /* Body */
-            font-family: Montserrat;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 150%; /* 24px */
+            @include body
+            /* 24px */
         }
-        
-        .action-bar{
+
+        .action-bar {
             display: flex;
             width: 100%;
             justify-content: space-between;
 
-            a{
+            a {
                 @include icon-link;
                 gap: 6px;
                 color: $grey_400;
                 transition: all 0.3s ease-out;
 
-                svg{
+                svg {
                     transition: all 0.3s ease-out;
                 }
 
-                &:hover{
-                    svg{
+                &:hover {
+                    svg {
                         transform: translateX(3px);
                     }
                 }
             }
-            a:first-child{
+
+            a:first-child {
                 padding-left: 0;
             }
 
-            a:nth-child(2){
-                svg{
+            a:nth-child(2) {
+                svg {
                     transition: all 0.3s ease-out;
                 }
 
-                &:hover{
-                    svg{
+                &:hover {
+                    svg {
                         transform: translateY(-5px);
                     }
                 }
             }
 
-            a:last-child{
+            a:last-child {
                 padding-right: 0;
             }
         }
 
     }
 
-    .article-image{
+    .article-image {
         width: 20%;
         aspect-ratio: 1;
         object-fit: cover;
         flex-grow: 0;
         background-color: $grey_100;
     }
+}
 
-    
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
 }

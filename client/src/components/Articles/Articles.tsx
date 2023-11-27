@@ -1,10 +1,9 @@
 import { BookmarkIcon, ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import "./articles.scss";
-import AuthorBullet from "../AuthorBullet/AuthorBullet";
-import { getArticles } from "../../lib/Articles/data";
 import { Article } from "@/lib/Article/types";
 import "@/components/Articles/articles.scss"
+import Avatar from "../Avatar/Avatar";
 
 type ArticlesProps = {
   data: Article[];
@@ -16,7 +15,10 @@ export default async function Articles({ data }: ArticlesProps) {
       {data.map(({ id, title, content, author }) => (
         <div key={id}>
           <div className="article-content">
-            <AuthorBullet name={author.name} avatar={author.avatar} />
+            <div className="author-bullet">
+              <Avatar className="avatar" img={author.avatar} />
+              <p className="author-name">{author.name}</p>
+            </div>
             <h3 className="article-title">
               <Link href={`/articles/${id}`}>{title}</Link>
             </h3>
