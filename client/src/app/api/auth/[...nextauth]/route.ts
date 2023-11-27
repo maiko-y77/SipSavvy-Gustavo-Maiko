@@ -7,26 +7,36 @@ const handler = NextAuth({
       name: "Credentials",
 
       credentials: {
-        email: { label: "Email", type: "email", placeholder: "youremail@example.com" },
+        email: {
+          label: "Email",
+          type: "email",
+          placeholder: "youremail@example.com",
+        },
         password: { label: "Password", type: "password" },
       },
 
       async authorize(credentials, req) {
-        console.log(credentials)
-        const res = await fetch(`http://localhost:3001/auth/login/${credentials?.email}`, {
-          method: "POST",
-          headers: { 
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            email: credentials?.email,
-            password: credentials?.password,
-          }),
-        });
+        const res = await fetch(
+          `http://localhost:3001/auth/login/${credentials?.email}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: credentials?.email,
+              password: credentials?.password,
+            }),
+          }
+        );
 
         const user = await res.json();
 
         if (user) {
+          if (user.password !== credentials?.password) {
+            return null;
+          }
+
           return user;
         } else {
           return null;

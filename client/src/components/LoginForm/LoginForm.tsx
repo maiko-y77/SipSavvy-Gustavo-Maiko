@@ -11,7 +11,7 @@ const LoginForm = () => {
       email: email.current,
       password: pass.current,
       redirect: true,
-      callbackUrl: "/",
+      callbackUrl: "/feed",
     });
   };
 
