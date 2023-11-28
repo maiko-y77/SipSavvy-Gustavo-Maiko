@@ -1,22 +1,25 @@
 import Articles from "@/components/Articles/Articles";
+import { getUser } from "@/lib/User/data";
 import Avatar from "@/components/Avatar/Avatar";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import Tab from "@/components/Tab/Tab";
-import { UserIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import "@/app/(user)/writers/[id]/writerProfile.scss"
 
-const page = () => {
+export default async function Page({ params }: { params: { id: string } }) {
+  const writer = await getUser(params.id);
+
   return (
     <div className="profile-container">
       <div className="sidebar">
         <div className="author-card">
           <div className="author-info">
             <div className="avatar">
-              <UserIcon />
+              <Avatar className="avatar" img={writer.avatar.toString()} />
             </div>
             <div className="author-name">
-              <h2>Jon Doe</h2>
+              <h2>{writer.name} {writer.last_name}</h2>
               <p>20k Followers</p>
             </div>
           </div>
@@ -64,18 +67,18 @@ const page = () => {
 
       <div className="articles-container">
         <div className="tab-bar">
-          <Tab text="Jon Doe's Articles" isActive={true} />
+          <Tab text={`${writer.name} ${writer.last_name}'s Articles`} isActive={true} />
           <SearchBar />
         </div>
 
         <ul className="articles-list">
           <li>
-            <Articles />
+            {writer.Articles.map((article, index) => (
+              <Articles data={writer.Articles} />
+            ))}
           </li>
         </ul>
       </div>
     </div>
   );
 };
-
-export default page;
