@@ -61,7 +61,6 @@ export const options: NextAuthOptions = {
         session.user.avatar = token.avatar
         session.user.username = token.username
       }
-      console.log(session)
       return session;
     },
 
