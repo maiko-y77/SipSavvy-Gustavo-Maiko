@@ -114,7 +114,7 @@
     align-items: center;
     border-bottom: 1px solid var(--neutrals-greys-200, #E5E7EB);
     background: $primary;
-    color: $brand_white;
+    color: $brand_white !important;
   
     .icon{
       color: $brand_white;

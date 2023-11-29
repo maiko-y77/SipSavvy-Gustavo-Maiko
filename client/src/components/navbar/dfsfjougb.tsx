@@ -18,8 +18,7 @@ export default async function Navbar({ type }: NavbarProps) {
   return (
     <header className={userRole === "admin" ? "admin-header" : "header"}>
       {userRole === "admin" ? <AdminLogo /> : <Logo />}
-      {data ? <LogoutBtn /> : 
-      <Link href="/login">Login</Link>}
+      {data ? <LogoutBtn /> : <Link href="/login">Login</Link>}
     </header>
   );
 }
