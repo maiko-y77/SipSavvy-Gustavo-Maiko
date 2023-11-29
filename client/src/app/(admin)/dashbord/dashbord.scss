@@ -20,7 +20,7 @@
                 display: flex;
                 width: 888px;
                 justify-content: space-between;
-                align-items: flex-start;  
+                align-items: center;  
             }
 
             &__tabs-tab{
@@ -104,7 +104,7 @@
             &__tabs{
                 display: flex;
                 justify-content: space-between;
-                align-items: flex-start;
+                align-items: center;
             }
     
             &__tabs-tab{
