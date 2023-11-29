@@ -1,12 +1,20 @@
 import Avatar from "../Avatar/Avatar";
+import { getUser } from "@/lib/User/data";
+import "@/components/AuthorBullet/authorBullet.scss"
 
-const AuthorBullet = () => {
+
+type Props = {
+    name: string;
+    avatar?: string;
+}
+
+export default async function AuthorBullet({ name, avatar }: Props) {
     return (
+
         <div className="author-bullet">
-            <Avatar />
-            Author Name
+            <Avatar img={avatar} />
+            <span>{name}</span>
         </div>
     );
 }
 
-export default AuthorBullet;

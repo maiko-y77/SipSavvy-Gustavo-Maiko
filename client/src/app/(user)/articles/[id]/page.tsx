@@ -1,4 +1,4 @@
-import { UserIcon, BookmarkIcon, HeartIcon } from "@heroicons/react/24/outline";
+import { BookmarkIcon, HeartIcon } from "@heroicons/react/24/outline";
 import { getArticle } from "@/lib/Article/data";
 import Articles from "@/components/Articles/Articles";
 import { Article } from "@/lib/Article/types";
@@ -6,6 +6,7 @@ import Image from "next/image"
 import "@/app/(user)/articles/[id]/article.scss"
 import Link from "next/link";
 import { FollowButton } from "@/components/FollowButton/FollowButton";
+import Avatar from "@/components/Avatar/Avatar";
 
 const BASE_CLASS = "article"
 
@@ -23,8 +24,8 @@ export default async function Page({ params }: { params: { id: string } }) {
                     <div className={`${BASE_CLASS}__author`}>
                         <div className={`${BASE_CLASS}__author-info`}>
                             <div className={`${BASE_CLASS}__author-left`} >
-                                <Link className={`${BASE_CLASS}__author-link`} href="/">
-                                    <UserIcon className={`${BASE_CLASS}__author-icon`} width={36} height={36} />
+                                <Link className={`${BASE_CLASS}__author-link`} href={`/writers/${article.authorId}`}>
+                                    <Avatar className="avatar" img={article.author.avatar} />
                                     <p>{article.author.name}</p>
                                 </Link>
 
@@ -60,7 +61,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                         <div className={`${BASE_CLASS}__author-info`}>
                             <div className={`${BASE_CLASS}__author-left`} >
                                 <Link className={`${BASE_CLASS}__author-link`} href="/">
-                                    <UserIcon className={`${BASE_CLASS}__author-icon`} width={36} height={36} />
+                                    <Avatar className="avatar" img={article.author.avatar} />
                                     <p>{article.author.name}</p>
                                 </Link>
 
@@ -77,26 +78,10 @@ export default async function Page({ params }: { params: { id: string } }) {
                             </div>
                         </div>
                     </div>
-
-                    {/* <div className="author-info-2">
-                        <div className="author-bullet">
-                            <a className="avatar icon" href="/">
-                                <UserIcon width={36} height={36} />
-                            </a>
-                            <p>{article.author.name}</p>
-                        </div>
-                        <div className="text-wrapper-4">Follow</div>
-                        <div className="icons">
-                            <div className="group-2">
-                                <HeartIcon width={24} height={24} />
-                                <div className="element">650 likes</div>
-                            </div>
-                            <BookmarkIcon width={24} height={24} />
-                        </div>
-                    </div> */}
                 </div>
                 <Articles data={recommendedArticles} />
             </div>
         </>
     );
 }
+

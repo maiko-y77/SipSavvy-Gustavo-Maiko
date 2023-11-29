@@ -34,7 +34,7 @@
             gap: 12px;
 
             p {
-                color: #9CA3AF
+                color: $grey_400
             }
         }
 
@@ -53,6 +53,11 @@
 
         }
 
+        &-right,
+        &__heart {
+            color: $grey_400
+        }
+
 
     }
 
@@ -61,6 +66,10 @@
         @include body
     }
 
+}
 
-
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
 }

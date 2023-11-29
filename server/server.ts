@@ -49,8 +49,8 @@ app.get("/users", async (req: Request, res: Response) => {
 });
 
 app.use("/articles", articleRoutes);
-app.use("/user", userRoutes);
 app.use("/auth", loginAuth);
+app.use("/users", userRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
