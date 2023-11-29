@@ -1,0 +1,10 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.category{
+    color: $neutrals_black;
+
+    /* Body */
+    @include body
+    /* 24px */
+}
