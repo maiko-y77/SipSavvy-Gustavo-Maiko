@@ -1,6 +1,6 @@
 import Tab from "@/components/Tab/Tab";
 import Link from "next/link";
-import "@/app/(admin)/users/users.scss";
+import "@/app/(admin)/admin/users/users.scss";
 import AdminUser from "@/components/AdiminUser/AdminUser";
 
 const BASE_CLASS = "users";

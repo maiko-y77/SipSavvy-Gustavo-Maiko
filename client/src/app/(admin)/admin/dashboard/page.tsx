@@ -1,4 +1,4 @@
-import "@/app/(admin)/dashbord/dashbord.scss";
+import "@/app/(admin)/admin/dashboard/dashbord.scss";
 import Tab from "@/components/Tab/Tab";
 import Link from "next/link";
 import AdminArticles from "@/components/AdminArticles/AdminArticles";
