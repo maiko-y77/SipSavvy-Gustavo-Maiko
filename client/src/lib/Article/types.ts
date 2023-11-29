@@ -8,6 +8,6 @@ export type Article = {
     author: {
         id: string;
         name: string;
-        avatar?: string;
+        avatar: string;
     }
 }
