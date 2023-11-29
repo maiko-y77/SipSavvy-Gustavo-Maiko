@@ -2,7 +2,7 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.login-content{
+.login-content {
     width: 100%;
     height: auto;
     display: flex;
@@ -12,32 +12,37 @@
     margin-top: 12%;
     gap: 24px;
 
-    h1{
+    h1 {
         @include heading-3;
         text-align: center;
-     }
- 
-     p{
-         text-align: center;
-     }
- 
-     form{
+    }
+
+    p {
+        text-align: center;
+    }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: 24px;
-         gap: 24px;
-         width: 100%;
- 
-         .form-group{
-             width: 100%;
-             max-width: 432px;
- 
-             label{
-                 margin-bottom: 8px;
-             }
- 
-             input{
-                 width: 100%;
-                 text-align: center;
-             }
-         }
-     }
+        gap: 48px;
+        width: 100%;
+
+        .form-group {
+            width: 100%;
+            max-width: 432px;
+            text-align: center;
+
+            label {
+                margin-bottom: 8px;
+            }
+
+            input {
+                width: 100%;
+                text-align: center;
+                padding: 8px;
+            }
+        }
+    }
 }
