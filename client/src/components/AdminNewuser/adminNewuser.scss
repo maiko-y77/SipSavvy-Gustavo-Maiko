@@ -1,0 +1,18 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.user{
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    border: 1px solid $grey_300;
+
+    &__name{
+        color: $grey_500;
+        @include body
+    }
+}
