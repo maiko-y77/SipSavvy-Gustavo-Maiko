@@ -2,29 +2,40 @@ import { BookmarkIcon, ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import "./articles.scss";
 import { Article } from "@/lib/Article/types";
-import "@/components/Articles/articles.scss"
+import "@/components/Articles/articles.scss";
 import Avatar from "../Avatar/Avatar";
+import Image from "next/image";
 
-type ArticlesProps = {
-  data: Article[];
-};
+interface ArticlesProps {
+  data: {
+    id: string;
+    title: string;
+    content: string;
+    coverImg?: string;
+    author: {
+      name: string;
+      avatar?: string;
+    };
+  }[];
+  key: string;
+}
 
-export default async function Articles({ data }: ArticlesProps) {
+const Articles: React.FC<ArticlesProps> = ({ data, key }) => {
   return (
     <div className="article-item">
-      {data.map(({ id, title, content, author }) => (
-        <div key={id}>
-          <div className="article-content">
+      {data.map((article) => (
+        <>
+          <div className="article-content" key={article.id}>
             <div className="author-bullet">
-              <Avatar className="avatar" img={author.avatar} />
-              <p className="author-name">{author.name}</p>
+              <Avatar className="avatar" img={article.author.avatar} />
+              <p className="author-name">{article.author.name}</p>
             </div>
             <h3 className="article-title">
-              <Link href={`/articles/${id}`}>{title}</Link>
+              <Link href={`/articles/${article.id}`}>{article.title}</Link>
             </h3>
-            <p>{content}</p>
+            <p>{article.content}</p>
             <div className="action-bar">
-              <Link href="#">
+              <Link href={`/articles/${article.id}`}>
                 Continue Reading <ArrowLongRightIcon width={24} height={24} />
               </Link>
               <Link href="#" className="icon-link">
@@ -32,9 +43,21 @@ export default async function Articles({ data }: ArticlesProps) {
               </Link>
             </div>
           </div>
-          <div className="article-image"></div>
-        </div>
+          {article.coverImg && (
+            <Link href={`/articles/${article.id}`}>
+              <Image
+                src={article.coverImg ?? ""}
+                width={200}
+                height={200}
+                alt={article.title}
+                className="article-image"
+              />
+            </Link>
+          )}
+        </>
       ))}
     </div>
   );
-}
+};
+
+export default Articles;

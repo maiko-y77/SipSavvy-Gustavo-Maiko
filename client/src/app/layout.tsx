@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <Navbar type="default" />
+          <Navbar />
           <main>
             {children}
             {modal}
