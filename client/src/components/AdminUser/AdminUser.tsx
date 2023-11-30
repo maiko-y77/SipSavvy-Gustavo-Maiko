@@ -1,32 +1,44 @@
+import Avatar from "../Avatar/Avatar";
 import "@/components/AdminUser/adminUser.scss";
 import Link from "next/link";
 import {
-  UserIcon,
   ChevronDownIcon,
   EllipsisHorizontalIcon,
 } from "@heroicons/react/24/outline";
+import { User } from "@/lib/User/types";
 
-const BASE_CLASS = "user";
-const AdminUser = () => {
-  return (
-    <div className={`${BASE_CLASS}`}>
-      <div className={`${BASE_CLASS}__content`}>
-        <Link className="avatar icon" href="/">
-          <UserIcon width={48} height={48} />
-        </Link>
-        <span className={`${BASE_CLASS}__content__name`}>John</span>
-        <span className={`${BASE_CLASS}__content__lastname`}>Doe</span>
-        <span className={`${BASE_CLASS}__content__email`}>test@email.com</span>
-      </div>
-      <div className={`${BASE_CLASS}__actions`}>
-        <div className={`${BASE_CLASS}__actions__roles`}>
-          <span className="role">Writer</span>
-          <ChevronDownIcon className="chevron-down" />
-        </div>
-        <EllipsisHorizontalIcon className="ellipsis" />
-      </div>
-    </div>
-  );
+type USersProps = {
+  data: User[];
 };
 
-export default AdminUser;
+const BASE_CLASS = "user";
+
+export default async function AdminUser({ data }: USersProps) {
+  return (
+    <div className={`${BASE_CLASS}`}>
+      {data.map(({ id, avatar, name, last_name, email }) => (
+        <div key={id}>
+          <div className={`${BASE_CLASS}__item`}>
+            <div className={`${BASE_CLASS}__content`}>
+              <Link className="avatar icon" href="/">
+                <Avatar className="avatar" img={String(avatar)} />
+              </Link>
+              <span className={`${BASE_CLASS}__content__name`}>{name}</span>
+              <span className={`${BASE_CLASS}__content__lastname`}>
+                {last_name}
+              </span>
+              <span className={`${BASE_CLASS}__content__email`}>{email}</span>
+            </div>
+            <div className={`${BASE_CLASS}__actions`}>
+              <div className={`${BASE_CLASS}__actions__roles`}>
+                <span className="role">Writer</span>
+                <ChevronDownIcon className="chevron-down" />
+              </div>
+              <EllipsisHorizontalIcon className="ellipsis" />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}

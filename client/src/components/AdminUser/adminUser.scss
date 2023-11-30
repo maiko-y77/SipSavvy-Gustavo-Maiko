@@ -3,55 +3,66 @@
 
 .user {
     display: flex;
-    padding: 24px;
-    align-items: center;
-    align-self: stretch;
+    width: 1344px;
+    height: 858px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
 
-    &__content{
+    &__item {
+        display: flex;
+        padding: 24px;
+        align-items: center;
+        align-self: stretch;
+    }
+
+    &__content {
         display: flex;
         align-items: center;
         gap: 24px;
         flex: 1 0 0;
+        width: 1096px;
 
-        &__name{
+        &__name {
             width: 250px;
             @include body
         }
 
-        &__lastname{
+        &__lastname {
             width: 350px;
             @include body
         }
 
-        &__email{
+        &__email {
             width: auto;
             @include body
         }
     }
 
-    &__actions{
+    &__actions {
         display: flex;
         width: 200px;
         justify-content: space-between;
         align-items: center;
 
-        &__roles{
+        &__roles {
             display: flex;
             padding: 24px;
             align-items: center;
             align-self: stretch;
 
-            .role{
+            .role {
                 color: $neutrals_black;
                 /* Body Bold */
                 font-family: Montserrat;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 700;
-                line-height: 150%; /* 24px */ 
+                line-height: 150%;
+                /* 24px */
             }
 
-            .chevron-down{
+            .chevron-down {
                 color: $neutrals_black;
                 width: 16px;
                 height: 8px;
@@ -59,14 +70,21 @@
             }
         }
 
-        .ellipsis{
-                display: flex;
-                padding: 6px;
-                justify-content: center;
-                align-items: center;
-                gap: 12px;
-                color: $grey_300;
+        .ellipsis {
+            display: flex;
+            padding: 6px;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            color: $grey_300;
         }
-        
+
     }
+}
+
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
 }
