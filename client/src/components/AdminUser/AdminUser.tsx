@@ -1,5 +1,5 @@
-import "@/components/AdiminUser/adminUser.scss";
 import Avatar from "../Avatar/Avatar";
+import "@/components/AdminUser/adminUser.scss";
 import Link from "next/link";
 import {
   ChevronDownIcon,

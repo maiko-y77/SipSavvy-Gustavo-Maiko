@@ -2,7 +2,7 @@ import Link from "next/link";
 import Tab from "@/components/Tab/Tab";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import CollectionItem from "@/components/CollectionItem/CollectionItem";
-import './collections'
+import './collections.scss'
 
 const page = () => {
 

@@ -10,12 +10,27 @@ const page = async () => {
   return (
     <div className="feed-container">
       <div className="articles-container">
-        <div className="tab-bar">
+        {/* <div className="tab-bar">
           <Tab text="For you" isActive={true} />
           <Tab text="Following" isActive={false} />
-        </div>
+        </div> */}
         <div className="articles-list">
-          <Articles data={articles} />
+          {articles.map((data) => (
+            <Articles
+              key={data.id}
+              data={
+                [{
+                id: data.id,
+                title: data.title,
+                content: data.content,
+                coverImg: data.cover_img,
+                author: {
+                  name: data.author?.name,
+                  avatar: data.author?.avatar,
+                },
+              }]}
+            />
+          ))}
         </div>
       </div>
       <div className="sidebar">

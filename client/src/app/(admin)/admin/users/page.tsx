@@ -1,8 +1,8 @@
 import Tab from "@/components/Tab/Tab";
 import Link from "next/link";
 import "@/app/(admin)/admin/users/users.scss";
-import AdminUser from "@/components/AdiminUser/AdminUser";
 import { getUsers } from "@/lib/Users/data";
+import AdminUser from "@/components/AdminUser/AdminUser";
 
 const BASE_CLASS = "users";
 
