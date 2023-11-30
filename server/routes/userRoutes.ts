@@ -4,6 +4,15 @@ const prisma = new PrismaClient();
 
 const router = express.Router();
 
+router.get("/", async (req: Request, res: Response) => {
+  try {
+    const articles = await prisma.user.findMany();
+    res.json(articles);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 router.get("/:id", async (req: Request, res: Response) => {
   const { id } = req.params;
   try {

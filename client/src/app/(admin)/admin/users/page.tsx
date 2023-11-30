@@ -2,10 +2,13 @@ import Tab from "@/components/Tab/Tab";
 import Link from "next/link";
 import "@/app/(admin)/admin/users/users.scss";
 import AdminUser from "@/components/AdiminUser/AdminUser";
+import { getUsers } from "@/lib/Users/data";
 
 const BASE_CLASS = "users";
 
-const Users = () => {
+const page = async () => {
+  const users = await getUsers();
+
   return (
     <>
       <div className={`${BASE_CLASS}`}>
@@ -35,14 +38,11 @@ const Users = () => {
               </div>
             </div>
           </div>
-          <AdminUser />
-          <AdminUser />
-          <AdminUser />
-          <AdminUser />
+          <AdminUser data={users} />
         </div>
       </div>
     </>
   );
 };
 
-export default Users;
+export default page;
