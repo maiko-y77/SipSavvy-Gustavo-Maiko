@@ -1,4 +1,4 @@
-import "@/components/AdiminUser/adminUser.scss";
+import "@/components/AdminUser/adminUser.scss";
 import Link from "next/link";
 import {
   UserIcon,
