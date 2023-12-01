@@ -9,10 +9,14 @@ import {
 } from "@heroicons/react/24/outline";
 import AdminRequests from "@/components/AdminRequests/AdminRequests";
 import AdminNewuser from "@/components/AdminNewuser/AdminNewuser";
+import { getArticles } from "@/lib/Articles/data";
+
 
 const BASE_CLASS = "dashbord";
 
-const Dashbord = () => {
+const Dashbord = async () => {
+  const articles = await getArticles();
+
   return (
     <>
       <div className={`${BASE_CLASS}`}>
@@ -28,9 +32,9 @@ const Dashbord = () => {
                 </Link>
               </div>
             </div>
-            <AdminArticles />
-            <AdminArticles />
-            <AdminArticles />
+            <AdminArticles data={articles} />
+            <AdminArticles data={articles} />
+            <AdminArticles data={articles} />
             <div className={`${BASE_CLASS}__container__right__tabs`}>
               <div className={`${BASE_CLASS}__container__right__tabs-tab`}>
                 <Tab text="Recent Comments" isActive={true} />
@@ -41,7 +45,7 @@ const Dashbord = () => {
                 </Link>
               </div>
             </div>
-            <AdminArticles />
+            <AdminArticles data={articles} />
             <div className={`${BASE_CLASS}__container__right__comment`}>
               <ChatBubbleOvalLeftEllipsisIcon
                 className={`${BASE_CLASS}__container__right__comment__chat-icon`}

@@ -2,28 +2,28 @@
 @import "../../../../styles/variables";
 
 
-.articles{
+.articles {
     max-width: 1344px;
     margin: 0 auto;
     padding: 48px 0 48px;
 
-    &__container{
+    &__container {
         display: flex;
         gap: 24px;
         justify-content: center;
         align-items: flex-start;
 
-        &__right{
+        &__right {
             width: 888px;
             height: 907px;
 
-            &__tabs{
+            &__tabs {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 width: 888px;
 
-                &__tabs-tab{
+                &__tabs-tab {
                     display: flex;
                     padding: 8px 16px;
                     flex-direction: column;
@@ -31,21 +31,21 @@
                     align-items: flex-start;
                     gap: 8px;
 
-                    Tab{
+                    Tab {
                         color: $grey_500;
                         @include body
                     }
                 }
 
-                &__options{
+                &__options {
                     display: flex;
                     width: 444px;
                     padding: 8px;
                     justify-content: space-between;
                     align-items: center;
                 }
-            
-                &__options-filters{
+
+                &__options-filters {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -53,18 +53,18 @@
                     flex: 1 0 0;
                 }
 
-                &__options-filters-filter{
+                &__options-filters-filter {
                     color: $grey_500;
                     @include body-small
                 }
 
-                &__options-filters-roles{
+                &__options-filters-roles {
                     display: flex;
                     align-items: center;
                     gap: 12px;
                 }
-                
-                &__options-sort{
+
+                &__options-sort {
                     display: flex;
                     width: 205.5px;
                     justify-content: center;
@@ -73,12 +73,12 @@
                     flex-shrink: 0;
                 }
 
-                &__options-sort-sortby{
+                &__options-sort-sortby {
                     color: $grey_500;
                     @include body-small
                 }
 
-                &__options-sort-roles{
+                &__options-sort-roles {
                     display: flex;
                     align-items: center;
                     gap: 12px;
@@ -87,48 +87,48 @@
 
         }
 
-        &__left{
-          display: flex;
-          width: auto;
-          height: 907px;
-          padding-bottom: 0px;
-          flex-direction: column;
-          align-items: flex-start;
-
-          &__tabs{
+        &__left {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-          }
-
-          &__tabs-tab{
-            display: flex;
-            padding: 8px 16px;
+            width: auto;
+            height: 907px;
+            padding-bottom: 0px;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
+            align-items: flex-start;
 
-            Tab{
-                color: $grey_500;
-                @include body
+            &__tabs {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
             }
-          }
 
-          &__categories{
-            display: flex;
-            width: 432px;
-            padding: 12px 24px;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 6px;
-          }
+            &__tabs-tab {
+                display: flex;
+                padding: 8px 16px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+
+                Tab {
+                    color: $grey_500;
+                    @include body
+                }
+            }
+
+            &__categories {
+                display: flex;
+                width: 432px;
+                padding: 12px 24px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
         }
 
     }
 }
 
-.role{
+.role {
     color: $grey_600;
 
     /* Body Small Bold */
@@ -136,10 +136,11 @@
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
-    line-height: 100%; /* 12px */
+    line-height: 100%;
+    /* 12px */
 }
 
-.chevron-down{
+.chevron-down {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,4 +149,3 @@
     width: 10px;
     color: $neutrals_black;
 }
-
