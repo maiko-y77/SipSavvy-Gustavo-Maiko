@@ -32,18 +32,3 @@ export const config = {
     "/writer/[id]",
   ],
 };
-
-/* 
-"/feed",
-    "/first-login",
-    "/articles/[id]",
-    "/messages",
-    "/my-collections",
-    "/collection",
-    "/writer",
-    "/articles",
-    "/dashboard",
-    "/users",
-    "/writer/[id]",
-    "/admin/:path*"
-*/
