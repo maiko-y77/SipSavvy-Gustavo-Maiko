@@ -2,10 +2,12 @@ import "@/app/(admin)/admin/articles/articlelists.scss";
 import Tab from "@/components/Tab/Tab";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import AdminArticles from "@/components/AdminArticles/AdminArticles";
-import AdminCategries from "@/components/AdminCategories/AdminCategories";
+import AdminCategories from "@/components/AdminCategories/AdminCategories";
+import { getArticles } from "@/lib/Articles/data";
 
 const BASE_CLASS = "articles";
-const ArticleLists = () => {
+const ArticleLists = async () => {
+  const articles = await getArticles();
   return (
     <>
       <div className={`${BASE_CLASS}`}>
@@ -50,9 +52,7 @@ const ArticleLists = () => {
                 </div>
               </div>
             </div>
-            <AdminArticles />
-            <AdminArticles />
-            <AdminArticles />
+            <AdminArticles data={articles} />
           </div>
           <div className={`${BASE_CLASS}__container__left`}>
             <div className={`${BASE_CLASS}__container__left__tabs`}>
@@ -61,12 +61,12 @@ const ArticleLists = () => {
               </div>
             </div>
             <div className={`${BASE_CLASS}__container__left__categories`}>
-              <AdminCategries />
-              <AdminCategries />
-              <AdminCategries />
-              <AdminCategries />
-              <AdminCategries />
-              <AdminCategries />
+              <AdminCategories />
+              <AdminCategories />
+              <AdminCategories />
+              <AdminCategories />
+              <AdminCategories />
+              <AdminCategories />
             </div>
           </div>
         </div>
