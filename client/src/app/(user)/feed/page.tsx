@@ -7,6 +7,7 @@ import { getArticles } from "@/lib/Articles/data";
 
 const page = async () => {
   const articles = await getArticles();
+  
   return (
     <div className="feed-container">
       <div className="articles-container">
