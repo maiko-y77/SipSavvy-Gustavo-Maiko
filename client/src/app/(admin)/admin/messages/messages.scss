@@ -1,0 +1,137 @@
+@import "../../../../styles/mixins";
+@import "../../../../styles/variables";
+
+.messages {
+    display: flex;
+    height: 955px;
+    padding-top: 48px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+
+    &__container {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &__sidebar {
+        display: flex;
+        width: 318px;
+        height: 907px;
+        padding: 49px 0px 750px 0px;
+        flex-direction: column;
+        align-items: center;
+
+        &__folder {
+            display: flex;
+            width: 318px;
+            padding: 12px 24px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+
+            .inbox {
+                align-self: stretch;
+                color: $neutrals_black;
+                /* Body Bold */
+                font-family: Montserrat;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 150%;
+                /* 24px */
+            }
+
+            .sent-trash {
+                align-self: stretch;
+                color: $neutrals_black;
+                @include body
+            }
+        }
+    }
+
+    &__main {
+        display: flex;
+        width: 1002px;
+        height: 907px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &__tabs {
+        display: flex;
+        align-items: center;
+
+        &__tab {
+            display: flex;
+            padding: 8px 16px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 8px;
+
+            Tab {
+                color: $grey_500;
+                @include body
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        width: 1002px;
+        height: 858px;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-shrink: 0;
+    }
+
+
+    &__item {
+        display: flex;
+        padding: 24px;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        border-bottom: 1px solid $grey_300;
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 6px;
+            flex: 1 0 0;
+
+            p {
+                align-self: stretch;
+                color: $grey_500;
+                /* Body */
+                @include body
+                /* 24px */
+            }
+        }
+
+        &__action {
+            display: flex;
+            padding-left: 0px;
+            align-items: center;
+            gap: 24px;
+
+            .item-icons {
+                display: flex;
+                padding: 0px 6px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                align-self: stretch;
+                width: 27px;
+                height: 24px;
+            }
+        }
+    }
+}
