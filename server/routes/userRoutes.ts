@@ -71,4 +71,35 @@ router.post("/new", async (req: Request, res: Response) => {
   res.json(data);
 });
 
+router.put("/update/:id",async (req:Request, res: Response) => {
+  const { id } = req.params
+  const { username, name, last_name, email, password, avatar, role, email_verified } = req.body
+
+  try{
+    const user  = await prisma.user.update({
+      where: {
+        id: id,
+      },
+      data: {
+        username: username,
+        name: name,
+        last_name: last_name,
+        email: email,
+        password: password,
+        avatar: avatar,
+        role: role,
+        email_verified: email_verified
+      }
+    })
+    res.json(user)
+
+  }catch(error){
+    console.error("Error:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+
+  res.json()
+
+})
+
 export default router;
