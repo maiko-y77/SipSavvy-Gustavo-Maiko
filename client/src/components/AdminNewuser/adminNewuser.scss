@@ -1,7 +1,7 @@
 @import "../../styles/mixins";
 @import "../../styles/variables";
 
-.user{
+.new-user{
     display: flex;
     padding: 24px;
     flex-direction: column;
@@ -12,7 +12,23 @@
     border: 1px solid $grey_300;
 
     &__name{
-        color: $grey_500;
-        @include body
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 12px;
+        width: 77px;
+       
+
+        .name{
+            color: $grey_500;
+            @include body
+        }
     }
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
 }

@@ -1,7 +1,7 @@
 @import "../../../../styles/mixins";
 @import "../../../../styles/variables";
 
-.dashbord {
+.dashboard {
     max-width: 1344px;
     margin: 0 auto;
     padding: 48px 0 48px;
@@ -49,51 +49,6 @@
                 .link {
                     color: $grey_400;
                     @include body
-                }
-            }
-
-            &__comment {
-                display: flex;
-                padding-left: 0px;
-                align-items: center;
-                gap: 24px;
-                align-self: stretch;
-
-                &__chat-icon {
-                    width: 24px;
-                    height: 24px;
-                    color: $grey_300;
-                }
-
-                &__trash-icon {
-                    width: 21px;
-                    height: 24px;
-                    flex-shrink: 0;
-                    color: $grey_400;
-                }
-
-                &__content {
-                    display: flex;
-                    padding: 24px;
-                    align-items: center;
-                    gap: 12px;
-                    flex: 1 0 0;
-
-                    &__info {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: flex-start;
-                        flex: 1 0 0;
-
-                        &__author {
-                            @include heading-3
-                        }
-
-                        &__comment {
-                            @include body
-                        }
-                    }
                 }
             }
         }
