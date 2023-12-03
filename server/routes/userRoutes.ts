@@ -98,8 +98,23 @@ router.put("/update/:id",async (req:Request, res: Response) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 
-  res.json()
+})
 
+router.delete("/delete/:id",async (req:Request, res: Response) => {
+  const { id } = req.params
+
+  try{
+    const user  = await prisma.user.delete({
+      where: {
+        id: id,
+      }
+    })
+    res.json(user)
+
+  }catch(error){
+    console.error("Error:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 })
 
 export default router;
