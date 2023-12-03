@@ -6,7 +6,11 @@ const router = express.Router();
 
 router.get("/", async (req: Request, res: Response) => {
   try {
-    const users = await prisma.user.findMany();
+    const users = await prisma.user.findMany({
+      orderBy: {
+        id: 'desc',
+      },
+    });
     res.json(users);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
