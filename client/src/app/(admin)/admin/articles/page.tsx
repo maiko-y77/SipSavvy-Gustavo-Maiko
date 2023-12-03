@@ -2,7 +2,6 @@ import "@/app/(admin)/admin/articles/articlelists.scss";
 import Tab from "@/components/Tab/Tab";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import AdminArticles from "@/components/AdminArticles/AdminArticles";
-import AdminCategories from "@/components/AdminCategories/AdminCategories";
 import { getArticles } from "@/lib/Articles/data";
 
 const BASE_CLASS = "articles";
@@ -61,12 +60,11 @@ const ArticleLists = async () => {
               </div>
             </div>
             <div className={`${BASE_CLASS}__container__left__categories`}>
-              <AdminCategories />
-              <AdminCategories />
-              <AdminCategories />
-              <AdminCategories />
-              <AdminCategories />
-              <AdminCategories />
+              <p className="category">Category</p>
+              <p className="category">Category</p>
+              <p className="category">Category</p>
+              <p className="category">Category</p>
+              <p className="category">Category</p>
             </div>
           </div>
         </div>

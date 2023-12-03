@@ -122,9 +122,16 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 6px;
+
+               .category{
+                    color: $neutrals_black;     
+                    /* Body */
+                    @include body
+                    /* 24px */
+                    }
+                
             }
         }
-
     }
 }
 
