@@ -11,9 +11,12 @@ router.get("/", async (req: Request, res: Response) => {
         include: {
           author: true,
         },
+<<<<<<< HEAD
         orderBy: {
           date_created: 'desc',
         },
+=======
+>>>>>>> main
       }
     );
     res.json(articles);

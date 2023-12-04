@@ -1,18 +1,27 @@
 "use client";
 import { signIn } from "next-auth/react";
 import React, { useRef } from "react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 const LoginForm = () => {
   const email = useRef("");
   const pass = useRef("");
 
+  // const router = useRouter()
+  const searchParams = useSearchParams();
+  const callBackUrl = searchParams.get("callbackUrl");
+
   const onSubmit = async () => {
-    const result = await signIn("credentials", {
-      email: email.current,
-      password: pass.current,
-      redirect: true,
-      callbackUrl: "/feed",
-    });
+    try {
+      const result = await signIn("credentials", {
+        email: email.current,
+        password: pass.current,
+        redirect: true,
+        callbackUrl: callBackUrl ? callBackUrl : "/feed",
+      });
+    } catch (error) {
+      console.error("Error during sign in:", error);
+    }
   };
 
   return (
