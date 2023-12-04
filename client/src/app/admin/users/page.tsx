@@ -1,6 +1,6 @@
 import Tab from "@/components/Tab/Tab";
 import Link from "next/link";
-import "@/app/(admin)/admin/users/users.scss";
+import "./users.scss";
 import { getUsers } from "@/lib/Users/data";
 import AdminUser from "@/components/AdminUser/AdminUser";
 
