@@ -4,6 +4,9 @@ import Link from "next/link";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import { User } from "@/lib/User/types";
 import SelectUserRole from "../SelectUserRole/SelectUserRole";
+import UserNameFormField from "./UserNameFormField/UserNameFormField";
+import UserLastNameFormField from "./UserLastNameFormField/UserLastNameFormField";
+import UserEmailFormField from "./UserEmailFormField/UserEmailFormField";
 
 type USersProps = {
   data: User[];
@@ -24,13 +27,10 @@ export default async function AdminUser({ data }: USersProps) {
                 <Avatar className="avatar" img={String(avatar)} />
               </Link>
 
-              <input value={name} type='text' className={`${BASE_CLASS}__item__content__name`} contentEditable={true} />
 
-              <span className={`${BASE_CLASS}__item__content__lastname`}>
-                {last_name}
-              </span>
-
-              <span className={`${BASE_CLASS}__item__content__email`}>{email}</span>
+              <UserNameFormField user={ { id, name } } />
+              <UserLastNameFormField user={ { id, last_name } } />
+              <UserEmailFormField user={ { id, email } } />
 
             </div>
 
