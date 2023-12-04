@@ -1,14 +1,14 @@
 "use client";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import "@/components/DropDown/dropDown.scss";
+import styles from "@/components/DropDown/dropDown.module.scss";
 import { useState } from "react";
 import Link from "next/link";
 
 const DropDown = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="container">
-      <div className="button" onClick={() => setIsOpen(!isOpen)}>
+    <div className={styles.container}>
+      <div className={styles.button} onClick={() => setIsOpen(!isOpen)}>
         Writer
         {!isOpen ? (
           <ChevronDownIcon width={24} height={24} />
@@ -18,8 +18,8 @@ const DropDown = () => {
       </div>
       {isOpen && (
         <div className={styles.dropdown}>
-          <Link href="#">Reader</Link>
-          <Link href="#">Admin</Link>
+          <Link href="/admin/dashboard">Reader</Link>
+          <Link href="/admin/users">Admin</Link>
         </div>
       )}
     </div>

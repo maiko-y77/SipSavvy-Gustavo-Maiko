@@ -6,6 +6,7 @@ import {
   EllipsisHorizontalIcon,
 } from "@heroicons/react/24/outline";
 import { User } from "@/lib/User/types";
+import DropDown from "@/components/DropDown/DropDown";
 
 type USersProps = {
   data: User[];
@@ -30,10 +31,11 @@ export default async function AdminUser({ data }: USersProps) {
               <span className={`${BASE_CLASS}__content__email`}>{email}</span>
             </div>
             <div className={`${BASE_CLASS}__actions`}>
-              <div className={`${BASE_CLASS}__actions__roles`}>
+              <DropDown />
+              {/* <div className={`${BASE_CLASS}__actions__roles`}>
                 <span className="role">Writer</span>
                 <ChevronDownIcon className="chevron-down" />
-              </div>
+              </div> */}
               <EllipsisHorizontalIcon className="ellipsis" />
             </div>
           </div>
