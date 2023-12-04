@@ -2,17 +2,18 @@ import "@/app/(admin)/admin/dashboard/dashboard.scss";
 import Tab from "@/components/Tab/Tab";
 import Link from "next/link";
 import AdminArticles from "@/components/AdminArticles/AdminArticles";
-import {
-  ChatBubbleOvalLeftEllipsisIcon,
-  UserIcon,
-  TrashIcon,
-} from "@heroicons/react/24/outline";
 import AdminRequests from "@/components/AdminRequests/AdminRequests";
 import AdminNewuser from "@/components/AdminNewuser/AdminNewuser";
+import { getArticles } from "@/lib/Articles/data";
+import AdminRecentComments from "@/components/AdminRecentComments/AdminRecentComments";
+import { getUsers } from "@/lib/Users/data"; // import the function to get users data
 
-const BASE_CLASS = "dashbord";
+const BASE_CLASS = "dashboard";
 
-const Dashbord = () => {
+const Dashboard = async () => {
+  const articles = await getArticles();
+  const users = await getUsers(); // get the users data
+
   return (
     <>
       <div className={`${BASE_CLASS}`}>
@@ -23,14 +24,14 @@ const Dashbord = () => {
                 <Tab text="Recent Articles" isActive={true} />
               </div>
               <div className={`${BASE_CLASS}__container__right__tabs-link`}>
-                <Link className="link" href="#">
+                <Link className="link" href={"/admin/articles"}>
                   See All
                 </Link>
               </div>
             </div>
-            <AdminArticles />
-            <AdminArticles />
-            <AdminArticles />
+            <AdminArticles data={articles} />
+            {/* <AdminArticles data={articles} />
+            <AdminArticles data={articles} /> */}
             <div className={`${BASE_CLASS}__container__right__tabs`}>
               <div className={`${BASE_CLASS}__container__right__tabs-tab`}>
                 <Tab text="Recent Comments" isActive={true} />
@@ -41,36 +42,8 @@ const Dashbord = () => {
                 </Link>
               </div>
             </div>
-            <AdminArticles />
-            <div className={`${BASE_CLASS}__container__right__comment`}>
-              <ChatBubbleOvalLeftEllipsisIcon
-                className={`${BASE_CLASS}__container__right__comment__chat-icon`}
-              />
-              <div
-                className={`${BASE_CLASS}__container__right__comment__content`}
-              >
-                <Link className="avatar icon" href="/">
-                  <UserIcon width={36} height={36} />
-                </Link>
-                <div
-                  className={`${BASE_CLASS}__container__right__comment__content__info`}
-                >
-                  <p
-                    className={`${BASE_CLASS}__container__right__comment__content__info__author`}
-                  >
-                    John Doe
-                  </p>
-                  <p
-                    className={`${BASE_CLASS}__container__right__comment__content__info__comment`}
-                  >
-                    The comment comes here
-                  </p>
-                </div>
-              </div>
-              <TrashIcon
-                className={`${BASE_CLASS}__container__right__comment__trash-icon`}
-              />
-            </div>
+            <AdminArticles data={articles} />
+            <AdminRecentComments />
           </div>
           <div className={`${BASE_CLASS}__container__left`}>
             <div className={`${BASE_CLASS}__container__left__tabs`}>
@@ -90,17 +63,13 @@ const Dashbord = () => {
                 <Tab text="New Users" isActive={true} />
               </div>
               <div className={`${BASE_CLASS}__container__left__tabs-link`}>
-                <Link className="link" href="#">
+                <Link className="link" href={"/admin/users"}>
                   See All
                 </Link>
               </div>
             </div>
             <div className={`${BASE_CLASS}__container__left__newuser`}>
-              <AdminNewuser />
-              <AdminNewuser />
-              <AdminNewuser />
-              <AdminNewuser />
-              <AdminNewuser />
+              <AdminNewuser data={users} />
             </div>
           </div>
         </div>
@@ -109,4 +78,4 @@ const Dashbord = () => {
   );
 };
 
-export default Dashbord;
+export default Dashboard;

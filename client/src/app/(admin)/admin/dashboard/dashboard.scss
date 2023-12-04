@@ -1,7 +1,7 @@
 @import "../../../../styles/mixins";
 @import "../../../../styles/variables";
 
-.dashbord {
+.dashboard {
     max-width: 1344px;
     margin: 0 auto;
     padding: 48px 0 48px;
@@ -10,20 +10,20 @@
         display: flex;
         gap: 24px;
         justify-content: center;
-        align-items: flex-start;   
+        align-items: flex-start;
 
-        &__right{
+        &__right {
             width: 888px;
-            height: 907px;    
-            
-            &__tabs{
+            height: 907px;
+
+            &__tabs {
                 display: flex;
                 width: 888px;
                 justify-content: space-between;
-                align-items: center;  
+                align-items: center;
             }
 
-            &__tabs-tab{
+            &__tabs-tab {
                 display: flex;
                 padding: 8px 16px;
                 flex-direction: column;
@@ -31,13 +31,13 @@
                 align-items: center;
                 gap: 8px;
 
-                Tab{
+                Tab {
                     color: $grey_500;
                     @include body
                 }
             }
 
-            &__tabs-link{
+            &__tabs-link {
                 display: flex;
                 width: 173px;
                 padding: 8px 16px;
@@ -46,68 +46,28 @@
                 gap: 12px;
                 flex-shrink: 0;
 
-                .link{
+                .link {
                     color: $grey_400;
-                    @include body
-                }
-            }
+                    @include body;
+                    transition: all 0.3s ease-out;
 
-            &__comment{
-                display: flex;
-                padding-left: 0px;
-                align-items: center;
-                gap: 24px;
-                align-self: stretch;
-
-                &__chat-icon{
-                    width: 24px;
-                    height: 24px;
-                    color: $grey_300;
-                }
-
-                &__trash-icon{
-                    width: 21px;
-                    height: 24px;
-                    flex-shrink: 0;
-                    color: $grey_400;
-                }
-
-                &__content{
-                    display: flex;
-                    padding: 24px;
-                    align-items: center;
-                    gap: 12px;
-                    flex: 1 0 0;
-
-                    &__info{
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: flex-start;
-                        flex: 1 0 0;
-
-                        &__author{
-                            @include heading-3
-                        }
-
-                        &__comment{
-                            @include body
-                        }
+                    &:hover{
+                        color: $primary;
                     }
                 }
             }
         }
 
-        &__left{
+        &__left {
             width: auto;
 
-            &__tabs{
+            &__tabs {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
             }
-    
-            &__tabs-tab{
+
+            &__tabs-tab {
                 display: flex;
                 padding: 8px 16px;
                 flex-direction: column;
@@ -115,12 +75,13 @@
                 align-items: center;
                 gap: 8px;
 
-                Tab{
+                Tab {
                     color: $grey_500;
                     @include body
                 }
             }
-            &__tabs-link{
+
+            &__tabs-link {
                 display: flex;
                 width: 173px;
                 padding: 8px 16px;
@@ -128,13 +89,18 @@
                 align-items: center;
                 gap: 12px;
 
-                .link{
+                .link {
                     color: $grey_400;
-                    @include body
+                    @include body;
+                    transition: all 0.3s ease-out;
+
+                    &:hover{
+                        color: $primary;
+                    }
                 }
             }
 
-            &__newuser{
+            &__newuser {
                 display: flex;
                 padding: 8px;
                 justify-content: center;
@@ -144,6 +110,6 @@
                 flex-wrap: wrap;
             }
         }
-    
+
     }
 }
