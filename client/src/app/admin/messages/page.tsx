@@ -1,4 +1,4 @@
-import "@/app/(admin)/admin/messages/messages.scss"
+import "./messages.scss"
 import Tab from "@/components/Tab/Tab";
 import {
     ArrowUturnLeftIcon,
