@@ -48,7 +48,16 @@
                 padding-left: 17px;
                 align-items: center;
                 justify-content: center;
+                list-style:none;
+
+              
             }
+
+            .filters  a:hover {
+                color: $primary;
+              }
+
+           
         }
     }
 }

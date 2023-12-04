@@ -19,23 +19,21 @@ const page = async () => {
             </div>
             <div className={`${BASE_CLASS}__container__tabs-link`}>
               <div className="filter">
-                <Link className="filter" href="#">
-                  Filters
-                </Link>
+                <p className="filter">Filters</p>
               </div>
-              <div className="filters">
-                <div className="filters__all">
-                  <Tab text="All" isActive={true} />
-                </div>
-                <span>|</span>
-                <Link className="writers" href="#">
-                  Writers
-                </Link>
-                <span>|</span>
-                <Link className="readers" href="#">
-                  Readers
-                </Link>
-              </div>
+              <ul className="filters">
+                <li>
+                  <Link href="#">All</Link>
+                </li>
+                <span>&nbsp;|&nbsp;</span>
+                <li>
+                  <Link href="#">Writers</Link>
+                </li>
+                <span>&nbsp;|&nbsp;</span>
+                <li>
+                  <Link href="#">Readers</Link>
+                </li>
+              </ul>
             </div>
           </div>
           <AdminUser data={users} />
