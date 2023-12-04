@@ -27,11 +27,6 @@
             justify-content: center;
             align-items: center;
             gap: 8px;
-
-            Tab {
-                color: $grey_500;
-                @include body
-            }
         }
 
         &__tabs-link {
@@ -56,9 +51,18 @@
 
             .filters  a:hover {
                 color: $primary;
-              }
+            }
 
-           
+            .filters li{
+                transition: $transition;
+            }
+
+            .filters li.active{
+                transition: $transition;
+                color: $neutrals_black;
+                font-weight: 700;
+                border-bottom: solid 1px $grey_400;
+            }
         }
     }
 }

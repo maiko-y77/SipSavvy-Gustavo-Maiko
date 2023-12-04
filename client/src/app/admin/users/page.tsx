@@ -1,14 +1,14 @@
 import Tab from "@/components/Tab/Tab";
-import Link from "next/link";
+import { useSearchParams } from 'next/navigation'
 import "./users.scss";
 import { getUsers } from "@/lib/Users/data";
 import AdminUser from "@/components/AdminUser/AdminUser";
+import AdminUserFilter from "@/components/AdminUserFilter/AdminUserFilter";
 
 const BASE_CLASS = "users";
 
 const page = async () => {
   const users = await getUsers();
-
   return (
     <>
       <div className={`${BASE_CLASS}`}>
@@ -21,19 +21,7 @@ const page = async () => {
               <div className="filter">
                 <p className="filter">Filters</p>
               </div>
-              <ul className="filters">
-                <li>
-                  <Link href="#">All</Link>
-                </li>
-                <span>&nbsp;|&nbsp;</span>
-                <li>
-                  <Link href="#">Writers</Link>
-                </li>
-                <span>&nbsp;|&nbsp;</span>
-                <li>
-                  <Link href="#">Readers</Link>
-                </li>
-              </ul>
+              <AdminUserFilter />
             </div>
           </div>
           <AdminUser data={users} />

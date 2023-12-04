@@ -1,3 +1,4 @@
+"use client"
 import Avatar from "../Avatar/Avatar";
 import "@/components/AdminUser/adminUser.scss";
 import Link from "next/link";
@@ -7,6 +8,7 @@ import SelectUserRole from "../SelectUserRole/SelectUserRole";
 import UserNameFormField from "./UserNameFormField/UserNameFormField";
 import UserLastNameFormField from "./UserLastNameFormField/UserLastNameFormField";
 import UserEmailFormField from "./UserEmailFormField/UserEmailFormField";
+import { useSearchParams } from 'next/navigation'
 
 type USersProps = {
   data: User[];
@@ -14,10 +16,18 @@ type USersProps = {
 
 const BASE_CLASS = "user";
 
-export default async function AdminUser({ data }: USersProps) {
+export default function AdminUser({ data }: USersProps) {
+
+  const searchParams = useSearchParams()
+  const searchRole = searchParams.get('role')
+
+  const filteredUsers = data.filter(user => {
+    return !searchRole || user.role === searchRole;
+  });
+
   return (
     <div className={`${BASE_CLASS}`}>
-      {data.map(({ id, avatar, name, last_name, email, role }) => (
+      {filteredUsers.map(({ id, avatar, name, last_name, email, role }) => (
         
           <div key={id} className={`${BASE_CLASS}__item`}>
 
