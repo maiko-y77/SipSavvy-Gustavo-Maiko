@@ -6,5 +6,6 @@ export type User = {
     last_name: string;
     email: string;
     avatar: String;
+    role: String;
     Articles: Article[]
 }

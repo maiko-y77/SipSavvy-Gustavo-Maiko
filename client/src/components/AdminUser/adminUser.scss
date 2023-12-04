@@ -25,7 +25,8 @@
 
         &__name {
             width: 250px;
-            @include body
+            @include body;
+            flex: 0.8;
         }
 
         &__lastname {
@@ -72,11 +73,11 @@
 
         .ellipsis {
             display: flex;
-            padding: 6px;
             justify-content: center;
             align-items: center;
             gap: 12px;
-            color: $grey_300;
+            color: $grey_400;
+            cursor: pointer;
         }
 
     }
