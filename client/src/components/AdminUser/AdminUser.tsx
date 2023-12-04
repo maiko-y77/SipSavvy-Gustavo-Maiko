@@ -24,7 +24,7 @@ export default async function AdminUser({ data }: USersProps) {
                 <Avatar className="avatar" img={String(avatar)} />
               </Link>
 
-              <span className={`${BASE_CLASS}__item__content__name`}>{name}</span>
+              <input value={name} type='text' className={`${BASE_CLASS}__item__content__name`} contentEditable={true} />
 
               <span className={`${BASE_CLASS}__item__content__lastname`}>
                 {last_name}

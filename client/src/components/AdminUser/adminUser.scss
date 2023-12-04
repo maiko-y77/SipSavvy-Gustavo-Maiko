@@ -38,6 +38,17 @@
             &__name{
                 width: 10%;
                 flex-grow: 1;
+                border: 0 !important;
+                outline: 0;
+                padding-inline: 0 !important;
+                color: $neutrals_black !important;
+
+                // font
+                font-family: Montserrat;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
             }
 
             &__lastname{
