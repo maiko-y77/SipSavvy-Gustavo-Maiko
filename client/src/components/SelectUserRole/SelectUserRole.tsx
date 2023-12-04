@@ -30,7 +30,7 @@ const SelectUserRole: React.FC<SelectUserRoleProps> = ({ user }) => {
   };
 
   return (
-    <select value={`${selectedRole}`} onChange={handleRoleChange}>
+    <select className={styles.select} value={`${selectedRole}`} onChange={handleRoleChange}>
       <option value={`${role}`}>{role}</option>
       {role === "admin" ? null : <option value={'admin'}>admin</option>}
       {role === "writer" ? null : <option value={'writer'}>writer</option>}

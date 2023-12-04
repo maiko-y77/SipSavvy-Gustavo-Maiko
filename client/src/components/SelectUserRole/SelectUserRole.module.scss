@@ -1,3 +1,21 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
+.select{
+    width: 88px;
+    outline: none;
+    border: none;
+    color: $neutrals_black;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    text-transform: capitalize;
+    transition: $transition;
+    cursor: pointer;
+
+    &:hover{
+        color: $primary;
+    }
+}
