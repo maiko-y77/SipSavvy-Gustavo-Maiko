@@ -8,7 +8,10 @@ import SelectUserRole from "../SelectUserRole/SelectUserRole";
 import UserNameFormField from "./UserNameFormField/UserNameFormField";
 import UserLastNameFormField from "./UserLastNameFormField/UserLastNameFormField";
 import UserEmailFormField from "./UserEmailFormField/UserEmailFormField";
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useState, useEffect } from "react";
+import ConfirmationDialog from "../ConfirmationDialog/ConfirmationDialog";
+import axios from "axios";
 
 type USersProps = {
   data: User[];
@@ -24,6 +27,34 @@ export default function AdminUser({ data }: USersProps) {
   const filteredUsers = data.filter(user => {
     return !searchRole || user.role === searchRole;
   });
+
+  const router = useRouter();
+  
+  const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
+  const [isConfirmationDialogOpen, setConfirmationDialogOpen] = useState<boolean>(false);
+
+  const handleDeleteUser = (userId: string) => {
+    setSelectedUserId(userId);
+    setConfirmationDialogOpen(true);
+  };
+
+  const handleConfirmDelete = async () => {
+    setSelectedUserId(selectedUserId)
+    try{
+      const response = await axios.delete(`http://localhost:3001/users/delete/${selectedUserId}`)
+      console.log('User deleted successfully', response.data);
+      router.refresh()
+      setSelectedUserId(null);
+      setConfirmationDialogOpen(false);
+    }catch(error){
+        console.error('Error deleting user', error);
+    }
+  }
+
+  const handleCancelDelete = () => {
+    setSelectedUserId(null);
+    setConfirmationDialogOpen(false);
+  };
 
   return (
     <div className={`${BASE_CLASS}`}>
@@ -46,9 +77,13 @@ export default function AdminUser({ data }: USersProps) {
 
             <div className={`${BASE_CLASS}__item__actions`}>
               <SelectUserRole user={{ id, role }} />
-              <TrashIcon width={24} height={24} className="ellipsis" />
+              <TrashIcon width={24} height={24} className="ellipsis" onClick={() => handleDeleteUser(id)} />
             </div>
 
+            <ConfirmationDialog 
+              isOpen={isConfirmationDialogOpen} 
+              onCancel={handleCancelDelete} 
+              onConfirm={handleConfirmDelete}  />
           </div>
 
       ))}
