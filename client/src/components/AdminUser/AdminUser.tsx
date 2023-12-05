@@ -1,12 +1,14 @@
+"use client"
 import Avatar from "../Avatar/Avatar";
 import "@/components/AdminUser/adminUser.scss";
 import Link from "next/link";
-import {
-  ChevronDownIcon,
-  EllipsisHorizontalIcon,
-} from "@heroicons/react/24/outline";
+import { TrashIcon } from "@heroicons/react/24/outline";
 import { User } from "@/lib/User/types";
-import DropDown from "@/components/DropDown/DropDown";
+import SelectUserRole from "../SelectUserRole/SelectUserRole";
+import UserNameFormField from "./UserNameFormField/UserNameFormField";
+import UserLastNameFormField from "./UserLastNameFormField/UserLastNameFormField";
+import UserEmailFormField from "./UserEmailFormField/UserEmailFormField";
+import { useSearchParams } from 'next/navigation'
 
 type USersProps = {
   data: User[];
@@ -14,32 +16,41 @@ type USersProps = {
 
 const BASE_CLASS = "user";
 
-export default async function AdminUser({ data }: USersProps) {
+export default function AdminUser({ data }: USersProps) {
+
+  const searchParams = useSearchParams()
+  const searchRole = searchParams.get('role')
+
+  const filteredUsers = data.filter(user => {
+    return !searchRole || user.role === searchRole;
+  });
+
   return (
     <div className={`${BASE_CLASS}`}>
-      {data.map(({ id, avatar, name, last_name, email }) => (
-        <div key={id}>
-          <div className={`${BASE_CLASS}__item`}>
-            <div className={`${BASE_CLASS}__content`}>
-              <Link className="avatar icon" href="/">
+      {filteredUsers.map(({ id, avatar, name, last_name, email, role }) => (
+        
+          <div key={id} className={`${BASE_CLASS}__item`}>
+
+            <div className={`${BASE_CLASS}__item__content`}>
+
+              <Link className="avatar icon" href={`/writers/${id}`} target="_blank">
                 <Avatar className="avatar" img={String(avatar)} />
               </Link>
-              <span className={`${BASE_CLASS}__content__name`}>{name}</span>
-              <span className={`${BASE_CLASS}__content__lastname`}>
-                {last_name}
-              </span>
-              <span className={`${BASE_CLASS}__content__email`}>{email}</span>
+
+
+              <UserNameFormField user={ { id, name } } />
+              <UserLastNameFormField user={ { id, last_name } } />
+              <UserEmailFormField user={ { id, email } } />
+
             </div>
-            <div className={`${BASE_CLASS}__actions`}>
-              <DropDown />
-              {/* <div className={`${BASE_CLASS}__actions__roles`}>
-                <span className="role">Writer</span>
-                <ChevronDownIcon className="chevron-down" />
-              </div> */}
-              <EllipsisHorizontalIcon className="ellipsis" />
+
+            <div className={`${BASE_CLASS}__item__actions`}>
+              <SelectUserRole user={{ id, role }} />
+              <TrashIcon width={24} height={24} className="ellipsis" />
             </div>
+
           </div>
-        </div>
+
       ))}
     </div>
   );
