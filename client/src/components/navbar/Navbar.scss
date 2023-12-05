@@ -29,12 +29,11 @@
       a:hover {
         color: $primary;
       }
-  
-      /* 24px */
-  
-      div {
-        @include primary_btn
-      }
+    }
+
+    .primary-btn {
+      @include primary_btn;
+      margin-left: 24px;
     }
   
     .user-writer-admin-navbar {
