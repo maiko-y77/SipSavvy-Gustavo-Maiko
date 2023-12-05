@@ -17,10 +17,9 @@ interface ArticlesProps {
       avatar?: string;
     };
   }[];
-  key: string;
 }
 
-const Articles: React.FC<ArticlesProps> = ({ data, key }) => {
+const Articles: React.FC<ArticlesProps> = ({ data }) => {
   return (
     <div className="article-item">
       {data.map((article) => (
