@@ -17,9 +17,9 @@
         width: 100%;
         justify-content: space-between;
 
-        &__content{
+        &__content {
             align-items: center;
-            gap: 24px; 
+            gap: 24px;
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -30,12 +30,12 @@
                 flex-grow: 0;
                 border-radius: 50%;
 
-                img{
+                img {
                     object-fit: cover;
                 }
             }
 
-            &__name{
+            &__name {
                 width: 10%;
                 flex-grow: 1;
                 border: 0 !important;
@@ -50,12 +50,12 @@
                 font-weight: 400;
                 line-height: 150%;
 
-                &:focus{
+                &:focus {
                     border-bottom: solid 1px $primary;
                 }
             }
 
-            &__lastname{
+            &__lastname {
                 width: 10%;
                 flex-grow: 1;
                 border: 0 !important;
@@ -71,7 +71,7 @@
                 line-height: 150%;
             }
 
-            &__email{
+            &__email {
                 width: 20%;
                 flex-grow: 1;
 
@@ -92,89 +92,25 @@
 
         }
 
-        &__actions{
+        &__actions {
             display: flex;
             width: 200px;
             gap: 12px;
             justify-content: space-between;
         }
     }
+}
+.ellipsis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: $grey_400;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+        color: $primary;
+    }
 
 }
-
-    
-
-
-
-
-.ellipsis {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            color: $grey_400;
-            cursor: pointer;
-            transition: $transition;
-
-            &:hover{
-                color: $primary;
-            }
-
-        }
-
-        // &__content {
-            //     display: flex;
-            //     align-items: center;
-            //     gap: 24px;
-            //     flex: 1 0 0;
-            //     width: 1096px;
-        
-            //     &__name {
-            //         width: 250px;
-            //         @include body;
-            //         flex: 0.8;
-            //     }
-        
-            //     &__lastname {
-            //         width: 350px;
-            //         @include body
-            //     }
-        
-            //     &__email {
-            //         width: auto;
-            //         @include body
-            //     }
-            // }
-        
-            // &__actions {
-            //     display: flex;
-            //     width: 200px;
-            //     justify-content: space-between;
-            //     align-items: center;
-        
-            //     &__roles {
-            //         display: flex;
-            //         padding: 24px;
-            //         align-items: center;
-            //         align-self: stretch;
-        
-            //         .role {
-            //             color: $neutrals_black;
-            //             /* Body Bold */
-            //             font-family: Montserrat;
-            //             font-size: 16px;
-            //             font-style: normal;
-            //             font-weight: 700;
-            //             line-height: 150%;
-            //             /* 24px */
-            //         }
-        
-            //         .chevron-down {
-            //             color: $neutrals_black;
-            //             width: 16px;
-            //             height: 8px;
-            //             padding-left: 24;
-            //         }
-            //     }
-        
-            // }
