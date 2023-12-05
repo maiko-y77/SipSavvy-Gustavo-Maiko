@@ -1,9 +1,9 @@
-import Tab from "@/components/Tab/Tab";
+import Tab from "../../../components/Tab/Tab";
 import { useSearchParams } from 'next/navigation'
 import "./users.scss";
 import { getUsers } from "@/lib/Users/data";
-import AdminUser from "@/components/AdminUser/AdminUser";
-import AdminUserFilter from "@/components/AdminUserFilter/AdminUserFilter";
+import AdminUser from "../../../components/AdminUser/AdminUser";
+import AdminUserFilter from "../../../components/AdminUserFilter/AdminUserFilter";
 
 const BASE_CLASS = "users";
 

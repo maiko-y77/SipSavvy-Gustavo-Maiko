@@ -1,5 +1,5 @@
 import "./messages.scss"
-import Tab from "@/components/Tab/Tab";
+import Tab from "../../../components/Tab/Tab";
 import {
     ArrowUturnLeftIcon,
     EnvelopeIcon,
