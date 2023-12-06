@@ -28,7 +28,7 @@ export default function DashboardLayout({
           </Link>
         </div>
 
-        <div className={styles.articlesList}>{children}</div>
+        <div className={styles.frame}>{children}</div>
 
       </div>
 
