@@ -16,22 +16,7 @@ const page = async () => {
           <Tab text="Following" isActive={false} />
         </div> */}
         <div className="articles-list">
-          {articles.map((data) => (
-            <Articles
-              key={data.id}
-              data={
-                [{
-                id: data.id,
-                title: data.title,
-                content: data.content,
-                coverImg: data.cover_img,
-                author: {
-                  name: data.author?.name,
-                  avatar: data.author?.avatar,
-                },
-              }]}
-            />
-          ))}
+            <Articles data={articles} />
         </div>
       </div>
       <div className="sidebar">

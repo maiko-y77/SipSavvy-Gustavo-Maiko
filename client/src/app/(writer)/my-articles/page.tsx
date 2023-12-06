@@ -1,6 +1,6 @@
 import Tab from "@/components/Tab/Tab";
 import styles from "./MyArticles.module.scss";
-import MyArticlesItem from "@/components/MyArticlesItem/MyArticlesItem";
+import MyArticlesItem from "../../../components/MyArticlesItem/MyArticlesItem";
 import Link from "next/link";
 
 const MyArticles = () => {

@@ -49,7 +49,12 @@ export default async function Navbar() {
         )}
       </div>
 
-      {data ? <LogoutBtn /> : <Link href="/login">Login</Link>}
+      {data ? <LogoutBtn /> : (
+      <>
+        <Link href="/login">Login</Link>
+        <Link href="/register" className="primary-btn">Register</Link>
+      </>
+      )}
     </header>
   );
 }

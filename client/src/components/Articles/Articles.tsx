@@ -5,6 +5,7 @@ import { Article } from "@/lib/Article/types";
 import "@/components/Articles/articles.scss";
 import Avatar from "../Avatar/Avatar";
 import Image from "next/image";
+import DOMPurify from "dompurify";
 
 interface ArticlesProps {
   data: {
@@ -17,10 +18,9 @@ interface ArticlesProps {
       avatar?: string;
     };
   }[];
-  key: string;
 }
 
-const Articles: React.FC<ArticlesProps> = ({ data, key }) => {
+const Articles: React.FC<ArticlesProps> = ({ data }) => {
   return (
     <div className="article-item">
       {data.map((article) => (
@@ -33,7 +33,7 @@ const Articles: React.FC<ArticlesProps> = ({ data, key }) => {
             <h3 className="article-title">
               <Link href={`/articles/${article.id}`}>{article.title}</Link>
             </h3>
-            <p>{article.content}</p>
+            <p dangerouslySetInnerHTML={{__html: article.content}}></p>
             <div className="action-bar">
               <Link href={`/articles/${article.id}`}>
                 Continue Reading <ArrowLongRightIcon width={24} height={24} />
