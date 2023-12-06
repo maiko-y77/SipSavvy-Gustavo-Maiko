@@ -7,12 +7,13 @@ import Link from "next/link";
 
 type ArticlesProps = {
   data: Article[];
+  status: string
 };
 
-const MyArticlesItem = ({ data }: ArticlesProps) => {
+const MyArticlesItem = ({ data , status }: ArticlesProps) => {
   const session = useSession();
   const filteredData: Article[] = data.filter(
-    (article) => article.author.id === session.data?.user.id && article.status === 'published'
+    (article) => article.author.id === session.data?.user.id && article.status === status
   );
 
   return (

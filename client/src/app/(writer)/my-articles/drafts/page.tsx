@@ -1,9 +1,10 @@
-import React from 'react'
+import MyArticlesItem from "@/components/MyArticlesItem/MyArticlesItem";
+import { getArticles } from "@/lib/Articles/data";
+import React from "react";
 
-const Drafts = () => {
-  return (
-    <div>Drafts</div>
-  )
-}
+const Drafts = async () => {
+  const articles = await getArticles();
+  return <MyArticlesItem data={articles} status="draft" />;
+};
 
-export default Drafts
+export default Drafts;

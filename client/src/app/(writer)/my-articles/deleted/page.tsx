@@ -1,8 +1,10 @@
+import MyArticlesItem from "@/components/MyArticlesItem/MyArticlesItem";
+import { getArticles } from "@/lib/Articles/data";
+import React from "react";
 
-const Deleted = () => {
-  return (
-    <div>Deleted</div>
-  )
-}
+const Deleted = async () => {
+  const articles = await getArticles();
+  return <MyArticlesItem data={articles} status="deleted" />;
+};
 
-export default Deleted
+export default Deleted;
