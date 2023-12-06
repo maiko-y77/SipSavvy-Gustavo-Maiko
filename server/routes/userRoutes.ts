@@ -57,7 +57,7 @@ router.get("/check/:email", async (req: Request, res: Response) => {
 });
 
 router.post("/new", async (req: Request, res: Response) => {
-  const data = req.body;
+  const data = req.body.data;
 
   try {
     const user = await prisma.user.create({
@@ -73,15 +73,13 @@ router.post("/new", async (req: Request, res: Response) => {
         followers: [],
         following: [],
       },
-    });
-    console.log(user);
+    })
     res.json(user);
+    console.log(user);
   } catch (error) {
     console.error("Error:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
-
-  res.json(data);
 });
 
 router.put("/update/:id",async (req:Request, res: Response) => {
