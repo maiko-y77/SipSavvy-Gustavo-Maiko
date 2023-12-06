@@ -1,2 +1,45 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
+
+.container {
+    width: 100%;
+    max-width: 1344px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-block: 48px;
+    gap: 24px;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+
+        .tabBar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            gap: 24px;
+
+            div {
+                transition: $transition;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+
+            .newArticleBtn {
+                @include primary-btn;
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+
+    .sidebar {
+        width: 432px;
+    }
+}
