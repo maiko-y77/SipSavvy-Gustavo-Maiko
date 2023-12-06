@@ -15,13 +15,13 @@ export default function DashboardLayout({
 
         <div className={styles.tabBar}>
           <Link href="/my-articles">
-            <Tab text="My Articles" isActive={true} />
+            <Tab text="My Articles" path="/my-articles" />
           </Link>
           <Link href="/my-articles/drafts">
-            <Tab text="My Drafts" isActive={false} />
+            <Tab text="My Drafts" path="/my-articles/drafts" />
           </Link>
           <Link href="/my-articles/deleted">
-            <Tab text="Deleted" isActive={false} />
+            <Tab text="Deleted" path="/my-articles/deleted" />
           </Link>
           <Link href="/editor/new" className={styles.newArticleBtn}>
             New Article
