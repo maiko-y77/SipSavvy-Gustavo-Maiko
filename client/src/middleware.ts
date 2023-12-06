@@ -37,7 +37,12 @@ export const config = {
     "/users",
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "/writer/[id]", */
+=======
+    "/writer/[id]",
+    "/editor/:path*"
+>>>>>>> Stashed changes
 =======
     "/writer/[id]",
     "/editor/:path*"
