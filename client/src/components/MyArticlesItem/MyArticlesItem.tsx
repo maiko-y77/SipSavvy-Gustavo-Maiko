@@ -1,13 +1,28 @@
-"use client"
-import './MyArticlesItem.module.scss'
-import { getArticles } from '@/lib/Articles/data'
+"use client";
+import { options } from "@/app/api/auth/[...nextauth]/options";
+import styles from "./MyArticlesItem.module.scss";
+import { Article } from "@/lib/Article/types";
+import { useSession } from "next-auth/react";
 
-const MyArticlesItem = () => {
+type ArticlesProps = {
+  data: Article[];
+};
 
-  const articles = getArticles();
-  console.log(articles)
-  
-  return <div className='test'>Vamos la</div>
-}
+const MyArticlesItem = ({ data }: ArticlesProps) => {
+  const session = useSession();
+  const filteredData: Article[] = data.filter(
+    (article) => article.author.id === session.data?.user.id
+  );
 
-export default MyArticlesItem
+  return (
+    <div className={styles.articlesList}>
+      {filteredData.map((article) => (
+        <div key={article.id} className={styles.articleItem}>
+          {article.author.name}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default MyArticlesItem;

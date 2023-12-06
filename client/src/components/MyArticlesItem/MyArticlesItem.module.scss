@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.articlesList {
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .articleItem {
+        width: 100%;
+        border: solid 1px red;
+
+        
+
+    }
+}
