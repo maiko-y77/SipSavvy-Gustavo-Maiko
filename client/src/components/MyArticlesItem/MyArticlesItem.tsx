@@ -4,6 +4,7 @@ import styles from "./MyArticlesItem.module.scss";
 import { Article } from "@/lib/Article/types";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 type ArticlesProps = {
   data: Article[];
@@ -21,7 +22,11 @@ const MyArticlesItem = ({ data , status }: ArticlesProps) => {
       {filteredData.map((article) => (
         <div key={article.id} className={styles.articleItem}>
           <div className={styles.title}>
-            {article.title}
+            {article.title} {status === "draft" && <em>[draft]</em>}
+          </div>
+          <div className={styles.actions}>
+            <Link href="" className="icon"><PencilSquareIcon width={24} height={24} /></Link>
+            <Link href="" className="icon"><TrashIcon width={24} height={24} /></Link>
           </div>
         </div>
       ))}

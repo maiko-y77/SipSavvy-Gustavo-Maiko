@@ -11,6 +11,10 @@
         width: 100%;
         padding: 24px;
         border-bottom: solid 1px $grey_300;
+        display: flex;
+        gap: 24px;
+        justify-content: space-between;
+        align-items: center;
 
         .title {
             color: $neutrals_black;
@@ -19,6 +23,22 @@
             font-style: normal;
             font-weight: 400;
             line-height: 150%;
+            vertical-align: center;
+            display: flex;
+
+            em{
+                margin-left: 6px;
+                font-size: 14px;
+                color: $grey_400;
+                letter-spacing: 1px;
+                font-family: $Montserrat;
+                font-weight: 300;
+            }
+        }
+
+        .actions{
+            display: flex;
+            gap: 24px;
         }
     }
 
