@@ -43,6 +43,19 @@ router.get("/:id", async (req: Request, res: Response) => {
   }
 });
 
+router.get("/check/:email", async (req: Request, res: Response) => {
+  const { email } = req.params;
+  try {
+    const user = await prisma.user.findUnique({
+      where: { email: String(email) },
+    });
+    res.json(user);
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 router.post("/new", async (req: Request, res: Response) => {
   const data = req.body;
 
