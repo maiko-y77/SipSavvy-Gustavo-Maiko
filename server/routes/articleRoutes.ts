@@ -44,24 +44,23 @@ router.get("/:id", async (req: Request, res: Response) => {
 });
 
 router.post("/", async (req: Request, res: Response) => {
-  const { title, content, status, cover_img, authorId } = req.body;
+  const { title, content, status, cover_img, authorId, slug } = req.body;
+  // function slugify({ str }: { str: String }) {
+  //   return str
+  //      .toLowerCase()
+  //      .trim()
+  //      .replace(/[^\w\s-]/g, "")
+  //      .replace(/[\s_-]+/g, "-")
+  //      .replace(/^-+|-+$/g, "");
+  //  }
+  // const slug = slugify(title);
   try {
-    function slugify({ str }: { str: String }) {
-       return str
-          .toLowerCase()
-          .trim()
-          .replace(/[^\w\s-]/g, "")
-          .replace(/[\s_-]+/g, "-")
-          .replace(/^-+|-+$/g, "");
-      }
-      const slug = slugify(title);
     const newArticle = await prisma.article.create({
         data: {
-            title,
-            content,
-            status,
-            cover_img,
-            authorId,
+            title: title,
+            content: content,
+            status: status,
+            cover_img: cover_img,
             author: {
               connect: {
                 id: authorId,
@@ -70,9 +69,10 @@ router.post("/", async (req: Request, res: Response) => {
             slug,
         }
     });
-
+    console.log(newArticle)
     res.json(newArticle);
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: "Internal Server Error" });
   }
 });

@@ -8,6 +8,12 @@ export default withAuth(
       req.nextauth.token?.role !== "admin"
     )
       return NextResponse.redirect(new URL("/feed", req.url));
+      
+      if (
+        req.nextUrl.pathname.startsWith("/editor") &&
+        req.nextauth.token?.role !== "writer"
+      )
+        return NextResponse.redirect(new URL("/feed", req.url));
   },
   {
     callbacks: {

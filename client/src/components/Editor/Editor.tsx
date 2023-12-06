@@ -15,6 +15,8 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "../../../utils/firebase";
+import axios from "axios";
+import { getSession } from "next-auth/react";
 
 const storage = getStorage(app);
 
@@ -67,14 +69,32 @@ const ArticleEditor = () => {
       .replace(/^-+|-+$/g, "");
 
   const handleSubmit = async () => {
-    const res = await fetch("http://localhost:3001/articles/", {
-      method: "POST",
-      body: JSON.stringify({
-        title,
-        desc: value,
-        img: media,
-        slug: slugify(title),
-      }),
+    const session = await getSession();
+    const authorId = session?.user?.id || "";
+    const res = await axios.post("http://localhost:3001/articles/", {
+      // body: JSON.stringify({
+      authorId: authorId,
+      status: "published",
+      title: title,
+      content: value,
+      cover_img: media,
+      slug: slugify(title),
+      // }),
+    });
+
+    console.log(res);
+  };
+
+  const handleDraft = async () => {
+    const session = await getSession();
+    const authorId = session?.user?.id || "";
+    const res = await axios.post("http://localhost:3001/articles/", {
+      authorId: authorId,
+      status: "draft",
+      title: title,
+      content: value,
+      cover_img: media,
+      slug: slugify(title),
     });
 
     console.log(res);
@@ -108,7 +128,9 @@ const ArticleEditor = () => {
           }
         </div>
         <div>
-          <button className={styles.saveDraftButton}>Save Draft</button>
+          <button className={styles.saveDraftButton} onClick={handleDraft}>
+            Save Draft
+          </button>
           <button className={styles.publishButton} onClick={handleSubmit}>
             Publish
           </button>

@@ -21,6 +21,7 @@ export default async function Navbar() {
         <Link href={data ? "/feed" : "/"}>Home</Link>
         {userRole === "writer" && (
           <>
+          <Link href={`/editor/new`}>Write</Link>
           <Link href={`/writers/${data?.user.id}`}>My Profile</Link>
           <Link href="/my-articles">My Articles</Link>
           </>
