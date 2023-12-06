@@ -5,6 +5,7 @@ export type Article = {
     cover_img?: string;
     date_created: string;
     authorId: string;
+    status: string;
     author: {
         id: string;
         name: string;

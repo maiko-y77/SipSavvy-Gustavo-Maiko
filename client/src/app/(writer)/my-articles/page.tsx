@@ -1,26 +1,9 @@
-import Tab from "@/components/Tab/Tab";
-import styles from "./MyArticles.module.scss";
 import MyArticlesItem from "../../../components/MyArticlesItem/MyArticlesItem";
-import Link from "next/link";
+import { getArticles } from "@/lib/Articles/data";
 
-const MyArticles = () => {
-  return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        
-        <div className="tab-bar">
-          <Tab text="My Articles" isActive={true} />
-          <Tab text="My Drafts" isActive={false} />
-          <Link href="/editor/new" className={styles.newArticleBtn}>New Article</Link>
-        </div>
-
-        <div className={styles.articlesList}>
-          <MyArticlesItem />
-        </div>
-      </div>
-      <div className={styles.sidebar}>Sidebar</div>
-    </div>
-  );
+const MyArticles = async () => {
+  const articles = await getArticles();
+  return <MyArticlesItem data={articles} status="published"/>;
 };
 
 export default MyArticles;

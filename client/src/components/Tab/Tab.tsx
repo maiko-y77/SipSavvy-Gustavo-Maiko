@@ -1,8 +1,9 @@
-const Tab = ({ text, isActive } : { text: string, isActive: boolean }) => {
-    
-    return (
-            <div className={`tab ${isActive ? 'active' : ''}`}>{text}</div>
-    );
-}
+"use client";
+import { usePathname } from "next/navigation";
+
+const Tab = ({ text, path }: { text: string; path: string }) => {
+  const pathname = usePathname();
+  return <div className={`tab ${pathname === path ? "active" : ""}`}>{text}</div>;
+};
 
 export default Tab;

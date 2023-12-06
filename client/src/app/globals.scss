@@ -64,6 +64,10 @@ button {
 
 .icon {
   color: $grey_400;
+  transition: $transition;
+  &:hover{
+    color: $primary;
+  }
 }
 
 .section-title {
