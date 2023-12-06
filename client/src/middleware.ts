@@ -24,7 +24,7 @@ export default withAuth(
 
 export const config = {
   matcher: [
-    /* "/admin/:path*",
+    "/admin/:path*",
     "/feed",
     "/first-login",
     "/articles/:path*",
@@ -35,21 +35,6 @@ export const config = {
     "/articles",
     "/dashboard",
     "/users",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    "/writer/[id]", */
-=======
-    "/writer/[id]",
-    "/editor/:path*"
->>>>>>> Stashed changes
-=======
-    "/writer/[id]",
-    "/editor/:path*"
->>>>>>> Stashed changes
-=======
-    "/writer/[id]",
-    "/editor/:path*"
->>>>>>> Stashed changes
+    "/writer/[id]"
   ],
 };
