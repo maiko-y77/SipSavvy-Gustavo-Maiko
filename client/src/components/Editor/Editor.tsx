@@ -17,10 +17,12 @@ import {
 import { app } from "../../../utils/firebase";
 import axios from "axios";
 import { getSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const storage = getStorage(app);
 
 const ArticleEditor = () => {
+  const router = useRouter();
   const [value, setValue] = useState("");
   const [file, setFile] = useState(null);
   const [media, setMedia] = useState("");
@@ -82,7 +84,10 @@ const ArticleEditor = () => {
       // }),
     });
 
-    console.log(res);
+    if (res.status === 200) {
+      const data = await res.data;
+      router.push(`/articles/${data.id}`);
+    }
   };
 
   const handleDraft = async () => {
@@ -97,7 +102,9 @@ const ArticleEditor = () => {
       slug: slugify(title),
     });
 
-    console.log(res);
+    if (res.status === 200) {
+      router.push(`/my-articles/drafts`);
+    }
   };
 
   return (
