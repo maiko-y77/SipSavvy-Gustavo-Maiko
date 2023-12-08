@@ -17,6 +17,7 @@
         align-items: center;
 
         .title {
+            a{
             color: $neutrals_black;
             font-family: Oswald;
             font-size: 24px;
@@ -25,6 +26,11 @@
             line-height: 150%;
             vertical-align: center;
             display: flex;
+            transition: $transition;
+
+            &:hover{
+                color: $primary;
+            }
 
             em{
                 margin-left: 6px;
@@ -33,6 +39,7 @@
                 letter-spacing: 1px;
                 font-family: $Montserrat;
                 font-weight: 300;
+            }
             }
         }
 

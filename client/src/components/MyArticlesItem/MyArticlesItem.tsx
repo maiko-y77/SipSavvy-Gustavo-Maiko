@@ -71,7 +71,7 @@ const MyArticlesItem = ({ data, status }: ArticlesProps) => {
       {filteredData.map((article) => (
         <div key={article.id} className={styles.articleItem}>
           <div className={styles.title}>
-            {article.title} {status === "draft" && <em>[draft]</em>}
+            {<Link href={`articles/${article.id}`} target="_blank">{article.title}</Link>} {status === "draft" && <em>[draft]</em>}
           </div>
           <div className={styles.actions}>
             {article.status !== "published" ? (
