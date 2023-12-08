@@ -45,7 +45,14 @@ export default async function Page({ params }: { params: { id: string } }) {
               </div>
             </div>
             <p className={`${BASE_CLASS}__publish-date`}>
-              Published on {new Date(article.date_created).toLocaleString()}
+              Published on{" "}
+              {new Date(article.date_created).toLocaleString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "numeric",
+                minute: "numeric",
+              })}
             </p>
           </div>
 
@@ -63,9 +70,11 @@ export default async function Page({ params }: { params: { id: string } }) {
           )}
 
           <div className={`${BASE_CLASS}__content`}>
-            <p dangerouslySetInnerHTML={{
-                  __html: article.content
-                }}></p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: article.content,
+              }}
+            ></p>
           </div>
 
           <div className={`${BASE_CLASS}__author`}>
