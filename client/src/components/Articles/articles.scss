@@ -1,66 +1,74 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.article-item {
-    width: 100%;
-    height: fit-content;
-    padding: 24px;
-    border-bottom: solid 1px $grey_300;
+.article-list {
+
     display: flex;
-    gap: 24px;
-    padding: 0;
     flex-direction: column;
-    position: relative;
-    align-items: center;
-    background-color: transparent;
-    transition: background-color 0.3s ease-out;
-
-    &:not(:first-child),
-    &:not(:last-child) {
-        margin-block: 12px;
-    }
-
-
-    .article-content {
+    
+    .article-item {
         width: 100%;
-        flex-grow: 1;
+        height: fit-content;
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
         padding: 24px;
-
-        &:hover {
-            background-color: $brand_white;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        background-color: transparent;
+        transition: background-color 0.3s ease-out;
+        border-bottom: solid 1px $grey_300;
+        
+        &:not(:first-child),
+        &:not(:last-child) {
+            margin-block: 12px;
         }
-
-        .author-bullet {
+        
+        .article-content {
             width: 100%;
-            height: fit-content;
+            flex-grow: 1;
             display: flex;
-            gap: 12px;
-            align-items: center;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+            padding:6px;
 
-            .author-name {
-                color: $grey_400;
-                /* Body Small Bold */
-                @include body-small
-                /* 12px */
+            .article-details {
+
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                .author-bullet {
+                    width: 100%;
+                    height: fit-content;
+                    display: flex;
+                    gap: 12px;
+                    align-items: center;
+
+                    .author-name {
+                        color: $grey_400;
+                        /* Body Small Bold */
+                        @include body-small
+                        /* 12px */
+                    }
+                }
+
+                .article-title a {
+                    color: var(--neutrals-black, #111827);
+                    /* Heading 3 */
+                    @include heading-3
+                    /* 36px */
+                }
+
+                p {
+                    color: var(--neutrals-black, #111827);
+                    /* Body */
+                    @include body
+                    /* 24px */
+                }
+
             }
-        }
 
-        .article-title a {
-            color: var(--neutrals-black, #111827);
-            /* Heading 3 */
-            @include heading-3
-            /* 36px */
-        }
-
-        p {
-            color: var(--neutrals-black, #111827);
-            /* Body */
-            @include body
-            /* 24px */
         }
 
         .action-bar {
@@ -106,15 +114,9 @@
             }
         }
 
+
     }
 
-    .article-image {
-        width: 200px;
-        aspect-ratio: 1;
-        object-fit: cover;
-        flex-grow: 0;
-        background-color: $grey_100;
-    }
 }
 
 .avatar {

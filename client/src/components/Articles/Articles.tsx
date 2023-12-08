@@ -12,7 +12,7 @@ interface ArticlesProps {
     id: string;
     title: string;
     content: string;
-    coverImg?: string;
+    cover_img?: string;
     author: {
       name: string;
       avatar?: string;
@@ -22,39 +22,43 @@ interface ArticlesProps {
 
 const Articles: React.FC<ArticlesProps> = ({ data }) => {
   return (
-    <div className="article-item">
+    <div className="article-list">
       {data.map((article) => (
-        <>
-          <div className="article-content" key={article.id}>
-            <div className="author-bullet">
-              <Avatar className="avatar" img={article.author.avatar} />
-              <p className="author-name">{article.author.name}</p>
+        <div className="article-item" key={article.id}>
+          <div className="article-content">
+            <div className="article-details">
+              <div className="author-bullet">
+                <Avatar className="avatar" img={article.author.avatar} />
+                <p className="author-name">{article.author.name}</p>
+              </div>
+              <h3 className="article-title">
+                <Link href={`/articles/${article.id}`}>{article.title}</Link>
+              </h3>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: article.content.substring(0, 200) + `...`,
+                }}
+              ></p>
             </div>
-            <h3 className="article-title">
-              <Link href={`/articles/${article.id}`}>{article.title}</Link>
-            </h3>
-            <p dangerouslySetInnerHTML={{__html: article.content}}></p>
-            <div className="action-bar">
-              <Link href={`/articles/${article.id}`}>
-                Continue Reading <ArrowLongRightIcon width={24} height={24} />
-              </Link>
-              <Link href="#" className="icon-link">
-                <BookmarkIcon width={24} height={24} /> Save for later
-              </Link>
-            </div>
-          </div>
-          {article.coverImg && (
             <Link href={`/articles/${article.id}`}>
               <Image
-                src={article.coverImg ?? ""}
+                src={article.cover_img ?? ""}
                 width={200}
                 height={200}
                 alt={article.title}
                 className="article-image"
               />
             </Link>
-          )}
-        </>
+          </div>
+          <div className="action-bar">
+            <Link href={`/articles/${article.id}`}>
+              Continue Reading <ArrowLongRightIcon width={24} height={24} />
+            </Link>
+            {/* <Link href="#" className="icon-link">
+                <BookmarkIcon width={24} height={24} /> Save for later
+              </Link> */}
+          </div>
+        </div>
       ))}
     </div>
   );
