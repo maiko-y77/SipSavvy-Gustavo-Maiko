@@ -79,7 +79,7 @@ router.post("/", async (req: Request, res: Response) => {
 
 router.put("/:id", async (req: Request, res: Response) => {
   const { id } = req.params;
-  const { title, content, status, cover_img } = req.body;
+  const { title, content, status, cover_img, slug } = req.body;
   try {
     const updatedArticle = await prisma.article.update({
       where: { id: String(id) },
@@ -88,6 +88,7 @@ router.put("/:id", async (req: Request, res: Response) => {
         content,
         status,
         cover_img,
+        slug,
       },
     });
 

@@ -21,12 +21,12 @@ import { useRouter } from "next/navigation";
 
 const storage = getStorage(app);
 
-const ArticleEditor = () => {
+export default function DraftEditor({ id, title, content, cover_img }) {
   const router = useRouter();
-  const [value, setValue] = useState("");
+  const [newValue, setNewValue] = useState(content);
   const [file, setFile] = useState(null);
-  const [media, setMedia] = useState("");
-  const [title, setTitle] = useState("");
+  const [newMedia, setNewMedia] = useState(cover_img);
+  const [newTitle, setNewTitle] = useState(title);
 
   useEffect(() => {
     const upload = () => {
@@ -53,7 +53,7 @@ const ArticleEditor = () => {
         (error) => {},
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            setMedia(downloadURL);
+            setNewMedia(downloadURL);
           });
         }
       );
@@ -71,16 +71,13 @@ const ArticleEditor = () => {
       .replace(/^-+|-+$/g, "");
 
   const handleSubmit = async () => {
-    const session = await getSession();
-    const authorId = session?.user?.id || "";
-    const res = await axios.post("http://localhost:3001/articles/", {
+    const res = await axios.put(`http://localhost:3001/articles/${id}`, {
       // body: JSON.stringify({
-      authorId: authorId,
       status: "published",
-      title: title,
-      content: value,
-      cover_img: media,
-      slug: slugify(title),
+      title: newTitle,
+      content: newValue,
+      cover_img: newMedia,
+      slug: slugify(newTitle),
       // }),
     });
 
@@ -91,19 +88,16 @@ const ArticleEditor = () => {
   };
 
   const handleDraft = async () => {
-    const session = await getSession();
-    const authorId = session?.user?.id || "";
-    const res = await axios.post("http://localhost:3001/articles/", {
-      authorId: authorId,
+    const res = await axios.put(`http://localhost:3001/articles/${id}`, {
       status: "draft",
-      title: title,
-      content: value,
-      cover_img: media,
-      slug: slugify(title),
+      title: newTitle,
+      content: newValue,
+      cover_img: newMedia,
+      slug: slugify(newTitle),
     });
 
     if (res.status === 200) {
-      router.push(`/my-articles/drafts`);
+      router.replace(`/my-articles/drafts`);
     }
   };
 
@@ -147,18 +141,17 @@ const ArticleEditor = () => {
         className={styles.title}
         type="text"
         placeholder="Title"
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(e) => setNewTitle(e.target.value)}
+        value={newTitle}
       />
       <div className={styles.editor}>
         <ReactQuill
           theme="bubble"
-          value={value}
-          onChange={setValue}
+          value={newValue}
+          onChange={setNewValue}
           placeholder="Tell your story..."
         />
       </div>
     </div>
   );
-};
-
-export default ArticleEditor;
+}
