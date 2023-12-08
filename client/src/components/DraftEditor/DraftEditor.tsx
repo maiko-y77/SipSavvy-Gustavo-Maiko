@@ -97,7 +97,7 @@ export default function DraftEditor({ id, title, content, cover_img }) {
     });
 
     if (res.status === 200) {
-      router.push(`/my-articles/drafts`);
+      router.replace(`/my-articles/drafts`);
     }
   };
 
