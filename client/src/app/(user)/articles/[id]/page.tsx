@@ -64,7 +64,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
           <div className={`${BASE_CLASS}__content`}>
             <p dangerouslySetInnerHTML={{
-                  __html: article.content.substring(0, 200) + `...`,
+                  __html: article.content
                 }}></p>
           </div>
 
