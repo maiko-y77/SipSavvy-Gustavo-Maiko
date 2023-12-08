@@ -13,6 +13,7 @@ interface ArticlesProps {
     title: string;
     content: string;
     cover_img?: string;
+    status: string;
     author: {
       name: string;
       avatar?: string;
@@ -21,9 +22,15 @@ interface ArticlesProps {
 }
 
 const Articles: React.FC<ArticlesProps> = ({ data }) => {
+
+  const filteredData: [] = data.filter(
+    (article) =>
+      article.status === "published"
+  );
+
   return (
     <div className="article-list">
-      {data.map((article) => (
+      {filteredData.map((article) => (
         <div className="article-item" key={article.id}>
           <div className="article-content">
             <div className="article-details">
