@@ -56,6 +56,17 @@
                     }
                 }
             }
+
+            .articles{
+                flex-direction: column;
+
+                div{
+                    width: 100%;
+                    .articles__item{
+                        color: red;
+                    }
+                }
+            }
         }
 
         &__left {
@@ -102,6 +113,7 @@
 
             &__newuser {
                 display: flex;
+                flex-direction: column;
                 padding: 8px;
                 justify-content: center;
                 align-items: center;
