@@ -26,7 +26,6 @@ export default async function Navbar() {
           <Link href="/my-articles">My Articles</Link>
           </>
         )}
-        {data && <Link href="/my-collections">My Collections</Link>}
         <Link href="/about">About Us</Link>
         {userRole !== "admin" && <Link href="/contact" >Contact Us</Link>}
       </nav>
