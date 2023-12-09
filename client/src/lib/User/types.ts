@@ -7,5 +7,7 @@ export type User = {
     email: string;
     avatar: String;
     role: String;
-    Articles: Article[]
+    Articles: Article[],
+    followers: [],
+    following: []
 }
