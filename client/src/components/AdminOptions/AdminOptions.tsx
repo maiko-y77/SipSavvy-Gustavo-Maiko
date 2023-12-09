@@ -1,10 +1,14 @@
 "use client";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import styles from "./AdminOptions.module.scss";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, ReactPropTypes } from "react";
 import Link from "next/link";
 
-const AdminOptions = () => {
+interface AdminOptionsProps {
+  closeNavbar: () => void;
+}
+
+const AdminOptions: React.FC<AdminOptionsProps> = ({ closeNavbar }) => {
   const [isOpen, setIsOpen] = useState(false);
   const adminOptionsRef = useRef<HTMLDivElement>(null);
 
@@ -13,6 +17,11 @@ const AdminOptions = () => {
       setIsOpen(false);
     }
   };
+
+  const handleClick = () => {
+    setIsOpen(!isOpen)
+    closeNavbar();
+  }
 
   useEffect(() => {
     document.addEventListener('click', handleClickOutside);
@@ -29,9 +38,9 @@ const AdminOptions = () => {
         </div>
         {isOpen &&
         <div className={styles.dropdown}>
-           <Link href="/admin/dashboard" onClick={()=> setIsOpen(!isOpen)}>Dashboard</Link>
-           <Link onClick={()=> setIsOpen(!isOpen)} href="/admin/users">Users</Link>
-           <Link onClick={()=> setIsOpen(!isOpen)} href="/admin/articles">Articles</Link>
+           <Link href="/admin/dashboard" onClick={handleClick}>Dashboard</Link>
+           <Link onClick={handleClick} href="/admin/users">Users</Link>
+           <Link onClick={handleClick} href="/admin/articles">Articles</Link>
         </div>
         }
   </div>

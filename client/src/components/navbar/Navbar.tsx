@@ -31,7 +31,7 @@ export default function Navbar() {
 
       <nav className={`default_navbar ${isNavbarOpen ? "open" : ""} mobile-nav`}>
         <div className="links">
-        {role === "admin" && <AdminOptions />}
+        {role === "admin" && <AdminOptions closeNavbar={closeNavbar}/>}
         <Link href={data ? "/feed" : "/"} onClick={closeNavbar}>Home</Link>
         {role === "writer" && (
           <>
