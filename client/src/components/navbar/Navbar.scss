@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.header {
+.header, .admin-header {
     display: flex;
     width: 100%;
     margin: 0 auto;
@@ -11,7 +11,11 @@
     border-bottom: 1px solid var(--neutrals-greys-200, #E5E7EB);
     background: rgba(255, 255, 255, 0.75);
     color: $neutrals_black;
-  
+    position: relative;
+
+    @media screen and (max-width: 1024px){
+      padding: 12px 24px;
+    }
   
     .header-navbar-logo {
       width: 164px;
@@ -25,10 +29,51 @@
       gap: 24px;
       padding: 0 24px;
       flex: 1 0 0;
+      z-index: 99999;
   
       a:hover {
         color: $primary;
       }
+
+      a{
+        @media screen and (max-width: 1024px){
+          padding: 24px;
+        }
+      }
+
+      @media screen and (max-width: 1024px){
+        position: absolute;
+        top: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        height: fit-content;
+        background-color: white;
+        gap: 24px;
+        padding: 128px 0;
+      }
+
+      .wrap-icons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+
+        @media screen and (max-width: 1024px){
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 24px;
+
+          a.primary-btn{
+            margin-left: 0
+          }
+        }
+      }
+
     }
 
     .primary-btn {
@@ -130,15 +175,27 @@
   }
   
   .admin-header {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    padding: 24px 48px;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--neutrals-greys-200, #E5E7EB);
     background: $primary;
     color: $brand_white !important;
+
+    .default_navbar{
+      @media screen and (max-width: 1024px){
+        background-color: $primary;
+        left: 0;
+
+        a{
+        &:hover{
+          color: $accent;
+        }
+        }
+      }
+
+      .wrap-icons{
+        @media screen and (max-width: 1024px){
+          margin-block: 12px;
+        }
+      }
+    }
 
     a{
       color: $brand_white;
@@ -148,55 +205,18 @@
         color: $accent;
       }
     }
-  
+
     .icon{
       color: $brand_white;
       &:hover{
         color: $accent;
       }
     }
-
-    .default_navbar{
-      width: 100%;
-      display: flex;
-      gap: 24px;
-      padding: 0 24px;
-      flex: 1 0 0;
-      align-items: center;
-    }
+  
   
     .header-navbar-logo {
       width: 163.669px;
       height: 64px;
-    }
-  
-    .user-writer-admin-navbar {
-      display: flex;
-      padding: 0px 24px;
-      align-items: center;
-      gap: 24px;
-      flex: 1 0 0;
-  
-      .wrap-links {
-        display: flex;
-        padding: 0px 24px;
-        align-items: center;
-        gap: 24px;
-  
-        a:hover{
-          color: $accent;
-        }
-      }
-  
-      .wrap-icons {
-        display: flex;
-        padding: 0px 24px;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 24px;
-        flex: 1 0 0;
-      }
-  
     }
     .droppeddown-loggedin {
       display: flex;

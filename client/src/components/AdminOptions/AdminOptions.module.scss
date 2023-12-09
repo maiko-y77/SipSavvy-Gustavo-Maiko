@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.container{
+.container {
     width: fit-content;
     height: 100%;
     position: relative;
@@ -9,18 +9,18 @@
     left: 0;
     cursor: pointer;
 
-    .button{
+    .button {
         display: flex;
         align-items: center;
         gap: 6px;
         transition: $transition;
 
-        &:hover{
+        &:hover {
             color: $accent;
         }
     }
-    
-    .dropdown{
+
+    .dropdown {
         width: auto;
         padding: 24px 24px;
         position: absolute;
@@ -33,15 +33,20 @@
 
         background-color: $primary;
 
-        a{
+        a {
             color: $brand_white;
             padding: 12px;
             background-color: transparent;
 
-            &:hover{
-                color: $primary;
+            &:hover {
+                color: $primary_darker !important;
                 background-color: $accent;
             }
+        }
+
+        @media screen and (max-width: 1024px) {
+            background-color: $primary_darker;
+            transform: translateX(-25%);
         }
     }
 }

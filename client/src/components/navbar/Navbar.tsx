@@ -13,47 +13,50 @@ export default async function Navbar() {
   const userRole = data?.user.role;
 
   return (
-    <header className={userRole === "admin" ? "admin-header" : "header"}>
+    <header className={userRole === "admin" ? "header admin-header" : "header"}>
       {userRole === "admin" ? <AdminLogo /> : <Logo />}
 
       <nav className="default_navbar">
-        {userRole === "admin" && <AdminOptions /> }
+        {userRole === "admin" && <AdminOptions />}
         <Link href={data ? "/feed" : "/"}>Home</Link>
         {userRole === "writer" && (
           <>
-          <Link href={`/editor/new`}>Write</Link>
-          <Link href={`/writers/${data?.user.id}`}>My Profile</Link>
-          <Link href="/my-articles">My Articles</Link>
+            <Link href={`/editor/new`}>Write</Link>
+            <Link href={`/writers/${data?.user.id}`}>My Profile</Link>
+            <Link href="/my-articles">My Articles</Link>
           </>
         )}
         <Link href="/about">About Us</Link>
-        {userRole !== "admin" && <Link href="/contact" >Contact Us</Link>}
+        {userRole !== "admin" && <Link href="/contact">Contact Us</Link>}
+        <div className="wrap-icons">
+          {data ? (
+            <div className="droppeddown-loggedin">
+              <Image
+                className="avatar icon"
+                src={data?.user.avatar}
+                width={24}
+                height={24}
+                alt={data?.user.avatar + `'s Avatar`}
+              />
+              <p>
+                Hello, <span>{data?.user.name}</span>!
+              </p>
+            </div>
+          ) : (
+            ""
+          )}
+          {data ? (
+            <LogoutBtn />
+          ) : (
+            <>
+              <Link href="/login">Login</Link>
+              <Link href="/register" className="primary-btn">
+                Register
+              </Link>
+            </>
+          )}
+        </div>
       </nav>
-      <div className="wrap-icons">
-        {data ? (
-          <div className="droppeddown-loggedin">
-            <Image
-              className="avatar icon"
-              src={data?.user.avatar}
-              width={24}
-              height={24}
-              alt={data?.user.avatar + `'s Avatar`}
-            />
-            <p>
-              Hello, <span>{data?.user.name}</span>!
-            </p>
-          </div>
-        ) : (
-          ""
-        )}
-      </div>
-
-      {data ? <LogoutBtn /> : (
-      <>
-        <Link href="/login">Login</Link>
-        <Link href="/register" className="primary-btn">Register</Link>
-      </>
-      )}
     </header>
   );
 }
