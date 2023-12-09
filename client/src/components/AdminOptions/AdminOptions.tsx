@@ -1,13 +1,28 @@
 "use client";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import styles from "./AdminOptions.module.scss";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 const AdminOptions = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const adminOptionsRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (adminOptionsRef.current && !adminOptionsRef.current.contains(event.target as Node)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   return (
-  <div className={styles.container}>
+  <div className={styles.container} ref={adminOptionsRef}>
         <div className={styles.button} onClick={()=> setIsOpen(!isOpen)}>
             Admin
             {!isOpen ? <ChevronDownIcon width={24} height={24}/> : <ChevronUpIcon width={24} height={24}/>}
