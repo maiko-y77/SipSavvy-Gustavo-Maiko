@@ -6,12 +6,13 @@
     width: 888px;
     padding: 24px;
     align-items: center;
-    gap: 24px;
-    border-bottom: 1px solid $grey_300;
-
+    gap: 12px;
+    
     &__item {
         display: flex;
         align-items: center;
+        border-bottom: 1px solid $grey_300;
+        padding: 24px;
         gap: 24px;
     }
 
