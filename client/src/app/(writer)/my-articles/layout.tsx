@@ -32,8 +32,6 @@ export default function DashboardLayout({
 
       </div>
 
-      <div className={styles.sidebar}>Sidebar</div>
-
     </div>
   );
 }
