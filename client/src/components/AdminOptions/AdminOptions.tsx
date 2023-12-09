@@ -14,9 +14,9 @@ const AdminOptions = () => {
         </div>
         {isOpen &&
         <div className={styles.dropdown}>
-           <Link href="/admin/dashboard">Dashboard</Link>
-           <Link href="/admin/users">Users</Link>
-           <Link href="/admin/articles">Articles</Link>
+           <Link href="/admin/dashboard" onClick={()=> setIsOpen(!isOpen)}>Dashboard</Link>
+           <Link onClick={()=> setIsOpen(!isOpen)} href="/admin/users">Users</Link>
+           <Link onClick={()=> setIsOpen(!isOpen)} href="/admin/articles">Articles</Link>
         </div>
         }
   </div>
