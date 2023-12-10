@@ -3,6 +3,7 @@ import './home.scss'
 import { options } from './api/auth/[...nextauth]/options'
 import { getServerSession } from "next-auth/next"
 import { redirect } from 'next/navigation'
+import Link from 'next/link'
 
 
 export default async function Home() {
@@ -20,7 +21,7 @@ export default async function Home() {
             Explore narratives, knowledge, and insights from connoisseurs on all
             things wine.
           </p>
-          <button className="primary-btn">Start reading</button>
+          <Link href="/login" className="primary-btn">Start reading</Link>
         </div>
         <div className="bg-image"></div>
       </div>

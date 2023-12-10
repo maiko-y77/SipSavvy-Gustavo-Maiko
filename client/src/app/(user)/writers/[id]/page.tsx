@@ -6,9 +6,13 @@ import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import Tab from "@/components/Tab/Tab";
 import Link from "next/link";
 import "@/app/(user)/writers/[id]/writerProfile.scss"
+import { options } from '../../../api/auth/[...nextauth]/options'
+import { getServerSession } from "next-auth/next"
 
 export default async function Page({ params }: { params: { id: string } }) {
   const writer = await getUser(params.id);
+  const session = await getServerSession(options)
+  const userId = session?.user.id
 
   return (
     <div className="profile-container">
@@ -20,61 +24,23 @@ export default async function Page({ params }: { params: { id: string } }) {
             </div>
             <div className="author-name">
               <h2>{writer.name} {writer.last_name}</h2>
-              <p>20k Followers</p>
+              <p>{writer.followers.length} Followers</p>
             </div>
           </div>
-          <div className="author-bio">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              venenatis ligula leo, vitae imperdiet neque pulvinar vitae. Nulla
-              facilisi. Aliquam.
-            </p>
-          </div>
 
-          <Link href="#">Follow</Link>
-        </div>
-        <div className="following-list">
-          <div className="tab-bar">
-            <SectionTitle text="Following" />
-
-            <SearchBar />
-          </div>
-
-          <ul>
-            <li>
-              <Avatar />
-              <Link href="/writer/leonardodicapprio">Leonardo Dicapprio</Link>
-            </li>
-            <li>
-              <Avatar />
-              <Link href="/writer/leonardodicapprio">Jane Doe</Link>
-            </li>
-            <li>
-              <Avatar />
-              <Link href="/writer/leonardodicapprio">Richard Owsen</Link>
-            </li>
-            <li>
-              <Avatar />
-              <Link href="/writer/leonardodicapprio">Lana DelRey</Link>
-            </li>
-          </ul>
-
-          <Link href="writer/jondoe/following" className="link">
-            See all
-          </Link>
+          {userId !== writer.id && <Link href="#">Follow</Link>}
         </div>
       </div>
 
       <div className="articles-container">
         <div className="tab-bar">
-          <Tab text={`${writer.name} ${writer.last_name}'s Articles`} isActive={true} />
-          <SearchBar />
+          <Tab text={`${writer.name} ${writer.last_name}'s Articles`} path={`/writers/${writer.id}`} />
         </div>
 
         <ul className="articles-list">
           <li>
             {writer.Articles.map((article, index) => (
-              <Articles data={writer.Articles} />
+              <Articles key={article.id} data={writer.Articles} />
             ))}
           </li>
         </ul>

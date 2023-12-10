@@ -121,15 +121,9 @@ const ArticleEditor = () => {
                 style={{ display: "none" }}
               />
               <button className={styles.addButton}>
-                <label htmlFor="icon">
+                <label htmlFor="icon" title="Set the cover Image">
                   <PhotoIcon width={16} height={16} />
                 </label>
-              </button>
-              <button className={styles.addButton}>
-                <ArrowUpTrayIcon width={16} height={16} />
-              </button>
-              <button className={styles.addButton}>
-                <VideoCameraIcon width={16} height={16} />
               </button>
             </div>
           }

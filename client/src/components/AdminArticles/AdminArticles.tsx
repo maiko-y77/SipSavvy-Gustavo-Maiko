@@ -8,15 +8,14 @@ type ArticlesProps = {
   data: Article[];
 };
 
-const BASE_CLASS = "articles";
+const BASE_CLASS = "articlesItem";
 
 export default async function AdminArticles({ data }: ArticlesProps) {
   return (
     <div className={`${BASE_CLASS}`}>
-      {data.map(({ id, title, author, cover_img }) => {
+      {data.slice(0,5).map(({ id, title, author, cover_img }) => {
         return (
-          <div key={id}>
-            <div className={`${BASE_CLASS}__item`}>
+            <div key={id} className={`${BASE_CLASS}__item`}>
               {cover_img && (
                 <Image
                   className={`${BASE_CLASS}__image`}
@@ -34,13 +33,11 @@ export default async function AdminArticles({ data }: ArticlesProps) {
                   {title}
                 </Link>
                 <p className={`${BASE_CLASS}__content__subtitle`}>
-                  Written by {author.name} • 650 Likes
+                  Written by {author.name}
                 </p>
               </div>
               <EyeIcon className="see-icon" />
-              <EllipsisHorizontalIcon className="ellipsis" />
             </div>
-          </div>
         );
       })}
     </div>

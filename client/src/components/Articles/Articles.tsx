@@ -1,11 +1,9 @@
-import { BookmarkIcon, ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import "./articles.scss";
-import { Article } from "@/lib/Article/types";
 import "@/components/Articles/articles.scss";
 import Avatar from "../Avatar/Avatar";
 import Image from "next/image";
-import DOMPurify from "dompurify";
 
 interface ArticlesProps {
   data: {
@@ -22,10 +20,8 @@ interface ArticlesProps {
 }
 
 const Articles: React.FC<ArticlesProps> = ({ data }) => {
-
-  const filteredData: [] = data.filter(
-    (article) =>
-      article.status === "published"
+  const filteredData = data.filter(
+    (article) => article.status === "published"
   );
 
   return (
@@ -41,11 +37,11 @@ const Articles: React.FC<ArticlesProps> = ({ data }) => {
               <h3 className="article-title">
                 <Link href={`/articles/${article.id}`}>{article.title}</Link>
               </h3>
-              <p
+              <div
                 dangerouslySetInnerHTML={{
                   __html: article.content.substring(0, 200) + `...`,
                 }}
-              ></p>
+              ></div>
             </div>
             <Link href={`/articles/${article.id}`}>
               <Image
@@ -61,9 +57,6 @@ const Articles: React.FC<ArticlesProps> = ({ data }) => {
             <Link href={`/articles/${article.id}`}>
               Continue Reading <ArrowLongRightIcon width={24} height={24} />
             </Link>
-            {/* <Link href="#" className="icon-link">
-                <BookmarkIcon width={24} height={24} /> Save for later
-              </Link> */}
           </div>
         </div>
       ))}

@@ -48,8 +48,9 @@
             line-height: 150%; /* 54px */
         }
 
-        button{
+        .primary-btn{
             @include primary_btn;
+            width: fit-content;
             margin-top: 48px;
         }
     }

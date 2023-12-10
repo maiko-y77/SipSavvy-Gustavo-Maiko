@@ -13,12 +13,12 @@
         align-items: flex-start;
 
         &__right {
-            width: 888px;
+            width: 100%;
             height: 907px;
 
             &__tabs {
                 display: flex;
-                width: 888px;
+                width: 100%;
                 justify-content: space-between;
                 align-items: center;
             }
@@ -56,10 +56,21 @@
                     }
                 }
             }
+
+            .articles{
+                flex-direction: column;
+
+                div{
+                    width: 100%;
+                    .articles__item{
+                        color: red;
+                    }
+                }
+            }
         }
 
         &__left {
-            width: auto;
+            width: 432px;
 
             &__tabs {
                 display: flex;
@@ -102,6 +113,7 @@
 
             &__newuser {
                 display: flex;
+                flex-direction: column;
                 padding: 8px;
                 justify-content: center;
                 align-items: center;

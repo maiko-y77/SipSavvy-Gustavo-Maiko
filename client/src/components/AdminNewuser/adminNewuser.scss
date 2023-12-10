@@ -4,12 +4,12 @@
 .new-user{
     display: flex;
     padding: 24px;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     border-radius: 8px;
     border: 1px solid $grey_300;
+    width: 100%;
 
     &__name{
         display: flex;
@@ -17,7 +17,7 @@
         justify-content: center;
         align-items: flex-start;
         gap: 12px;
-        width: 77px;
+        width: 100%;
        
 
         .name{

@@ -12,8 +12,10 @@
     align-items: flex-start;
 
     .articles-container {
-        width: 66.07%;
+        width: 100%;
+        max-width: 1046px;
         display: inline-block;
+        margin: 0 auto;
     }
 
     .sidebar {
