@@ -6,13 +6,14 @@ import "./feed.scss";
 import { getArticles } from "@/lib/Articles/data";
 
 const page = async () => {
-  const articles = await getArticles();
-  
+  const allArticles = await getArticles();
+  const articles = allArticles.slice(0, 3);
+
   return (
     <div className="feed-container">
       <div className="articles-container">
         <div className="articles-list">
-            <Articles data={articles} />
+          <Articles data={articles} />
         </div>
       </div>
     </div>
