@@ -11,6 +11,10 @@
     border: 1px solid $grey_300;
     width: 100%;
 
+    @media screen and (max-width: 1024px) {
+        width: fit-content;
+    }
+
     &__name{
         display: flex;
         flex-direction: column;
