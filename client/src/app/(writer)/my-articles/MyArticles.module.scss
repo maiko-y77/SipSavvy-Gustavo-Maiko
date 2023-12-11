@@ -9,6 +9,10 @@
     justify-content: space-between;
     padding-block: 48px;
     gap: 24px;
+    
+    @media screen and (max-width: 1024px) {
+        width: 92%;
+    }
 
     .content {
         display: flex;
