@@ -15,9 +15,13 @@
 
         &__tabs {
             display: flex;
-            width: 1344px;
+            width: 100%;
             justify-content: space-between;
             align-items: center;
+
+            @media screen and (max-width: 1024px) {
+                width:92%
+            }
         }
 
         &__tabs-tab {
