@@ -26,11 +26,8 @@ export default async function Page({ params }: { params: { id: string } }) {
               <h2>
                 {writer.name} {writer.last_name}
               </h2>
-              <p>{writer.followers.length} Followers</p>
             </div>
           </div>
-
-          {userId !== writer.id && <Link href="#">Follow</Link>}
         </div>
       </div>
 
