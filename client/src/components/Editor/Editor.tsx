@@ -18,6 +18,7 @@ import { app } from "../../../utils/firebase";
 import axios from "axios";
 import { getSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const storage = getStorage(app);
 
@@ -27,6 +28,19 @@ const ArticleEditor = () => {
   const [file, setFile] = useState(null);
   const [media, setMedia] = useState("");
   const [title, setTitle] = useState("");
+  const [previewUrl, setPreviewUrl] = useState(null);
+
+  useEffect(() => {
+    if (!file) {
+      setPreviewUrl(null);
+      return;
+    }
+
+    const objectUrl = URL.createObjectURL(file);
+    setPreviewUrl(objectUrl);
+
+    return () => URL.revokeObjectURL(objectUrl);
+  }, [file]);
 
   useEffect(() => {
     const upload = () => {
@@ -127,6 +141,9 @@ const ArticleEditor = () => {
               </button>
             </div>
           }
+          {previewUrl && (
+            <Image src={previewUrl} alt="Preview" width={100} height={50} />
+          )}
         </div>
         <div>
           <button className={styles.saveDraftButton} onClick={handleDraft}>

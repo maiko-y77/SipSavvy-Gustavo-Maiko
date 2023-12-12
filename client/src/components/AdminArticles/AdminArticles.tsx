@@ -13,8 +13,10 @@ const BASE_CLASS = "articlesItem";
 export default async function AdminArticles({ data }: ArticlesProps) {
   return (
     <div className={`${BASE_CLASS}`}>
-      {data.slice(0,5).map(({ id, title, author, cover_img }) => {
-        return (
+      {data
+        .filter((article) => article.status === "published")
+        .map(({ id, title, author, cover_img }) => {
+          return (
             <div key={id} className={`${BASE_CLASS}__item`}>
               {cover_img && (
                 <Image
@@ -38,8 +40,8 @@ export default async function AdminArticles({ data }: ArticlesProps) {
               </div>
               <Link href={`/articles/${id}`} ><EyeIcon className="see-icon" /></Link>
             </div>
-        );
-      })}
+          );
+        })}
     </div>
   );
 }
