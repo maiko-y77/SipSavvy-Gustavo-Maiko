@@ -62,7 +62,7 @@
             font-weight: 300;
             line-height: 150%; /* 54px */
 
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width: 768px) {
                 max-width: 87%;
                 font-size: 24px;
                 height:fit-content;
@@ -76,7 +76,7 @@
             width: fit-content;
             margin-top: 48px;
 
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width: 768px) {
                 margin-top: 24px;
             }
         }
@@ -99,7 +99,7 @@
         background-position-x: 42%;
 
     }
-    
+
     @media screen and (max-width: 800px) {
         background-size: 250%;
         background-position-x: 47%;

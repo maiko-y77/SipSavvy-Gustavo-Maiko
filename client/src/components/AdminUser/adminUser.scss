@@ -12,6 +12,8 @@
     @media screen and (max-width: 1024px) {
         width: 92%;
         margin: 0 auto;
+        gap: 24px;
+        padding-top: 24px;
     }
 
     &__item {
@@ -24,7 +26,9 @@
 
         @media screen and (max-width: 1024px) {
             width: 100%;
+            flex-direction: column;
             justify-content: space-around;
+            border: solid 1px $grey_300;
         }
 
         &__content {
@@ -33,6 +37,13 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+
+            @media screen and (max-width: 1024px) {
+                flex-direction: row;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 0;
+            }
             
 
             .avatar {
@@ -43,6 +54,13 @@
 
                 img {
                     object-fit: cover;
+                }
+
+                @media screen and (max-width: 1024px) {
+                    width: 64px;
+                    height: 64px;
+                    background-color: transparent;
+                    margin-right: 8px;
                 }
             }
 
@@ -62,12 +80,15 @@
                 line-height: 150%;
 
                 &:focus {
-                    border-bottom: solid 1px $primary;
+                    border-bottom: solid 1px $primary !important;
                 }
 
                 @media screen and (max-width: 1024px) {
-                    width: auto;
-                    display: inline-block;
+                    width: 30%;
+                    display: block;
+                    border-bottom: solid 1px $grey_300 !important;
+                    padding: 8px !important;
+                    margin-right: 8px;
                 }
             }
 
@@ -87,8 +108,10 @@
                 line-height: 150%;
 
                 @media screen and (max-width: 1024px) {
-                    width: fit-content;
+                    width: 30%;
                     display: inline-block;
+                    border-bottom: solid 1px $grey_300 !important;
+                    padding: 8px !important;
                 }
             }
 
@@ -111,8 +134,10 @@
                 line-height: 150%;
 
                 @media screen and (max-width: 1024px) {
-                    width: fit-content;
-                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                    border-bottom: solid 1px $grey_300 !important;
+                    padding: 8px !important;
                 }
             }
 
@@ -125,8 +150,9 @@
             justify-content: space-between;
 
             @media screen and (max-width: 1024px) {
-                width: 150px;
-                justify-content: space-between;
+                width: 100%;
+                justify-content: space-around;
+                margin-top: 24px;
             }
         }
     }
