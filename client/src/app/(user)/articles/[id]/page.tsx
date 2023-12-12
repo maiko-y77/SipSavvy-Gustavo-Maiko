@@ -31,7 +31,6 @@ export default async function Page({ params }: { params: { id: string } }) {
                   <Avatar className="avatar" img={article.author.avatar} />
                   <p>{article.author.name}</p>
                 </Link>
-                {userId !== article.authorId && <FollowButton />}
               </div>
             </div>
             <p className={`${BASE_CLASS}__publish-date`}>
