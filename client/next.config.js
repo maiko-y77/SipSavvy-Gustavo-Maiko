@@ -25,7 +25,7 @@ const nextConfig = {
                 hostname: 'gustavoneri.art',
                 port: '',
                 pathname: '/**',
-            },
+            }
         ],
     },
 }

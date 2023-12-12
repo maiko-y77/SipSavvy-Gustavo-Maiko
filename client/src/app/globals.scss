@@ -24,10 +24,24 @@ body {
   display: block;
   position: relative;
   font-family: $Montserrat;
+
+  @media screen and (max-width: 600px){
+    min-height: calc(100vh - 94px);
+  }
+}
+
+header{
+  @media screen and (max-width: 600px){
+    top: 0;
+  }
 }
 
 main {
   display: block;
+
+  @media screen and (max-width: 600px){
+    margin-top: 94px;
+  }
 }
 
 form {
