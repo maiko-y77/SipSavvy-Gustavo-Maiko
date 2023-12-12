@@ -6,15 +6,22 @@
     margin: 0 auto;
     padding: 48px 0 48px;
 
+    @media screen and (max-width: 1024px) {
+        width: 92%;
+    }
+
     &__container {
         display: flex;
         gap: 24px;
         justify-content: center;
         align-items: flex-start;
 
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+        }
+
         &__right {
             width: 100%;
-            height: 907px;
 
             &__tabs {
                 display: flex;
@@ -72,6 +79,11 @@
         &__left {
             width: 432px;
 
+            @media screen and (max-width: 1024px) {
+                width: 100%;
+                margin-bottom: 64px;
+            }
+
             &__tabs {
                 display: flex;
                 justify-content: space-between;
@@ -120,6 +132,13 @@
                 align-content: center;
                 gap: 8px;
                 flex-wrap: wrap;
+
+                @media screen and (max-width: 1024px) {
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    gap: 12px;
+                }
             }
         }
 

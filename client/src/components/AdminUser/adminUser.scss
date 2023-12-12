@@ -9,6 +9,11 @@
     align-items: flex-start;
     flex-shrink: 0;
 
+    @media screen and (max-width: 1024px) {
+        width: 92%;
+        margin: 0 auto;
+    }
+
     &__item {
         padding: 24px;
         align-items: center;
@@ -17,12 +22,18 @@
         width: 100%;
         justify-content: space-between;
 
+        @media screen and (max-width: 1024px) {
+            width: 100%;
+            justify-content: space-around;
+        }
+
         &__content {
             align-items: center;
             gap: 24px;
             width: 100%;
             display: flex;
             justify-content: space-between;
+            
 
             .avatar {
                 width: 48px;
@@ -53,6 +64,11 @@
                 &:focus {
                     border-bottom: solid 1px $primary;
                 }
+
+                @media screen and (max-width: 1024px) {
+                    width: auto;
+                    display: inline-block;
+                }
             }
 
             &__lastname {
@@ -69,6 +85,11 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: 150%;
+
+                @media screen and (max-width: 1024px) {
+                    width: fit-content;
+                    display: inline-block;
+                }
             }
 
             &__email {
@@ -88,6 +109,11 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: 150%;
+
+                @media screen and (max-width: 1024px) {
+                    width: fit-content;
+                    display: inline-block;
+                }
             }
 
         }
@@ -97,6 +123,11 @@
             width: 200px;
             gap: 12px;
             justify-content: space-between;
+
+            @media screen and (max-width: 1024px) {
+                width: 150px;
+                justify-content: space-between;
+            }
         }
     }
 }

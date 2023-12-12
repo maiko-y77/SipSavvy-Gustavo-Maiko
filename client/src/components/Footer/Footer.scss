@@ -23,4 +23,8 @@
       padding: 16px 48px;
       /* 24px */
     }
+
+    @media screen and (max-width: 600px) {
+      background: rgba(255, 255, 255, 0.75);
+    }
 }
