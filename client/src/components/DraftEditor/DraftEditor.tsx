@@ -18,6 +18,7 @@ import { app } from "../../../utils/firebase";
 import axios from "axios";
 import { getSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const storage = getStorage(app);
 
@@ -27,6 +28,19 @@ export default function DraftEditor({ id, title, content, cover_img }) {
   const [file, setFile] = useState(null);
   const [newMedia, setNewMedia] = useState(cover_img);
   const [newTitle, setNewTitle] = useState(title);
+  const [previewUrl, setPreviewUrl] = useState(null);
+
+  useEffect(() => {
+    if (!file) {
+      setPreviewUrl(null);
+      return;
+    }
+
+    const objectUrl = URL.createObjectURL(file);
+    setPreviewUrl(objectUrl);
+
+    return () => URL.revokeObjectURL(objectUrl);
+  }, [file]);
 
   useEffect(() => {
     const upload = () => {
@@ -119,14 +133,17 @@ export default function DraftEditor({ id, title, content, cover_img }) {
                   <PhotoIcon width={16} height={16} />
                 </label>
               </button>
-              <button className={styles.addButton}>
+              {/* <button className={styles.addButton}>
                 <ArrowUpTrayIcon width={16} height={16} />
               </button>
               <button className={styles.addButton}>
                 <VideoCameraIcon width={16} height={16} />
-              </button>
+              </button> */}
             </div>
           }
+          {previewUrl && (
+            <Image src={previewUrl} alt="Preview" width={100} height={50} />
+          )}
         </div>
         <div>
           <button className={styles.saveDraftButton} onClick={handleDraft}>
