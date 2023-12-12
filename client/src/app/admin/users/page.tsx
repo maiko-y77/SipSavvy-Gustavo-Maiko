@@ -15,7 +15,7 @@ const page = async () => {
         <div className={`${BASE_CLASS}__container`}>
           <div className={`${BASE_CLASS}__container__tabs`}>
             <div className={`${BASE_CLASS}__container__tabs-tab`}>
-              <Tab text="Users" isActive={true} />
+              <Tab text="Users" path={""} />
             </div>
             <div className={`${BASE_CLASS}__container__tabs-link`}>
               <div className="filter">
