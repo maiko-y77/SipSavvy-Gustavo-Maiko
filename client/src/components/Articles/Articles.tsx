@@ -43,11 +43,10 @@ const Articles: React.FC<ArticlesProps> = ({ data }) => {
                 }}
               ></div>
             </div>
-            <Link href={`/articles/${article.id}`}>
+            <Link href={`/articles/${article.id}`} className="article-cover">
               <Image
                 src={article.cover_img ?? ""}
-                width={200}
-                height={200}
+                fill={true}
                 alt={article.title}
                 className="article-image"
               />

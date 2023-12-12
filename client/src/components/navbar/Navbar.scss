@@ -13,6 +13,15 @@
     color: $neutrals_black;
     position: relative;
 
+    @media screen and (max-width: 1024px){
+      padding: 12px 24px;
+    }
+
+    @media screen and (max-width: 600px){
+      position: fixed;
+      z-index: 999;
+    }
+
     .burger{
       display: none;
 
@@ -21,9 +30,6 @@
       }
     } 
 
-    @media screen and (max-width: 1024px){
-      padding: 12px 24px;
-    }
   
     .header-navbar-logo {
       width: 164px;
@@ -50,6 +56,11 @@
 
       &.open {
         display: flex;
+        left: 0;
+
+        @media screen and (max-width: 600px){
+          height: calc(100vh - 80px);
+        }
       }
   
       a:hover {
@@ -84,6 +95,10 @@
 
         &.open{
           display: flex;
+
+          @media screen and (max-width: 600px){
+            
+          }
         }
       }
 
@@ -153,9 +168,7 @@
           }
   
           img {
-            width: 14px;
-            height: 16px;
-            flex-shrink: 0;
+            object-fit: cover;
           }
         }
   
@@ -260,6 +273,11 @@
       .avatar{
           background-color: $brand_white;
           color: $primary;
+      }
+
+      img{
+        object-fit: cover;
+        object-position: center center;
       }
 
       .user {

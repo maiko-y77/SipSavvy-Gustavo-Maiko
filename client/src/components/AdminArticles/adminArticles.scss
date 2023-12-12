@@ -9,6 +9,10 @@
     align-items: center;
     gap: 12px;
     flex-direction: column;
+
+    @media screen and (max-width: 1024px) {
+        padding: 24px 0;
+    }
     
     &__item {
         display: flex;
@@ -30,7 +34,6 @@
     &__content {
         display: flex;
         flex-direction: column;
-        height: 57px;
         align-items: flex-start;
         justify-content: center;
         gap: 8px;
@@ -53,9 +56,8 @@
         position: relative;
         width: 30px;
         color: $grey_400;
+        z-index: 1;
     }
-
-
 
     .ellipsis {
         display: flex;

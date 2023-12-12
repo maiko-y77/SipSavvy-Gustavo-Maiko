@@ -2,9 +2,14 @@
 @import "../../../styles/variables";
 
 .users {
+    width: 100%;
     max-width: 1344px;
     margin: 0 auto;
     padding: 48px 0 48px;
+
+    @media screen and (max-width: 1024px) {
+        padding-block: 128px;
+    }
 
     &__container {
         display: flex;
@@ -15,9 +20,16 @@
 
         &__tabs {
             display: flex;
-            width: 1344px;
+            width: 100%;
+            max-width: 100%;
             justify-content: space-between;
             align-items: center;
+
+            @media screen and (max-width: 1024px) {
+                width:100%;
+                flex-direction: column;
+                justify-content: center;
+            }
         }
 
         &__tabs-tab {
@@ -38,6 +50,10 @@
             color: $grey_500;
             @include body;
 
+            @media screen and (max-width: 1024px) {
+                flex-direction: column;
+            }
+
             .filters {
                 display: flex;
                 padding-left: 17px;
@@ -45,8 +61,6 @@
                 align-items: center;
                 justify-content: center;
                 list-style:none;
-
-              
             }
 
             .filters  a:hover {

@@ -9,6 +9,12 @@
     display: flex;
     justify-content: space-between;
 
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        align-items: center;
+        padding-block: 48px;
+    }
+
     ul {
         list-style: none;
     }
@@ -25,6 +31,11 @@
 
     .sidebar {
         width: 32.14%;
+
+        @media screen and (max-width: 1024px) {
+            width: 92%;
+            margin: 0 auto;
+        }
 
         .author-card {
             width: 100%;
@@ -160,6 +171,10 @@
 
     .articles-container {
         width: 66.07%;
+
+        @media screen and (max-width: 1024px) {
+            width: 92%;
+        }
 
         .tab-bar {
             width: 100%;

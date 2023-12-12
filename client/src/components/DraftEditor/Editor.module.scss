@@ -7,6 +7,10 @@
     margin: 0 auto;
     position: relative;
 
+    @media screen and (max-width: 1024px) {
+        width: 92%;
+    }
+
     .actions {
         width: 100%;
         height: fit-content;
