@@ -1,0 +1,151 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.container{
+    width: 100%;
+    max-width: 1344px;
+    margin: 0 auto;
+    padding: 3rem 0;
+    color: $neutrals_black;
+
+    @media screen and (max-width: 1344px) {
+        padding: 48px 4rem;
+    }
+
+    @media screen and (max-width: 600px){
+        padding: 24px 2rem;
+    }
+
+    h1.title{
+        font-size: 48px;
+
+        @media screen and (max-width: 600px){
+            font-size: 36px;
+        }
+    }
+
+    p{
+        line-height: 150%;
+    }
+
+    .section{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding-block: 24px;
+
+        h2.title{
+            font-size: 36px;
+            @media screen and (max-width: 600px){
+                font-size: 24px;
+            }
+        }
+
+        .card{
+            max-width: 100%;
+            display: flex;
+            gap: 24px;
+            padding: 24px;
+            align-items: center;
+            
+            @media screen and (max-width: 800px) {
+                flex-direction: column;
+                align-items: center;
+                padding: 24px 0;
+            }
+
+            .image{
+                width: 40%;
+                aspect-ratio: 1 / 1;
+                position: relative;
+
+                @media screen and (max-width: 800px) {
+                    width: 100%;
+                }
+
+                img{
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content{
+                width: 60%;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                @media screen and (max-width: 800px) {
+                    width: 100%;
+                }
+
+                h3{
+                    font-size: 24px;
+                    @media screen and (max-width: 600px){
+                        font-size: 18px;
+                    }
+                }
+
+                p{
+                    line-height: 150%;
+                    font-size: 16px;
+                }
+
+                .socials{
+                    width: 100%;
+                    display: flex;
+                    gap: 6px;
+                    flex-direction: column;
+
+                    p{
+                        font-size: 14px;
+                        color: $grey_400;
+                        @media screen and (max-width: 600px){
+                            font-size: 12px;
+                        }
+                    }
+
+                    ul{
+                        display: flex;
+                        width: 100%;
+                        list-style: none;
+                        justify-content: flex-start;
+                        gap: 24px;
+                        flex-wrap: wrap;
+                        padding-block: 12px;
+
+                        @media screen and (max-width: 900px){
+                            justify-content: space-between;
+                        }
+
+                        @media screen and (max-width: 600px){
+                            justify-content: center;
+                        }
+
+                        a{
+                            width: fit-content;
+                            padding: 6px;
+                            transition: $transition;
+                            &:hover{
+                                color: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            &:nth-child(even){
+                flex-direction: row-reverse;
+                @media screen and (max-width: 800px) {
+                    flex-direction: column;
+                }
+            }
+
+        }
+
+    }
+}
+
