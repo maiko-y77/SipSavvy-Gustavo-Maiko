@@ -7,7 +7,7 @@ import { getArticles } from "@/lib/Articles/data";
 
 const page = async () => {
   const allArticles = await getArticles();
-  const articles = allArticles.slice(0, 3);
+  const articles = allArticles.slice(0, 10);
 
   return (
     <div className="feed-container">

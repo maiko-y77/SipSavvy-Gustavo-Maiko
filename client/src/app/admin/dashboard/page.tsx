@@ -11,7 +11,9 @@ import { getUsers } from "@/lib/Users/data"; // import the function to get users
 const BASE_CLASS = "dashboard";
 
 const Dashboard = async () => {
-  const articles = await getArticles();
+  const allArticles = await getArticles();
+  const articles = allArticles.slice(0, 9);
+
   const users = await getUsers();
 
   return (
