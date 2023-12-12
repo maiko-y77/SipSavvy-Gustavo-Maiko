@@ -12,7 +12,7 @@ const BASE_CLASS = "new-user";
 export default async function AdminNewuser({ data }: UsersProps) {
   return (
     <>
-      {data.map(({ id, avatar, name, last_name }) => (
+      {data.slice(0, 10).map(({ id, avatar, name, last_name }) => (
         <div className={`${BASE_CLASS}`} key={id}>
           <Link className="avatar icon" href="/">
             <Avatar className="avatar" img={String(avatar)} />
