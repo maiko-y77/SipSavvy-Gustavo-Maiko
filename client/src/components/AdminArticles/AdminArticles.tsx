@@ -36,7 +36,7 @@ export default async function AdminArticles({ data }: ArticlesProps) {
                   Written by {author.name}
                 </p>
               </div>
-              <EyeIcon className="see-icon" />
+              <Link href={`/articles/${id}`} ><EyeIcon className="see-icon" /></Link>
             </div>
         );
       })}

@@ -34,7 +34,6 @@
     &__content {
         display: flex;
         flex-direction: column;
-        height: 57px;
         align-items: flex-start;
         justify-content: center;
         gap: 8px;
@@ -57,9 +56,8 @@
         position: relative;
         width: 30px;
         color: $grey_400;
+        z-index: 1;
     }
-
-
 
     .ellipsis {
         display: flex;
