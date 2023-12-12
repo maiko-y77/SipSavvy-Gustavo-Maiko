@@ -5,15 +5,15 @@ import "@/app/(user)/articles/[id]/article.scss";
 import Link from "next/link";
 import { FollowButton } from "@/components/FollowButton/FollowButton";
 import Avatar from "@/components/Avatar/Avatar";
-import { options } from '../../../api/auth/[...nextauth]/options'
-import { getServerSession } from "next-auth/next"
+import { options } from "../../../api/auth/[...nextauth]/options";
+import { getServerSession } from "next-auth/next";
 
 const BASE_CLASS = "article";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const article = await getArticle(params.id);
-  const session = await getServerSession(options)
-  const userId = session?.user.id
+  const session = await getServerSession(options);
+  const userId = session?.user.id;
 
   return (
     <>
@@ -50,8 +50,8 @@ export default async function Page({ params }: { params: { id: string } }) {
             <Image
               src={article.cover_img}
               alt="cover image for article"
-              width={100}
-              height={100}
+              width={2000}
+              height={1000}
               style={{
                 width: "100%",
                 height: "auto",
