@@ -3,7 +3,6 @@ import { getArticle } from "@/lib/Article/data";
 import Image from "next/image";
 import "@/app/(user)/articles/[id]/article.scss";
 import Link from "next/link";
-import { FollowButton } from "@/components/FollowButton/FollowButton";
 import Avatar from "@/components/Avatar/Avatar";
 import { options } from "../../../api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth/next";
