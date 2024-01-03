@@ -1,4 +1,4 @@
-export const Published = () => {
+export default function Published () {
   return (
     <div>page</div>
   )
