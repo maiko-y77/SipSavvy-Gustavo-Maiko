@@ -37,7 +37,7 @@ const UserLastNameFormField: React.FC<SelectUserRoleProps> = ({ user }) =>  {
         value={`${userName}`}
         type="text"
         className={`${BASE_CLASS}__item__content__lastname`}
-        onChange={handleNameChange}
+        onChange={() => handleNameChange}
       />
     );
 }

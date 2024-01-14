@@ -25,7 +25,7 @@ const storage = getStorage(app);
 const ArticleEditor = () => {
   const router = useRouter();
   const [value, setValue] = useState("");
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<any>(null);
   const [media, setMedia] = useState("");
   const [title, setTitle] = useState("");
   const [previewUrl, setPreviewUrl] = useState(null);
@@ -36,7 +36,7 @@ const ArticleEditor = () => {
       return;
     }
 
-    const objectUrl = URL.createObjectURL(file);
+    const objectUrl:any = URL.createObjectURL(file);
     setPreviewUrl(objectUrl);
 
     return () => URL.revokeObjectURL(objectUrl);
@@ -44,7 +44,7 @@ const ArticleEditor = () => {
 
   useEffect(() => {
     const upload = () => {
-      const name = new Date().getTime + file.name;
+      const name = new Date().getTime() + file.name;
       const storageRef = ref(storage, name);
 
       const uploadTask = uploadBytesResumable(storageRef, file);
@@ -76,7 +76,7 @@ const ArticleEditor = () => {
     file && upload();
   }, [file]);
 
-  const slugify = (str) =>
+  const slugify = (str:string) =>
     str
       .toLowerCase()
       .trim()
@@ -131,7 +131,14 @@ const ArticleEditor = () => {
               <input
                 type="file"
                 id="icon"
-                onChange={(e) => setFile(e.target.files[0])}
+                onChange={
+                  (e) => {
+                    const selectedFile = e.target.files?.[0];
+                    if (selectedFile) {
+                      setFile(selectedFile);
+                    }
+                  }
+                }
                 style={{ display: "none" }}
               />
               <button className={styles.addButton}>

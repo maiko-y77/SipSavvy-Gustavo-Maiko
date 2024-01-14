@@ -16,7 +16,7 @@ export default async function Header() {
         {userRole === "admin" ? <AdminLogo /> : <Logo />}
       </div>
 
-      <Navbar data={data} />
+      <Navbar />
 
       <div className="burger">
         <Bars2Icon width={24} height={24} />

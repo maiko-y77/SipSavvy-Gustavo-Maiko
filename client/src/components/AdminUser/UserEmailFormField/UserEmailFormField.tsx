@@ -37,7 +37,7 @@ const UserEmailFormField: React.FC<SelectUserRoleProps> = ({ user }) =>  {
         value={`${userEmail}`}
         type="email"
         className={`${BASE_CLASS}__item__content__email`}
-        onChange={handleEmailChange}
+        onChange={() => handleEmailChange}
       />
     );
 }

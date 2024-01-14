@@ -22,10 +22,10 @@ import Image from "next/image";
 
 const storage = getStorage(app);
 
-export default function DraftEditor({ id, title, content, cover_img }) {
+export default function DraftEditor({ id, title, content, cover_img } : { id: string, title: string, content:string, cover_img: string }) {
   const router = useRouter();
   const [newValue, setNewValue] = useState(content);
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<any>(null);
   const [newMedia, setNewMedia] = useState(cover_img);
   const [newTitle, setNewTitle] = useState(title);
   const [previewUrl, setPreviewUrl] = useState(null);
@@ -36,7 +36,7 @@ export default function DraftEditor({ id, title, content, cover_img }) {
       return;
     }
 
-    const objectUrl = URL.createObjectURL(file);
+    const objectUrl:any = URL.createObjectURL(file);
     setPreviewUrl(objectUrl);
 
     return () => URL.revokeObjectURL(objectUrl);
@@ -44,7 +44,7 @@ export default function DraftEditor({ id, title, content, cover_img }) {
 
   useEffect(() => {
     const upload = () => {
-      const name = new Date().getTime + file.name;
+      const name = new Date().getTime() + file.name;
       const storageRef = ref(storage, name);
 
       const uploadTask = uploadBytesResumable(storageRef, file);
@@ -76,7 +76,7 @@ export default function DraftEditor({ id, title, content, cover_img }) {
     file && upload();
   }, [file]);
 
-  const slugify = (str) =>
+  const slugify = (str:string) =>
     str
       .toLowerCase()
       .trim()
@@ -125,7 +125,13 @@ export default function DraftEditor({ id, title, content, cover_img }) {
               <input
                 type="file"
                 id="icon"
-                onChange={(e) => setFile(e.target.files[0])}
+                onChange={(e) => {
+                    const selectedFile = e.target.files?.[0];
+                    if (selectedFile) {
+                      setFile(selectedFile);
+                    }
+                  }
+                }
                 style={{ display: "none" }}
               />
               <button className={styles.addButton}>

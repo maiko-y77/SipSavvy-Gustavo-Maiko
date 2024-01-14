@@ -1,11 +1,9 @@
 import DraftEditor from "@/components/DraftEditor/DraftEditor";
 import axios from "axios";
 
-const getArticleById = async (id) => {
+const getArticleById = async (id:string) => {
   try {
-    const res = await axios.get(`http://localhost:3001/articles/${id}`, {
-      cache: "no-store",
-    });
+    const res = await axios.get(`http://localhost:3001/articles/${id}`);
 
     return res.data;
   } catch (error) {
@@ -13,7 +11,7 @@ const getArticleById = async (id) => {
   }
 };
 
-export default async function DraftArticle({ params }) {
+export default async function DraftArticle({ params }:{ params: any }) {
   const { id } = params;
   const article = await getArticleById(id);
   const { title, content, cover_img } = article;
