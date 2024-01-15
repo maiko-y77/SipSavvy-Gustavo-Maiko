@@ -1,5 +1,4 @@
 import Tab from "../../../components/Tab/Tab";
-import { useSearchParams } from 'next/navigation'
 import "./users.scss";
 import { getUsers } from "@/lib/Users/data";
 import AdminUser from "../../../components/AdminUser/AdminUser";

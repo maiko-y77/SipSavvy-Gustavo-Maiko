@@ -2,7 +2,6 @@
 import LoginForm from "@/components/LoginForm/LoginForm";
 import Modal from "@/components/Modal/Modal"
 import '../../login/login.scss'
-import { usePathname } from "next/navigation";
 
 const page = () => {
     return (

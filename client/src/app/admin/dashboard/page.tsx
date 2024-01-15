@@ -2,10 +2,8 @@ import "./dashboard.scss";
 import Tab from "../../../components/Tab/Tab";
 import Link from "next/link";
 import AdminArticles from "../../../components/AdminArticles/AdminArticles";
-import AdminRequests from "../../../components/AdminRequests/AdminRequests";
 import AdminNewuser from "../../../components/AdminNewuser/AdminNewuser";
 import { getArticles } from "@/lib/Articles/data";
-import AdminRecentComments from "../../../components/AdminRecentComments/AdminRecentComments";
 import { getUsers } from "@/lib/Users/data"; // import the function to get users data
 
 const BASE_CLASS = "dashboard";

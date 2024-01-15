@@ -1,6 +1,5 @@
 import styles from "./articles.module.scss";
 import Tab from "@/components/Tab/Tab";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import AdminArticles from "../../../components/AdminArticles/AdminArticles";
 import { getArticles } from "@/lib/Articles/data";
 

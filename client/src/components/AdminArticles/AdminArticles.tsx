@@ -1,5 +1,5 @@
 import "@/components/AdminArticles/adminArticles.scss";
-import { EyeIcon, EllipsisHorizontalIcon } from "@heroicons/react/24/outline";
+import { EyeIcon } from "@heroicons/react/24/outline";
 import { Article } from "@/lib/Article/types";
 import Image from "next/image";
 import Link from "next/link";

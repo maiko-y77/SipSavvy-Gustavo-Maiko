@@ -1,6 +1,3 @@
-import Tab from "@/components/Tab/Tab";
-import SectionTitle from "@/components/SectionTitle/SectionTitle";
-import Link from "next/link";
 import Articles from "@/components/Articles/Articles";
 import "./feed.scss";
 import { getArticles } from "@/lib/Articles/data";

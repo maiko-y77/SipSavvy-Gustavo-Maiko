@@ -1,17 +1,11 @@
 import Articles from "@/components/Articles/Articles";
 import { getUser } from "@/lib/User/data";
 import Avatar from "@/components/Avatar/Avatar";
-import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import Tab from "@/components/Tab/Tab";
-import Link from "next/link";
 import "@/app/(user)/writers/[id]/writerProfile.scss";
-import { options } from "../../../api/auth/[...nextauth]/options";
-import { getServerSession } from "next-auth/next";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const writer = await getUser(params.id);
-  const session = await getServerSession(options);
-  const userId = session?.user.id;
 
   return (
     <div className="profile-container">

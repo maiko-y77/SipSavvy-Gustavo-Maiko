@@ -11,8 +11,8 @@ const getArticleById = async (id:string) => {
   }
 };
 
-export default async function DraftArticle({ params }:{ params: any }) {
-  const { id } = params;
+export default async function DraftArticle({ params }:{ params: string }) {
+  const  id  = params;
   const article = await getArticleById(id);
   const { title, content, cover_img } = article;
 

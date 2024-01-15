@@ -1,6 +1,5 @@
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { getUser } from "@/lib/UserAuth/data";
 
 export const options: NextAuthOptions = {
   session: {strategy: 'jwt'},
@@ -52,7 +51,7 @@ export const options: NextAuthOptions = {
     signIn: "/login",
   },
   callbacks: {
-    async session({ session, user, token }) {
+    async session({ session, token }) {
       if (session.user) {
         session.user.id = token.id
         session.user.role = token.role
@@ -72,7 +71,7 @@ export const options: NextAuthOptions = {
         token.last_name = user.last_name
         token.avatar = user.avatar
         token.username = user.username
-      };
+      }
       return token;
     },
   },

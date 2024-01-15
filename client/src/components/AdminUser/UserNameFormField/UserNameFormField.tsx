@@ -5,8 +5,8 @@ import React, { useState } from "react";
 
 interface SelectUserRoleProps {
     user: {
-      id: String;
-      name: String;
+      id: string;
+      name: string;
     };
 }
 
