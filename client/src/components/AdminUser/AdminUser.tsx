@@ -9,7 +9,7 @@ import UserNameFormField from "./UserNameFormField/UserNameFormField";
 import UserLastNameFormField from "./UserLastNameFormField/UserLastNameFormField";
 import UserEmailFormField from "./UserEmailFormField/UserEmailFormField";
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ConfirmationDialog from "../ConfirmationDialog/ConfirmationDialog";
 import axios from "axios";
 

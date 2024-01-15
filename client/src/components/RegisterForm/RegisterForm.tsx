@@ -55,14 +55,11 @@ const RegisterForm = () => {
 
     // prepare data to send to the server
     const { name, lastName, email, password } = formData;
-    let username = name + lastName.replace(/\s/g, "").toLowerCase();
-    username.toLowerCase();
+    const username = name + lastName.replace(/\s/g, "").toLowerCase();
     const role = "user";
     const avatar =
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
     const emailVerified = true;
-    const followers = [];
-    const following = [];
 
     // send data to the server
 

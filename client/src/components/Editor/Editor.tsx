@@ -1,9 +1,5 @@
 "use client";
-import {
-  ArrowUpTrayIcon,
-  PhotoIcon,
-  VideoCameraIcon,
-} from "@heroicons/react/24/outline";
+import { PhotoIcon } from "@heroicons/react/24/outline";
 import styles from "./Editor.module.scss";
 import { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
@@ -22,9 +18,10 @@ import Image from "next/image";
 
 const storage = getStorage(app);
 
-const ArticleEditor = () => {
+const Editor = () => {
   const router = useRouter();
   const [value, setValue] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [file, setFile] = useState<any>(null);
   const [media, setMedia] = useState("");
   const [title, setTitle] = useState("");
@@ -36,7 +33,8 @@ const ArticleEditor = () => {
       return;
     }
 
-    const objectUrl:any = URL.createObjectURL(file);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const objectUrl: any = URL.createObjectURL(file);
     setPreviewUrl(objectUrl);
 
     return () => URL.revokeObjectURL(objectUrl);
@@ -64,7 +62,6 @@ const ArticleEditor = () => {
               break;
           }
         },
-        (error) => {},
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
@@ -76,7 +73,7 @@ const ArticleEditor = () => {
     file && upload();
   }, [file]);
 
-  const slugify = (str:string) =>
+  const slugify = (str: string) =>
     str
       .toLowerCase()
       .trim()
@@ -131,14 +128,12 @@ const ArticleEditor = () => {
               <input
                 type="file"
                 id="icon"
-                onChange={
-                  (e) => {
-                    const selectedFile = e.target.files?.[0];
-                    if (selectedFile) {
-                      setFile(selectedFile);
-                    }
+                onChange={(e) => {
+                  const selectedFile = e.target.files?.[0];
+                  if (selectedFile) {
+                    setFile(selectedFile);
                   }
-                }
+                }}
                 style={{ display: "none" }}
               />
               <button className={styles.addButton}>
@@ -179,4 +174,4 @@ const ArticleEditor = () => {
   );
 };
 
-export default ArticleEditor;
+export default Editor;

@@ -1,7 +1,7 @@
 "use client";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import styles from "./AdminOptions.module.scss";
-import { useState, useRef, useEffect, ReactPropTypes } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 interface AdminOptionsProps {

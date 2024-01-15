@@ -1,5 +1,4 @@
 import Avatar from "../Avatar/Avatar";
-import { getUser } from "@/lib/User/data";
 import "@/components/AuthorBullet/authorBullet.scss"
 
 

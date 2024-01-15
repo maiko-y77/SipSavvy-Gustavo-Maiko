@@ -1,8 +1,6 @@
 "use client";
 import {
-  ArrowUpTrayIcon,
   PhotoIcon,
-  VideoCameraIcon,
 } from "@heroicons/react/24/outline";
 import styles from "./Editor.module.scss";
 import { useEffect, useState } from "react";
@@ -16,7 +14,6 @@ import {
 } from "firebase/storage";
 import { app } from "../../../utils/firebase";
 import axios from "axios";
-import { getSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -25,6 +22,7 @@ const storage = getStorage(app);
 export default function DraftEditor({ id, title, content, cover_img } : { id: string, title: string, content:string, cover_img: string }) {
   const router = useRouter();
   const [newValue, setNewValue] = useState(content);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [file, setFile] = useState<any>(null);
   const [newMedia, setNewMedia] = useState(cover_img);
   const [newTitle, setNewTitle] = useState(title);
@@ -36,6 +34,7 @@ export default function DraftEditor({ id, title, content, cover_img } : { id: st
       return;
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const objectUrl:any = URL.createObjectURL(file);
     setPreviewUrl(objectUrl);
 
@@ -64,7 +63,6 @@ export default function DraftEditor({ id, title, content, cover_img } : { id: st
               break;
           }
         },
-        (error) => {},
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setNewMedia(downloadURL);

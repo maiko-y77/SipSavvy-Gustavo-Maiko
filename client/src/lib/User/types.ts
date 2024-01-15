@@ -5,8 +5,8 @@ export type User = {
     name: string;
     last_name: string;
     email: string;
-    avatar: String;
-    role: String;
+    avatar: string;
+    role: string;
     Articles: Article[],
     followers: [],
     following: []

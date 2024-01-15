@@ -1,6 +1,5 @@
-import { BookmarkIcon, TrashIcon, EyeIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
+import { TrashIcon, EyeIcon, PencilSquareIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import AuthorBullet from "../AuthorBullet/AuthorBullet";
 
 const CollectionItem = () => {
     return (

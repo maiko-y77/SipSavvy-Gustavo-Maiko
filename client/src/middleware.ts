@@ -1,5 +1,5 @@
 import { withAuth } from "next-auth/middleware";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 export default withAuth(
   function middleware(req) {
@@ -23,6 +23,7 @@ export default withAuth(
   },
   {
     callbacks: {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       authorized: ({ token }: any) => !!token,
     },
   }

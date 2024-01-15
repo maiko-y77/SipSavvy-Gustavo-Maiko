@@ -1,18 +1,13 @@
-import { BookmarkIcon, HeartIcon } from "@heroicons/react/24/outline";
 import { getArticle } from "@/lib/Article/data";
 import Image from "next/image";
 import "@/app/(user)/articles/[id]/article.scss";
 import Link from "next/link";
 import Avatar from "@/components/Avatar/Avatar";
-import { options } from "../../../api/auth/[...nextauth]/options";
-import { getServerSession } from "next-auth/next";
 
 const BASE_CLASS = "article";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const article = await getArticle(params.id);
-  const session = await getServerSession(options);
-  const userId = session?.user.id;
 
   return (
     <>
